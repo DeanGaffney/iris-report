@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper,titlepage]{report}
 
 \usepackage{hyperref}
+\usepackage[margin=2cm]{geometry}
 
 \hypersetup{
     colorlinks=true,
@@ -19,9 +20,21 @@
 \usepackage{lipsum}
 \usepackage{minted}
 \usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{55}}
+\usepackage{array}
+\setlength\extrarowheight{2pt}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
 \newcommand{\q}[1]{``#1''}
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0em}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{5}
 
 \begin{document}
 \title{Dynamic Performance Framework}
@@ -122,6 +135,7 @@ In this example the user creates a schema in Iris for a raspberry pi. The user h
 \end{tcolorbox}
 \caption{Raspberry Pi Monitor for Iris}
 \end{figure}
+
 \begin{figure}[H]
 \begin{tcolorbox}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{dynamic_performance_framework_android_flow}
@@ -192,6 +206,7 @@ Elasticsearch is a RESTful based search engine for indexing documents of data. E
 
 \begin{figure}[H]
 \begin{tcolorbox}
+PUT twitter
 \begin{minted}{json}
 {
    "mappings":{
@@ -205,9 +220,283 @@ Elasticsearch is a RESTful based search engine for indexing documents of data. E
    }
 }
 \end{minted}
+An example of an Elasticsearch mapping being set up for an index - \url{ https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-put-mapping.html}
 \end{tcolorbox}
-\caption{Example of Spock Test in Iris}
+\caption{Example of an Elasticsearch Mapping}
 \end{figure}
 
+There are alternatives to Elasticsearch, in particular  Hadoop and Spark. However, the main reason for using Elasticsearch is that Onaware developers have experience using Elasticsearch on their other products, so to maintain the product after the project lifecycle Elasticsearch is the best choice for Onaware as they can remain consistent with their technologies.
+
+Another reason for Elasticsearch being used in Iris was due it being RESTful. All data coming to Iris will be made with REST calls already in the correct format for Elasticsearch, meaning a simple redirect to an Elasticsearch URL allows Iris to insert a user’s data to Elasticsearch. Querying Elasticsearch is also a major part of Iris and it can be done through REST calls using aggregations. Aggregations will allow Iris to come with out of the box analytics that can be easily mapped to a user's chart. As aggregations are the backbone of Iris an aggregation playground will be put in place where a user can build up complex aggregations using a user friendly interface and send them to Elasticsearch. 
+
+\subsection{Generating Dynamic Elasticsearch Queries}
+\subsubsection{Elasticsearch Java API Issue}
+Elasticsearch comes with a rich Java API for using Elasticsearch in your applications. The API covers all features of Elasticsearch which Iris requires such as creating indices, mapping indices and performing and parsing aggregations. The main issue with the Java API is that it doesn’t expand well in Iris due to Iris dealing with dynamic data. The Java API is set up in a such a way that if a user wishes to create a complex aggregation with several sub-aggregations Iris would have to  use reflection or have several complex factory design patterns in place. This approach is not ideal, and is best explained with an example using the Java API:
+\begin{figure}[H]
+\begin{tcolorbox}
+POST /exams/\_search?size=0
+\begin{minted}{json}
+{
+   "aggs":{
+      "avg_grade":{ "avg":{"field": "grade"}}
+   }
+}
+\end{minted}
+An example of an average aggregation being performed on a field ‘grade’. As you can see an aggregation is just a JSON object which works upon a given field.
+However when you use the Java API building a similar aggregation without knowing beforehand what the data looks like would be quite difficult and may require reflection in the language you are using. Below is an example of a simple aggregation with a sub aggregation being created using the Java API. \url{https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-avg-aggregation.html}
+
+\begin{minted}{java}
+AggregationBuilders
+	.terms("genders")
+	.fields("gender")
+	.order(Terms.Order.aggregation("avg_height", false)
+	.subAggregation(
+	   AggregationBuilders.avg("avg_height")
+			              .field("height")
+	)
+\end{minted}
+Looking at this example of the Java API, the first method call to ‘terms’, references an aggregation type and the next call adds the ‘gender’ field to the aggregation. An Optional order is added to the aggregation, notice how a static call to ‘Terms.Order.aggregation’ is used. Finally a sub aggregation is added, which refers to the average aggregation. From the example notice the large amount of calls to static methods, this would require Iris to have a factory in place for each aggregation type, which is possible. The problem occurs when users wish to add extra attributes such as ordering to an aggregation, as Iris would need a factory in place for every possible form of an aggregation. Once again this is possible, but not a very elegant way of building up a JSON object, as a user may not wish to use all of the available optional attributes.
+\end{tcolorbox}
+\caption{Example Aggregation for Elasticsearch}
+\end{figure}
+The API is catered more towards having prebuilt aggregations in the backend where you can just fill in the blank parts of the aggregation with fields and is not the best for building aggregations from scratch due to the amount of code needed to fit with the existing API. It is for this reason Iris will implement its own approach for building aggregations.
+
+\subsubsection{Solution using Groovy/Grails}
+Groovy is an excellent candidate as Groovy objects are essentially just maps of keys and values which can be converted into JSON using standard Groovy functions. Groovy constructors will only use the fields given to it and add default values to the remaining fields which were not specified. With this knowledge Elasticsearch aggregation objects built in Groovy would automatically support optional attributes such as order, sort etc… 
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{groovy}
+import Groovy.json.JsonBuilder 
+
+class Person{     
+    String name 
+    int age
+}  
+
+// age will be given a default value
+def person1 = new Person(name: 'dean') 
+
+ //notice the key/value style constructor
+def person2 = new Person(name: 'shane', age: 20) 
+
+Map personMap = [name: 'kieran', age: 30]
+//object constructed from a map
+def person3 = new Person(personMap)
+
+println new JsonBuilder(person1).toPrettyString()
+println new JsonBuilder(person2).toPrettyString()
+println new JsonBuilder(person3).toPrettyString()​
+\end{minted}
+Output:
+\begin{minted}{json}
+{
+    "age": 0,
+    "name": "dean"
+}
+{
+    "age": 20,
+    "name": "shane"
+}
+{
+    "age": 30,
+    "name": "kieran"
+}
+\end{minted}
+\end{tcolorbox}
+\caption{Example of Groovy Constructor}
+\end{figure}
+\pagebreak
+The Groovy implementation follows a standard OOP (Object Orientated Programming) approach. Each Aggregation type is given a class with optional fields, similar to the example above, a factory then accepts a map coming from the front end along with the name of the aggregation type and creates the correct object using the map.
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{groovy_agg_builder_logic_1}
+This diagram shows how a Groovy implementation of Elasticsearch aggregations may look and how they may be built into a single object.
+\end{tcolorbox}
+\caption{Iris Aggregation Implementation POC}
+\end{figure}
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{intellij_agg_diagram}
+The diagram above is a screenshot from IntelliJ. The diagram shows my Groovy implementation class structure.
+\end{tcolorbox}
+\caption{Iris Aggregation Groovy Implementation}
+\end{figure}
+\paragraph{Advantages of using Groovy/Grails}
+\begin{itemize}
+  \item Groovy constructors are maps which can assign default values
+  \item OOP approach
+  \item Scalable, can be updated easily to match Elasticsearch aggregations
+  \item Addition and removal of aggregation classes without system interference
+\end{itemize}
+\paragraph{Disadvantages of using Groovy/Grails}
+\begin{itemize}
+  \item Link between frontend and backend requires complex command objects
+  \item Command objects become very hard to maintain, as it must be index within HTML
+\end{itemize}
+An example of how command objects work can be found here \url{http://guides.grails.org/command-objects-and-forms/guide/index.html}
+\subsubsection{Solution using Javascript}
+Currently a separate implementation is in development for Iris to deal with aggregation objects using Javascript. This implementation depends on building the aggregation object dynamically from user input on the front end. As the user builds the aggregation object on the front end, an aggregation JSON object is being built along with it, this JSON object will then be saved in Iris as a String object.
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{js_agg_builder_flow_1}
+\newline
+This diagram shows the flow of how a user would create an aggregation using the frontend of Iris and shows how the Javascript builds the aggregation incrementally.
+\end{tcolorbox}
+\caption{Javascript Implementation POC}
+\end{figure}
+
+\paragraph{Advantages of using Javascript}
+\begin{itemize}
+\item Keep the aggregation object in its native language, JSON
+\item Remove 15 - 20 Groovy classes with a single Javascript file
+\item Store JSON as a string in database, making it immediately executable
+\item Balances load on the server, as clients now build aggregations
+\end{itemize}
+A practical tutorial on Elasticsearch aggregations and sub-aggregations can be found here \url{https://qbox.io/blog/elasticsearch-aggregations-for-analytics}
+
+\section{JQuery}
+JQuery (\url{http://api.jquery.com}) will be used to post form data, make ajax calls as well as traversing and manipulating the DOM (Document Object Model). JQuery is a defacto industry standard library for accomplishing these tasks.
+
+\section{Grails Spring Websockets Plugin}
+This plugin will be used mainly for updating charts. The sockets will allow for charts to be updated as soon as new data comes into Iris. The Spring plugin allows a Grails Service or Controller to deal with passing data to specific endpoints. These endpoints are referred to as STOMP (Simple [or Streaming] Text Orientated Messaging Protocol) endpoints (Docs.spring.io, 2017). It is then possible for Iris to target charts specific to a schema, which is much more efficient than all charts receiving all data. Controlling STOMP endpoints in Iris can be taken a step further by creating dynamic STOMP endpoints which would be specific to both a schema a chart type, meaning a pie chart could subscribe to an endpoint only related to pie charts, so the data being sent to the pie chart subscriber will already be formatted for pie charts. This once again prevents charts receiving data which is not relevant to them. The endpoints are secured with the Spring Security plugin.
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris_sockets}
+\newline
+The diagram above shows data coming into Iris. The data coming into Iris is for a schema called ‘sql’. Iris sends out data to \q{/sql/pie} and \q{/sql/line}, this means any pie charts or line charts associated with the \q{sql} schema will receive the data and be updated. This is shown by the pie chart and line chart subscribing to the correct topics \q{/topic/sql/pie} and \q{/topic/sql/line}. The bar chart is subscribed to an endpoint called \q{/topic/android/bar} which will not receive any updates as no data has been sent to Iris related to the \q{android} schema.
+\end{tcolorbox}
+\caption{Iris Socket POC}
+\end{figure}
+For documentation on the Grails Spring Websockets plugin see \url{https://plugins.grails.org/plugin/zyro/grails-spring-websocket}
+
+\section{Selenide (Functional Testing)}
+Selenide (\url{http://selenide.org/documentation.html}) will be used for functional tests in Iris. Selenide is a wrapper library for Selenium which removes the boilerplate code for Selenium such as Implicit and Explicit waits. Selenide allows your tests to be more clear and concise due to its expressive function naming convention. Selenide also uses Javascript style selectors to make the developer feel as though they are targeting DOM elements using Javascript rather than Java.
+
+\section{Dashboards}
+
+Iris will allow users to create dashboards which consist of charts, the dashboard tiles should be moveable and resizable and most importantly serializable.
+\subsection{ Dashboard Library Requirements}
+\begin{itemize}
+\item Moveable tiles
+\item Resizeable tiles
+\item Adding tiles
+\item Removing tiles
+\item Have serializable functionality
+\item Be under an MIT License so Onaware may use it
+\item Active Developer Support (Optional, but preferable)
+\end{itemize}
+
+\subsection{ Review of Dashboard Libraries}
+Four libraries were researched in the design process of Iris’ dashboard system. Refer to Appendix C for a detailed comparison of the dashboard libraries. Below is a table summarising the comparisons.
+\begin{table}[H]
+\centering
+\small
+\setlength\tabcolsep{2pt}
+ \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+ \hline
+ 	& Moveable & Resizable & Add Tiles & Remove &  & MIT & Active\\[-3pt]
+Library & Tiles &   Tiles &   Dynamically &   Tiles & Serializable  &   Licensed &  Support\\
+ \hline\hline
+ Gridster & \checkmark & \checkmark & \checkmark &\checkmark & \checkmark & \checkmark & \xmark\\ 
+ \hline
+ Packery & \checkmark & \checkmark & \checkmark &\checkmark & \xmark & \xmark & \xmark\\ 
+ \hline
+ GridList & \checkmark & \checkmark & \xmark &\xmark & \checkmark & \checkmark & \xmark\\ 
+ \hline
+ Gridstack & \checkmark & \checkmark & \checkmark &\checkmark & \checkmark & \checkmark & \checkmark\\ 
+ \hline
+\end{tabular}
+\caption{Dashboard Review}
+\end{table}
+
+\section{Chart Libraries}
+\subsection{Chart Library Requirements}
+\begin{itemize}
+\item D3v4 wrapper library or better alternative to D3
+\item Support basic chart types (Bar, Bubble, Pie, Line etc…)
+\item Out of the box legends, zooming and responsiveness
+\item Allow for chart updates without the need for redrawing
+\item JSON data support
+\item Active Developer Support (Optional, but preferable)
+\item Advanced Chart Types (Radar, Heatmap etc…)
+\end{itemize}
+
+\subsection{Review of Chart Libraries}
+Four libraries were researched in the design process of Iris’ charting system. Refer to Appendix D for a detailed comparison of the chart libraries as well as a information on why D3 is not being used for Iris. Below is a table summarising the comparisons.
+
+\begin{table}[H]
+\centering
+\small
+\setlength\tabcolsep{2pt}
+ \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+ \hline
+  	      & D3v4 - 	&  Basic    & Advanced &Included & Updateable & JSON & Active\\[-3pt]
+  Library  &   Wrapper &  Charts & Charts & Functionality & Charts & Support & Support\\
+ \hline\hline
+ C3 & \xmark & \checkmark & \checkmark &\checkmark & \checkmark & \checkmark & \xmark\\ 
+ \hline
+ Billboardjs & \checkmark & \checkmark & \checkmark &\checkmark & \checkmark & \checkmark & \checkmark\\ 
+\hline
+ Chartjs & \checkmark & \checkmark & \xmark & \checkmark & \checkmark & \checkmark & \checkmark\\ 
+ \hline
+\end{tabular}
+\caption{Chart Libary Review}
+\end{table}
+
+\section{Similar Products}
+\subsection{Kibana}
+
+Kibana (\url{https://www.elastic.co/guide/en/kibana/5.6/getting-started.html}) is a web application which allows you to visualise your ELK (Elasticsearch, Logstash, Kibana) stack. Kibana supports aggregations to be performed on Elasticsearch data and the visualisation of aggregations using charts and metrics. Kibana also supports persistent dashboards, however they are not personal dashboards meaning all users with access to the Kibana instance can view and modify the same dashboards, which is an unusual design choice (Logz.io, 2017). Kibana does not have any concept of a user, meaning there are no personal aspects to the application. Kibana also doesn’t have any user friendly ways to insert data into Elasticsearch meaning you have to understand Elasticsearch concepts in order to use Kibana. Kibana is also aimed towards managing and visualising log data rather than generic data. 
+
+\subsection{Grafana}
+
+Grafana (\url{http://docs.grafana.org/features/datasources/elasticsearch/}) is an open source dashboard tool for visualising time series data. Grafana supports several backend data sources, including Elasticsearch. Each data source has a corresponding query editor for users to query their data. Grafana is extremely powerful and has a very active community where users can collaborate and share dashboards. Grafana has the same issues as Kibana and doesn’t allow a user to enter data into the data source without having background knowledge of the data source.
+
+\subsection{ New Relic}
+
+New Relic (\url{https://newrelic.com/application-monitoring/features}) is a monitoring application which comes close to what Iris wishes to achieve. New Relic is mainly used for anticipating bottlenecks and issues with applications. It is extremely powerful and supports multiple languages (Java, Nodejs and Python) and frameworks however it won’t support data for unsupported languages and frameworks and is not dynamic — this is a fundamental feature of Iris.
+
+\subsection{AWS (Amazon Web Services)}
+
+AWS will be used for hosting an Elasticsearch instance which Iris can use throughout its development cycle. The advantage of using AWS is that Iris can query the Elasticsearch instance from any location making the development flexible.
+
+\chapter{Iris Current Progress}
+
+\section{ Design Iterations}
+
+Iris has had four design iterations up to this point. This section will talk about Iris’ current design. See Appendix A, for details on the other design iterations of Iris. 
+
+Iris’ development process is being carried out using the agile methodology of BDD (Behavior Driven Development). Iris is developed in iterations of two week sprints. Every two weeks Iris is branched over to a new branch and Trello is updated with a new label which corresponds to the branch number. Iris is currently on version 0.0.3. For more information on Trellos roll in the development of Iris please refer to Appendix B.
+
+\subsection{Iris (Current)}
+
+Iris currently has all of the models from the following diagram in place.
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris_models}
+\end{tcolorbox}
+\caption{Iris UML Diagram}
+\end{figure}
+
+All models in the previous diagram have been implemented and fully tested in Grails. Iris currently allows a user to create a schema with schema fields, which in turn creates Elasticsearch mappings and indices specific to the created schema. With a mapping setup Iris allows a user to target an endpoint to send their data, the logic for putting this data into Elasticsearch has been written and tested but it is not linked up yet.
+
+Iris has an Elasticsearch instance hosted on AWS (Amazon Web Services) which will be used for the remainder of the development process.
+
+Iris also has the two implementations of the aggregation building system in development. The Groovy version is completed but not linked to the backend, as progress on the Javascript version has begun which seems to be a more promising. It is likely that the Javascript version will completely replace the Groovy version. There is currently a single page application within Iris which allows a user to build up an aggregation on the front end which was completed using Javascript. This is still quiet rough on the front end, but proves that the Javascript logic works.
+
+Iris also has a single hard coded chart which sits inside a gridstack grid (dashboard). The chart is being updated with randomly generated data being every five seconds to update the chart. This is to make sure data can be flushed smoothly to Billboardjs and ensure that the chart will not overflow inside of the dashboard grid.
+
+As of now the next steps in the current sprint is to populate Elasticsearch with some real data and to develop the socket logic to allow charts to be updated when data is being routed to Iris. Serialization of dashboards is another time consuming task which must be implemented, but still needs to be planned out some more in order to ensure it is done properly. The front of end Iris is still rough, and the following diagram shows how the front end plans to interact with the backend.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{single_html_container}
+Iris will act as several single page web applications. As show in the diagram, each page will contain a main area for html content, which will be replaced by templates using ajax calls to the backend.
+\end{tcolorbox}
+\caption{Several Single Page Applications Design}
+\end{figure}
+
+\nocite{*}
+\printbibliography
 
 \end{document}

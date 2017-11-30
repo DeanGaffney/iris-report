@@ -9,3 +9,21 @@
 \BOOKMARK [1][-]{section.3.2}{Groovy}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.3}{Spock}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.4}{Elasticsearch}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.4.1}{Generating Dynamic Elasticsearch Queries}{section.3.4}% 12
+\BOOKMARK [1][-]{section.3.5}{JQuery}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.6}{Grails Spring Websockets Plugin}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.7}{Selenide \(Functional Testing\)}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.8}{Dashboards}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.8.1}{ Dashboard Library Requirements}{section.3.8}% 17
+\BOOKMARK [2][-]{subsection.3.8.2}{ Review of Dashboard Libraries}{section.3.8}% 18
+\BOOKMARK [1][-]{section.3.9}{Chart Libraries}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.9.1}{Chart Library Requirements}{section.3.9}% 20
+\BOOKMARK [2][-]{subsection.3.9.2}{Review of Chart Libraries}{section.3.9}% 21
+\BOOKMARK [1][-]{section.3.10}{Similar Products}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.10.1}{Kibana}{section.3.10}% 23
+\BOOKMARK [2][-]{subsection.3.10.2}{Grafana}{section.3.10}% 24
+\BOOKMARK [2][-]{subsection.3.10.3}{ New Relic}{section.3.10}% 25
+\BOOKMARK [2][-]{subsection.3.10.4}{AWS \(Amazon Web Services\)}{section.3.10}% 26
+\BOOKMARK [0][-]{chapter.4}{Iris Current Progress}{}% 27
+\BOOKMARK [1][-]{section.4.1}{ Design Iterations}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.1.1}{Iris \(Current\)}{section.4.1}% 29

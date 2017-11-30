@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.30)  30 NOV 2017 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.30)  30 NOV 2017 22:18
 entering extended mode
 **./fyp_document.tex
 (fyp_document.tex
@@ -140,7 +140,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 10.
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count98
+\Gm@cntv=\count99
+\c@Gm@tempcnt=\count100
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+Package hyperref Info: Option `colorlinks' set `true' on input line 11.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -159,8 +175,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen107
-\Gin@req@width=\dimen108
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -181,7 +197,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count98
+\c@lips@count=\count101
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\minted\minted.sty"
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
@@ -195,73 +211,73 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2017/11/22 v2.5 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count99
+\etb@tempcnta=\count102
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count100
+\FV@CodeLineNo=\count103
 \FV@InFile=\read1
 \FV@TabBox=\box26
-\c@FancyVerbLine=\count101
-\FV@StepNumber=\count102
+\c@FancyVerbLine=\count104
+\FV@StepNumber=\count105
 \FV@OutFile=\write3
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\lineno\lineno.sty"
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count103
-\output=\toks15
-\linenoprevgraf=\count104
-\linenumbersep=\dimen109
-\linenumberwidth=\dimen110
-\c@linenumber=\count105
-\c@pagewiselinenumber=\count106
-\c@LN@truepage=\count107
-\c@internallinenumber=\count108
-\c@internallinenumbers=\count109
-\quotelinenumbersep=\dimen111
-\bframerule=\dimen112
-\bframesep=\dimen113
+\linenopenalty=\count106
+\output=\toks16
+\linenoprevgraf=\count107
+\linenumbersep=\dimen117
+\linenumberwidth=\dimen118
+\c@linenumber=\count108
+\c@pagewiselinenumber=\count109
+\c@LN@truepage=\count110
+\c@internallinenumber=\count111
+\c@internallinenumbers=\count112
+\quotelinenumbersep=\dimen119
+\bframerule=\dimen120
+\bframesep=\dimen121
 \bframebox=\box27
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count110
-\c@FV@TrueTabCounter=\count111
+\c@FV@TrueTabGroupLevel=\count113
+\c@FV@TrueTabCounter=\count114
 \FV@TabBox@Group=\box28
 \FV@TmpLength=\skip44
-\c@FV@HighlightLinesStart=\count112
-\c@FV@HighlightLinesStop=\count113
-\FV@LoopCount=\count114
+\c@FV@HighlightLinesStart=\count115
+\c@FV@HighlightLinesStop=\count116
+\FV@LoopCount=\count117
 \FV@NCharsBox=\box29
-\FV@BreakIndent=\dimen114
-\FV@BreakIndentNChars=\count115
-\FV@BreakSymbolSepLeft=\dimen115
-\FV@BreakSymbolSepLeftNChars=\count116
-\FV@BreakSymbolSepRight=\dimen116
-\FV@BreakSymbolSepRightNChars=\count117
-\FV@BreakSymbolIndentLeft=\dimen117
-\FV@BreakSymbolIndentLeftNChars=\count118
-\FV@BreakSymbolIndentRight=\dimen118
-\FV@BreakSymbolIndentRightNChars=\count119
-\c@FancyVerbLineBreakLast=\count120
+\FV@BreakIndent=\dimen122
+\FV@BreakIndentNChars=\count118
+\FV@BreakSymbolSepLeft=\dimen123
+\FV@BreakSymbolSepLeftNChars=\count119
+\FV@BreakSymbolSepRight=\dimen124
+\FV@BreakSymbolSepRightNChars=\count120
+\FV@BreakSymbolIndentLeft=\dimen125
+\FV@BreakSymbolIndentLeftNChars=\count121
+\FV@BreakSymbolIndentRight=\dimen126
+\FV@BreakSymbolIndentRightNChars=\count122
+\c@FancyVerbLineBreakLast=\count123
 \FV@LineBox=\box30
 \FV@LineIndentBox=\box31
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count121
-\calc@Bcount=\count122
-\calc@Adimen=\dimen119
-\calc@Bdimen=\dimen120
+\calc@Acount=\count124
+\calc@Bcount=\count125
+\calc@Adimen=\dimen127
+\calc@Bdimen=\dimen128
 \calc@Askip=\skip45
 \calc@Bskip=\skip46
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count123
+\calc@Ccount=\count126
 \calc@Cskip=\skip47
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\shellesc.sty"
@@ -277,34 +293,34 @@ Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
 \@xs@message=\write4
-\integerpart=\count124
-\decimalpart=\count125
+\integerpart=\count127
+\decimalpart=\count128
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\framed\framed.sty"
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip48
-\fb@frw=\dimen121
-\fb@frh=\dimen122
-\FrameRule=\dimen123
-\FrameSep=\dimen124
+\fb@frw=\dimen129
+\fb@frh=\dimen130
+\FrameRule=\dimen131
+\FrameSep=\dimen132
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count126
-\float@exts=\toks16
+\c@float@type=\count129
+\float@exts=\toks17
 \float@box=\box32
-\@float@everytoks=\toks17
+\@float@everytoks=\toks18
 \@floatcapt=\box33
 )
 \minted@appexistsfile=\read2
 \minted@bgbox=\box34
 \minted@code=\write5
-\c@minted@FancyVerbLineTemp=\count127
-\c@minted@pygmentizecounter=\count128
-\@float@every@listing=\toks18
-\c@listing=\count129
+\c@minted@FancyVerbLineTemp=\count130
+\c@minted@pygmentizecounter=\count131
+\@float@every@listing=\toks19
+\c@listing=\count132
 )
 runsystem(if not exist _minted-fyp_document mkdir _minted-fyp_document)...execu
 ted.
@@ -316,9 +332,9 @@ Package: tcolorbox 2017/09/14 version 4.11 text color boxes
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
-\pgfutil@everybye=\toks19
-\pgfutil@tempdima=\dimen125
-\pgfutil@tempdimb=\dimen126
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen133
+\pgfutil@tempdimb=\dimen134
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.te
 x")) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
@@ -337,30 +353,30 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
-\pgfkeys@pathtoks=\toks20
-\pgfkeys@temptoks=\toks21
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
 x"
-\pgfkeys@tmptoks=\toks22
+\pgfkeys@tmptoks=\toks23
 ))
-\pgf@x=\dimen127
-\pgf@y=\dimen128
-\pgf@xa=\dimen129
-\pgf@ya=\dimen130
-\pgf@xb=\dimen131
-\pgf@yb=\dimen132
-\pgf@xc=\dimen133
-\pgf@yc=\dimen134
+\pgf@x=\dimen135
+\pgf@y=\dimen136
+\pgf@xa=\dimen137
+\pgf@ya=\dimen138
+\pgf@xb=\dimen139
+\pgf@yb=\dimen140
+\pgf@xc=\dimen141
+\pgf@yc=\dimen142
 \w@pgf@writea=\write6
 \r@pgf@reada=\read3
-\c@pgf@counta=\count130
-\c@pgf@countb=\count131
-\c@pgf@countc=\count132
-\c@pgf@countd=\count133
-\t@pgf@toka=\toks23
-\t@pgf@tokb=\toks24
-\t@pgf@tokc=\toks25
+\c@pgf@counta=\count133
+\c@pgf@countb=\count134
+\c@pgf@countc=\count135
+\c@pgf@countd=\count136
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
  ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -376,8 +392,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
 ex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count134
-\pgfsyssoftpath@bigbuffer@items=\count135
+\pgfsyssoftpath@smallbuffer@items=\count137
+\pgfsyssoftpath@bigbuffer@items=\count138
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
 ex"
@@ -388,12 +404,12 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
-\pgfmath@dimen=\dimen135
-\pgfmath@count=\count136
+\pgfmath@dimen=\dimen143
+\pgfmath@count=\count139
 \pgfmath@box=\box36
-\pgfmath@toks=\toks26
-\pgfmath@stack@operand=\toks27
-\pgfmath@stack@operation=\toks28
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.
@@ -413,37 +429,37 @@ ex")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarit
 hmetics.code.tex")))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count137
+\c@pgfmathroundto@lastzeros=\count140
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 "
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen136
-\pgf@picmaxx=\dimen137
-\pgf@picminy=\dimen138
-\pgf@picmaxy=\dimen139
-\pgf@pathminx=\dimen140
-\pgf@pathmaxx=\dimen141
-\pgf@pathminy=\dimen142
-\pgf@pathmaxy=\dimen143
-\pgf@xx=\dimen144
-\pgf@xy=\dimen145
-\pgf@yx=\dimen146
-\pgf@yy=\dimen147
-\pgf@zx=\dimen148
-\pgf@zy=\dimen149
+\pgf@picminx=\dimen144
+\pgf@picmaxx=\dimen145
+\pgf@picminy=\dimen146
+\pgf@picmaxy=\dimen147
+\pgf@pathminx=\dimen148
+\pgf@pathmaxx=\dimen149
+\pgf@pathminy=\dimen150
+\pgf@pathmaxy=\dimen151
+\pgf@xx=\dimen152
+\pgf@xy=\dimen153
+\pgf@yx=\dimen154
+\pgf@yy=\dimen155
+\pgf@zx=\dimen156
+\pgf@zy=\dimen157
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
 ode.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen150
-\pgf@path@lasty=\dimen151
+\pgf@path@lastx=\dimen158
+\pgf@path@lasty=\dimen159
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
 tex"
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen152
-\pgf@shorten@start@additional=\dimen153
+\pgf@shorten@end@additional=\dimen160
+\pgf@shorten@start@additional=\dimen161
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
 "
@@ -451,19 +467,19 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box37
 \pgf@hbox=\box38
 \pgf@layerbox@main=\box39
-\pgf@picture@serial@count=\count138
+\pgf@picture@serial@count=\count141
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
 de.tex"
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen154
+\pgflinewidth=\dimen162
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations
 .code.tex"
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen155
-\pgf@pt@y=\dimen156
-\pgf@pt@temp=\dimen157
+\pgf@pt@x=\dimen163
+\pgf@pt@y=\dimen164
+\pgf@pt@temp=\dimen165
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -479,12 +495,12 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
 "
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen158
+\pgfarrowsep=\dimen166
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen159
-\pgf@sys@shading@range@num=\count139
+\pgf@max=\dimen167
+\pgf@sys@shading@range@num=\count142
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
 x"
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -515,16 +531,16 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
 sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen160
-\pgf@nodesepend=\dimen161
+\pgf@nodesepstart=\dimen168
+\pgf@nodesepend=\dimen169
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
 sty"
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 )) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks29
-\verbatim@line=\toks30
+\every@verbatim=\toks30
+\verbatim@line=\toks31
 \verbatim@in@stream=\read4
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\environ\environ.sty"
@@ -533,15 +549,15 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 ("C:\Program Files\MiKTeX 2.9\tex\latex\trimspaces\trimspaces.sty"
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-\@envbody=\toks31
+\@envbody=\toks32
 )
 \tcb@titlebox=\box42
 \tcb@upperbox=\box43
 \tcb@lowerbox=\box44
 \tcb@phantombox=\box45
-\c@tcbbreakpart=\count140
-\c@tcblayer=\count141
-\tcolorbox@number=\count142
+\c@tcbbreakpart=\count143
+\c@tcblayer=\count144
+\tcolorbox@number=\count145
 \tcb@temp=\box46
 \tcb@temp=\box47
 \tcb@temp=\box48
@@ -549,60 +565,341 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@out=\write7
 \tcb@record@out=\write8
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks33
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\pifont.sty"
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\upzd.fd"
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\upsy.fd"
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen170
+\extrarowheight=\dimen171
+\NC@list=\toks34
+\extratabsurround=\skip49
+\backup@length=\skip50
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty"
+Package: biblatex 2017/11/21 v3.9 programmable bibliographies (PK/JW/AB)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\logreq\logreq.sty"
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count146
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\logreq\logreq.def"
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count147
+\c@listtotal=\count148
+\c@listcount=\count149
+\c@liststart=\count150
+\c@liststop=\count151
+\c@citecount=\count152
+\c@citetotal=\count153
+\c@multicitecount=\count154
+\c@multicitetotal=\count155
+\c@instcount=\count156
+\c@maxnames=\count157
+\c@minnames=\count158
+\c@maxitems=\count159
+\c@minitems=\count160
+\c@citecounter=\count161
+\c@savedcitecounter=\count162
+\c@uniquelist=\count163
+\c@uniquename=\count164
+\c@refsection=\count165
+\c@refsegment=\count166
+\c@maxextratitle=\count167
+\c@maxextratitleyear=\count168
+\c@maxextradate=\count169
+\c@maxextraalpha=\count170
+\c@abbrvpenalty=\count171
+\c@highnamepenalty=\count172
+\c@lownamepenalty=\count173
+\c@maxparens=\count174
+\c@parenlevel=\count175
+\blx@tempcnta=\count176
+\blx@tempcntb=\count177
+\blx@tempcntc=\count178
+\blx@maxsection=\count179
+\blx@maxsegment@0=\count180
+\blx@notetype=\count181
+\blx@parenlevel@text=\count182
+\blx@parenlevel@foot=\count183
+\blx@sectionciteorder@0=\count184
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
+\blx@bcfin=\read5
+\blx@bcfout=\write9
+\c@mincomprange=\count185
+\c@maxcomprange=\count186
+\c@mincompwidth=\count187
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-dm.def")
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count188
+\c@savedafterword=\count189
+\c@annotator=\count190
+\c@savedannotator=\count191
+\c@author=\count192
+\c@savedauthor=\count193
+\c@bookauthor=\count194
+\c@savedbookauthor=\count195
+\c@commentator=\count196
+\c@savedcommentator=\count197
+\c@editor=\count198
+\c@savededitor=\count199
+\c@editora=\count266
+\c@savededitora=\count267
+\c@editorb=\count268
+\c@savededitorb=\count269
+\c@editorc=\count270
+\c@savededitorc=\count271
+\c@foreword=\count272
+\c@savedforeword=\count273
+\c@holder=\count274
+\c@savedholder=\count275
+\c@introduction=\count276
+\c@savedintroduction=\count277
+\c@namea=\count278
+\c@savednamea=\count279
+\c@nameb=\count280
+\c@savednameb=\count281
+\c@namec=\count282
+\c@savednamec=\count283
+\c@translator=\count284
+\c@savedtranslator=\count285
+\c@shortauthor=\count286
+\c@savedshortauthor=\count287
+\c@shorteditor=\count288
+\c@savedshorteditor=\count289
+\c@labelname=\count290
+\c@savedlabelname=\count291
+\c@institution=\count292
+\c@savedinstitution=\count293
+\c@lista=\count294
+\c@savedlista=\count295
+\c@listb=\count296
+\c@savedlistb=\count297
+\c@listc=\count298
+\c@savedlistc=\count299
+\c@listd=\count300
+\c@savedlistd=\count301
+\c@liste=\count302
+\c@savedliste=\count303
+\c@listf=\count304
+\c@savedlistf=\count305
+\c@location=\count306
+\c@savedlocation=\count307
+\c@organization=\count308
+\c@savedorganization=\count309
+\c@origlocation=\count310
+\c@savedoriglocation=\count311
+\c@origpublisher=\count312
+\c@savedorigpublisher=\count313
+\c@publisher=\count314
+\c@savedpublisher=\count315
+\c@language=\count316
+\c@savedlanguage=\count317
+\c@origlanguage=\count318
+\c@savedoriglanguage=\count319
+\c@pageref=\count320
+\c@savedpageref=\count321
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def"
+File: blx-compat.def 2017/11/21 v3.9 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.def"
+File: biblatex.def 2017/11/21 v3.9 biblatex compatibility (PK/JW/AB)
+\c@textcitecount=\count322
+\c@textcitetotal=\count323
+\c@textcitemaxnames=\count324
+\c@biburlnumpenalty=\count325
+\c@biburlucpenalty=\count326
+\c@biburllcpenalty=\count327
+\c@smartand=\count328
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\bbx\numeric.bbx"
+File: numeric.bbx 2017/11/21 v3.9 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx"
+File: standard.bbx 2017/11/21 v3.9 biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count329
+\c@bbx:relatedtotal=\count330
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\cbx\numeric.cbx"
+File: numeric.cbx 2017/11/21 v3.9 biblatex citation style (PK/JW/AB)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg"
+File: biblatex.cfg 
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box50
+\beforetitleunit=\skip65
+\aftertitleunit=\skip66
+\ttl@plus=\dimen172
+\ttl@minus=\dimen173
+\ttl@toksa=\toks35
+\titlewidth=\dimen174
+\titlewidthlast=\dimen175
+\titlewidthfirst=\dimen176
+)
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > fy
 p_document.aex <nul: /p x=^%~$PATH:i>> fyp_document.aex)...executed.
 
 runsystem(del fyp_document.aex)...executed.
 
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
+File: english.lbx 2017/11/21 v3.9 biblatex localization (PK/JW/AB)
+)
+\@quotelevel=\count331
+\@quotereset=\count332
 
 (fyp_document.aux)
 \openout1 = `fyp_document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-\AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring ON on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+\AtBeginShipoutBox=\box51
+Package hyperref Info: Link coloring ON on input line 39.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count143
+\c@section@level=\count333
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 
 (fyp_document.out) (fyp_document.out)
-\@outlinefile=\write9
-\openout9 = `fyp_document.out'.
+\@outlinefile=\write10
+\openout10 = `fyp_document.out'.
 
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count144
-\scratchdimen=\dimen162
-\scratchbox=\box51
-\nofMPsegments=\count145
-\nofMParguments=\count146
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count147
-\MPscratchDim=\dimen163
-\MPnumerator=\count148
-\makeMPintoPDFobject=\count149
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count334
+\scratchdimen=\dimen177
+\scratchbox=\box52
+\nofMPsegments=\count335
+\nofMParguments=\count336
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count337
+\MPscratchDim=\dimen178
+\MPnumerator=\count338
+\makeMPintoPDFobject=\count339
+\everyMPtoPDFconversion=\toks37
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -617,55 +914,64 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 ABD: EveryShipout initializing macros
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 30.
- [1
+Package biblatex Info: No input encoding detected.
+(biblatex)             Assuming 'ascii'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'ascii'.
+\openout9 = `fyp_document.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'fyp_document.bbl' not found.
+
+No file fyp_document.bbl.
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {C:/Users/Gaff_000/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (fyp_doc
-ument.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
-)
-\tf@toc=\write10
-\openout10 = `fyp_document.toc'.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+ument.tocpdfTeX warning (ext4): destination with the same identifier (name{page
+.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 \listoftables
-                   [1
+l.59 ...ine {3.10.1}Kibana}{22}{subsection.3.10.1}
+                                                   [1
 
-] (fyp_document.lot)
-\tf@lot=\write11
-\openout11 = `fyp_document.lot'.
+])
+\tf@toc=\write11
+\openout11 = `fyp_document.toc'.
 
- [2
+ [2] (fyp_document.lot)
+\tf@lot=\write12
+\openout12 = `fyp_document.lot'.
+
+
+[3
 
 ] (fyp_document.lof)
-\tf@lof=\write12
-\openout12 = `fyp_document.lof'.
+\tf@lof=\write13
+\openout13 = `fyp_document.lof'.
 
- [3
+ [4
 
 ]
 Chapter 1.
-[4
-
-]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ˜ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [5] [6]
+[5
+
+] [6]
 Chapter 2.
 \openout3 = `fyp_document.pyg'.
 
@@ -675,9 +981,7 @@ Chapter 2.
 91353C7.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 3.
-) [7
-
-]
+)
 \openout3 = `fyp_document.pyg'.
 
 
@@ -696,60 +1000,53 @@ Missing character: There is no ™ in font cmr12!
 
 
 (_minted-fyp_document/5CE6131953EFF8CBBF758A9D9E66C5476B0A85902DA6284C11B2F15EA
-91353C7.pygtex) [8pdfTeX warning (ext4): destination with the same identifier (
-name{figure.2.1}) has been already used, duplicate ignored
+91353C7.pygtex) [7
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.112 
-      ] [9pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.2.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.116 
-      ]
-<diagrams/dynamic_performance_framework_pi_flow.jpg, id=124, 747.79375pt x 463.
+l.124 \end{figure}
+                  ]
+<diagrams/dynamic_performance_framework_pi_flow.jpg, id=226, 747.79375pt x 463.
 7325pt>
 File: diagrams/dynamic_performance_framework_pi_flow.jpg Graphic file (type jpg
 )
 <use diagrams/dynamic_performance_framework_pi_flow.jpg>
 Package pdftex.def Info: diagrams/dynamic_performance_framework_pi_flow.jpg  us
-ed on input line 120. on input line 120.
-Package pdftex.def Info: Requested size: 358.6973pt x 222.44046pt on input line
- 120.
+ed on input line 133. on input line 133.
+Package pdftex.def Info: Requested size: 452.39949pt x 280.5484pt on input line
+ 133.
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
+}) has been already used, duplicate ignored
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--122
-[][]
- []
-
-<diagrams/dynamic_performance_framework_android_flow.jpg, id=125, 747.79375pt x
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.138 
+      ]
+<diagrams/dynamic_performance_framework_android_flow.jpg, id=231, 747.79375pt x
  463.7325pt>
 File: diagrams/dynamic_performance_framework_android_flow.jpg Graphic file (typ
 e jpg)
 <use diagrams/dynamic_performance_framework_android_flow.jpg>
 Package pdftex.def Info: diagrams/dynamic_performance_framework_android_flow.jp
-g  used on input line 127. on input line 127.
-Package pdftex.def Info: Requested size: 358.6973pt x 222.44046pt on input line
- 127.
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
-[][]
- []
-
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3
+g  used on input line 141. on input line 141.
+Package pdftex.def Info: Requested size: 452.39949pt x 280.5484pt on input line
+ 141.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.132 
-       <./diagrams/dynamic_performance_framework_pi_flow.jpg>] [11pdfTeX warnin
+l.146 
+       <./diagrams/dynamic_performance_framework_pi_flow.jpg>] [10pdfTeX warnin
 g (ext4): destination with the same identifier (name{figure.2.4}) has been alre
 ady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.133 \chapter
+l.147 \chapter
               {Relevant Technologies} <./diagrams/dynamic_performance_framework
 _android_flow.jpg>]
 Chapter 3.
@@ -759,78 +1056,327 @@ Missing character: There is no ™ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[12
-
-]
 \openout3 = `fyp_document.pyg'.
 
 
 (_minted-fyp_document/257B7837001B989C4EBF65069B235164037042E5230FCF3C42A54895D
-D0D2342.pygtex)
+D0D2342.pygtex) [11
+
+]
 \openout3 = `fyp_document.pyg'.
 
 
 (_minted-fyp_document/A4B59257BF84FA2F43BCB57BF0687DB6037042E5230FCF3C42A54895D
-D0D2342.pygtex) [13pdfTeX warning (ext4): destination with the same identifier 
+D0D2342.pygtex)
+\openout3 = `fyp_document.pyg'.
+
+
+(_minted-fyp_document/7721BB163B97EBD22A1B824BC6BD5DBE6B0A85902DA6284C11B2F15EA
+91353C7.pygtex) [12pdfTeX warning (ext4): destination with the same identifier 
 (name{figure.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.187 P
-       eter Niederwieser has a concise introduction tutorial on Spock at the...
-]
+l.226 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.226 \end{figure}
+                  ]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
 \openout3 = `fyp_document.pyg'.
 
-runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o _mi
-nted-fyp_document/7721BB163B97EBD22A1B824BC6BD5DBE6B0A85902DA6284C11B2F15EA9135
-3C7.pygtex fyp_document.pyg)...executed.
 
-
-(_minted-fyp_document/7721BB163B97EBD22A1B824BC6BD5DBE6B0A85902DA6284C11B2F15EA
+(_minted-fyp_document/B777E7A0205AEE79E0340A8C0E4CFCCA6B0A85902DA6284C11B2F15EA
 91353C7.pygtex)
-runsystem(del _minted-fyp_document\F690AFCEF507CFDA6519D634E0001EB76B0A85902DA6
-284C11B2F15EA91353C7.pygtex)...executed.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ˜ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+\openout3 = `fyp_document.pyg'.
 
- [14pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
-2}) has been already used, duplicate ignored
+
+(_minted-fyp_document/F1D473A8F6A01F5443E6788070E9CE8BE7B92CEE1ED011D6CB20CF8C6
+E2F7D43.pygtex)
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ˜ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ˜ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ˜ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.213 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{figure.3.3}) has been already used, duplicate ignored
+l.262 T
+       he API is catered more towards having prebuilt aggregations in the ba...
+]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+\openout3 = `fyp_document.pyg'.
+
+
+(_minted-fyp_document/06D399146BABDA5B37F7F16D6FAE2F8A037042E5230FCF3C42A54895D
+D0D2342.pygtex
+Missing character: There is no â in font cmtt12!
+Missing character: There is no € in font cmtt12!
+Missing character: There is no ‹ in font cmtt12!
+)
+\openout3 = `fyp_document.pyg'.
+
+
+(_minted-fyp_document/3A0C9550E95855041D837F862DB5B8CE6B0A85902DA6284C11B2F15EA
+91353C7.pygtex) [14pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.3.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.213 \end{document}
-                    ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+l.307 \end{figure}
+                  ] [15pdfTeX warning (ext4): destination with the same identif
+ier (name{figure.3.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.309 T
+       he Groovy implementation follows a standard OOP (Object Orientated Pr...
+]
+<diagrams/groovy_agg_builder_logic_1.jpg, id=271, 3240.105pt x 2268.475pt>
+File: diagrams/groovy_agg_builder_logic_1.jpg Graphic file (type jpg)
+<use diagrams/groovy_agg_builder_logic_1.jpg>
+Package pdftex.def Info: diagrams/groovy_agg_builder_logic_1.jpg  used on input
+ line 312. on input line 312.
+Package pdftex.def Info: Requested size: 452.37561pt x 316.71898pt on input lin
+e 312.
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
+[][]
+ []
+
+<diagrams/intellij_agg_diagram.jpg, id=272, 1370.11874pt x 389.95688pt>
+File: diagrams/intellij_agg_diagram.jpg Graphic file (type jpg)
+<use diagrams/intellij_agg_diagram.jpg>
+Package pdftex.def Info: diagrams/intellij_agg_diagram.jpg  used on input line 
+319. on input line 319.
+Package pdftex.def Info: Requested size: 452.39146pt x 128.75757pt on input lin
+e 319.
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--321
+[][]
+ []
+
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.326   \item G
+               roovy constructors are maps which can assign default valuespdfTe
+X warning (ext4): destination with the same identifier (name{figure.3.7}) has b
+een already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.326   \item G
+               roovy constructors are maps which can assign default values <./d
+iagrams/groovy_agg_builder_logic_1.jpg> <./diagrams/intellij_agg_diagram.jpg>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 326.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 326.
+
+Overfull \hbox (101.04985pt too wide) in paragraph at lines 336--337
+\OT1/cmr/m/n/12 An ex-am-ple of how com-mand ob-jects work can be found here []
+[]$http : / / guides . grails . org / command-[]objects-[]and-[]forms /
+ []
+
+<diagrams/js_agg_builder_flow_1.jpg, id=279, 2457.18pt x 3798.19pt>
+File: diagrams/js_agg_builder_flow_1.jpg Graphic file (type jpg)
+<use diagrams/js_agg_builder_flow_1.jpg>
+Package pdftex.def Info: diagrams/js_agg_builder_flow_1.jpg  used on input line
+ 341. on input line 341.
+Package pdftex.def Info: Requested size: 331.1426pt x 511.8642pt on input line 
+341.
+[17] [18pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.356 
+       <./diagrams/js_agg_builder_flow_1.jpg>]
+<diagrams/iris_sockets.jpg, id=296, 2481.27pt x 2396.955pt>
+File: diagrams/iris_sockets.jpg Graphic file (type jpg)
+<use diagrams/iris_sockets.jpg>
+Package pdftex.def Info: diagrams/iris_sockets.jpg  used on input line 364. on 
+input line 364.
+Package pdftex.def Info: Requested size: 452.36421pt x 436.99261pt on input lin
+e 364.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ˜ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [19] [20pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.3.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.374 
+       <./diagrams/iris_sockets.jpg>]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [21pdfTeX warning (ext4): destination with the same identifier (name{table.3.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.416 \item S
+             upport basic chart types (Bar, Bubble, Pie, Line etcâ€¦)]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¦ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [22pdfTeX warning (ext4): destination with the same identifier (name{table.3.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.454 
+      ]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ” in font cmr12!
+ [23]
+Chapter 4.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+<diagrams/iris_models.jpg, id=326, 1167.36125pt x 578.16pt>
+File: diagrams/iris_models.jpg Graphic file (type jpg)
+<use diagrams/iris_models.jpg>
+Package pdftex.def Info: diagrams/iris_models.jpg  used on input line 476. on i
+nput line 476.
+Package pdftex.def Info: Requested size: 452.40125pt x 224.06114pt on input lin
+e 476.
+[24
+
+]
+<diagrams/single_html_container.jpg, id=332, 2497.33pt x 2806.485pt>
+File: diagrams/single_html_container.jpg Graphic file (type jpg)
+<use diagrams/single_html_container.jpg>
+Package pdftex.def Info: diagrams/single_html_container.jpg  used on input line
+ 493. on input line 493.
+Package pdftex.def Info: Requested size: 452.39607pt x 508.4001pt on input line
+ 493.
+
+Underfull \hbox (badness 10000) in paragraph at lines 493--495
+[][]
+ []
+
+[25pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.498 
+       <./diagrams/iris_models.jpg>]
+
+LaTeX Warning: Empty bibliography on input line 500.
+
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.502 \end{document}
+                     <./diagrams/single_html_container.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 502.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 502.
  (fyp_document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 502.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 502.
 Package rerunfilecheck Info: File `fyp_document.out' has not changed.
-(rerunfilecheck)             Checksum: D8F4D66EE4E9EB363CFA5F4A0EA54CC4;616.
+(rerunfilecheck)             Checksum: F48A91A054D9F71E0AF16C4F4A4EA443;1914.
+
+LaTeX Warning: There were undefined references.
+
 runsystem(del fyp_document.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                fyp_document
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'fyp_document.run.xml'.
+\openout1 = `fyp_document.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 502.
  ) 
 Here is how much of TeX's memory you used:
- 17414 strings out of 493312
- 337291 string characters out of 3138889
- 539336 words of memory out of 3000000
- 20627 multiletter control sequences out of 15000+200000
- 9444 words of font info for 34 fonts, out of 3000000 for 9000
+ 24442 strings out of 493312
+ 465355 string characters out of 3138889
+ 1014158 words of memory out of 3000000
+ 27504 multiletter control sequences out of 15000+200000
+ 15944 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,8n,73p,1024b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,12n,73p,1024b,740s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp_document.pdf (15 pages, 234729 bytes).
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/symbols/msam10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.
+pfb>
+Output written on fyp_document.pdf (27 pages, 1335004 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 

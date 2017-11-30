@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{err}{POST} \PYG{err}{/exams/\PYGZus{}search?size=}\PYG{l+m+mi}{0}
+\PYG{p}{\PYGZob{}}
+   \PYG{n+nt}{\PYGZdq{}aggs\PYGZdq{}}\PYG{p}{:\PYGZob{}}
+      \PYG{n+nt}{\PYGZdq{}avg\PYGZus{}grade\PYGZdq{}}\PYG{p}{:\PYGZob{}} \PYG{n+nt}{\PYGZdq{}avg\PYGZdq{}}\PYG{p}{:\PYGZob{}}\PYG{n+nt}{\PYGZdq{}field\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}grade\PYGZdq{}}\PYG{p}{\PYGZcb{}\PYGZcb{}}
+   \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

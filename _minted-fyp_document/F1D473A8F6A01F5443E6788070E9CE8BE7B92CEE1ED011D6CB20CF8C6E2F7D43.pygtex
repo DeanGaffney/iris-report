@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{AggregationBuilders}
+	\PYG{o}{.}\PYG{n+na}{terms}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}genders\PYGZdq{}}\PYG{o}{)}
+	\PYG{o}{.}\PYG{n+na}{fields}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}gender\PYGZdq{}}\PYG{o}{)}
+	\PYG{o}{.}\PYG{n+na}{order}\PYG{o}{(}\PYG{n}{Terms}\PYG{o}{.}\PYG{n+na}{Order}\PYG{o}{.}\PYG{n+na}{aggregation}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}avg\PYGZus{}height\PYGZdq{}}\PYG{o}{,} \PYG{k+kc}{false}\PYG{o}{)}
+	\PYG{o}{.}\PYG{n+na}{subAggregation}\PYG{o}{(}
+	   \PYG{n}{AggregationBuilders}\PYG{o}{.}\PYG{n+na}{avg}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}avg\PYGZus{}height\PYGZdq{}}\PYG{o}{)}
+			              \PYG{o}{.}\PYG{n+na}{field}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}height\PYGZdq{}}\PYG{o}{)}
+	\PYG{o}{)}
+\end{Verbatim}

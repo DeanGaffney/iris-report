@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{Groovy.json.JsonBuilder}
+
+\PYG{k+kd}{class} \PYG{n+nc}{Person}\PYG{o}{\PYGZob{}}
+    \PYG{n}{String} \PYG{n}{name}
+    \PYG{k+kt}{int} \PYG{n}{age}
+\PYG{o}{\PYGZcb{}}
+
+\PYG{c+c1}{// age will be given a default value}
+\PYG{k+kt}{def} \PYG{n}{person1} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Person}\PYG{o}{(}\PYG{n+nl}{name:} \PYG{l+s+s1}{\PYGZsq{}dean\PYGZsq{}}\PYG{o}{)}
+
+ \PYG{c+c1}{//notice the key/value style constructor}
+\PYG{k+kt}{def} \PYG{n}{person2} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Person}\PYG{o}{(}\PYG{n+nl}{name:} \PYG{l+s+s1}{\PYGZsq{}shane\PYGZsq{}}\PYG{o}{,} \PYG{n+nl}{age:} \PYG{l+m+mi}{20}\PYG{o}{)}
+
+\PYG{n}{Map} \PYG{n}{personMap} \PYG{o}{=} \PYG{o}{[}\PYG{n+nl}{name:} \PYG{l+s+s1}{\PYGZsq{}kieran\PYGZsq{}}\PYG{o}{,} \PYG{n+nl}{age:} \PYG{l+m+mi}{30}\PYG{o}{]}
+\PYG{c+c1}{//object constructed from a map}
+\PYG{k+kt}{def} \PYG{n}{person3} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Person}\PYG{o}{(}\PYG{n}{personMap}\PYG{o}{)}
+
+\PYG{n}{println} \PYG{k}{new} \PYG{n+nf}{JsonBuilder}\PYG{o}{(}\PYG{n}{person1}\PYG{o}{).}\PYG{n+na}{toPrettyString}\PYG{o}{()}
+\PYG{n}{println} \PYG{k}{new} \PYG{n+nf}{JsonBuilder}\PYG{o}{(}\PYG{n}{person2}\PYG{o}{).}\PYG{n+na}{toPrettyString}\PYG{o}{()}
+\PYG{n}{println} \PYG{k}{new} \PYG{n+nf}{JsonBuilder}\PYG{o}{(}\PYG{n}{person3}\PYG{o}{).}\PYG{n+na}{toPrettyString}\PYG{o}{()}\PYG{err}{​}
+\end{Verbatim}
