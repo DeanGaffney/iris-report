@@ -27,3 +27,19 @@
 \BOOKMARK [0][-]{chapter.4}{Iris Current Progress}{}% 27
 \BOOKMARK [1][-]{section.4.1}{ Design Iterations}{chapter.4}% 28
 \BOOKMARK [2][-]{subsection.4.1.1}{Iris \(Current\)}{section.4.1}% 29
+\BOOKMARK [0][-]{section*.4}{Appendices}{}% 30
+\BOOKMARK [0][-]{Appendix.1.A}{Iris Iterations}{}% 31
+\BOOKMARK [1][-]{section.1.A.1}{ MEAN \(MongoDB, Express, Angular, Nodejs\) Stack}{Appendix.1.A}% 32
+\BOOKMARK [1][-]{section.1.A.2}{Iris Single Page Application}{Appendix.1.A}% 33
+\BOOKMARK [1][-]{section.1.A.3}{Iris \046 Kibana as a Single Entity}{Appendix.1.A}% 34
+\BOOKMARK [0][-]{Appendix.1.B}{Iris Trello Board}{}% 35
+\BOOKMARK [0][-]{Appendix.1.C}{Dashboard Library Comparisons}{}% 36
+\BOOKMARK [1][-]{section.1.C.1}{Gridster}{Appendix.1.C}% 37
+\BOOKMARK [1][-]{section.1.C.2}{Packery}{Appendix.1.C}% 38
+\BOOKMARK [1][-]{section.1.C.3}{GridList}{Appendix.1.C}% 39
+\BOOKMARK [1][-]{section.1.C.4}{GridStack}{Appendix.1.C}% 40
+\BOOKMARK [0][-]{Appendix.1.D}{Chart Library Comparisons}{}% 41
+\BOOKMARK [1][-]{section.1.D.1}{Why D3 is not being used directly}{Appendix.1.D}% 42
+\BOOKMARK [1][-]{section.1.D.2}{C3}{Appendix.1.D}% 43
+\BOOKMARK [1][-]{section.1.D.3}{Billboardjs}{Appendix.1.D}% 44
+\BOOKMARK [1][-]{section.1.D.4}{Chartjs}{Appendix.1.D}% 45

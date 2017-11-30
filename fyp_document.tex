@@ -25,6 +25,7 @@
 \newcommand{\xmark}{\ding{55}}
 \usepackage{array}
 \setlength\extrarowheight{2pt}
+\usepackage[toc,page]{appendix}
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{references.bib}
@@ -499,4 +500,141 @@ Iris will act as several single page web applications. As show in the diagram, e
 \nocite{*}
 \printbibliography
 
+\pagebreak
+
+\begin{appendices}
+\chapter{Iris Iterations}
+Currently Iris has had four different design iterations. The Iris’ current iteration was previously discussed, below are the other three designs that were considered for Iris in the early stages of development.
+
+\section{ MEAN (MongoDB, Express, Angular, Nodejs) Stack}
+
+Before any development had started on Iris there was talks of potentially implementing Iris using the MEAN stack. Due to Nodejs being one of the leading web frameworks it would have been unwise to not at least consider what an implementation may look like using the MEAN stack. However when Iris was planned out with Onaware, they did not want to develop Iris in Nodejs due to existing applications being built using Grails. The solution would not have differed dramatically as both Grails and Nodejs share similar concepts, meaning architecture would have been the only major difference. Below is a design showing class relationships to suit MongoDB.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mongo_relation}
+\newline
+How Iris may have looked using a relational approach to suit MongoDB.
+\end{tcolorbox}
+\caption{MEAN Stack Implementation}
+\end{figure}
+
+\section{Iris Single Page Application}
+
+In the early stages of trying to understand how Iris would work, a single page application diagram was used to try and scale the design down to help as an understanding aid for those who did not understand the concept. Upon reviewing the diagram the implementation looked like a reasonable option. 
+
+This implementation would have Iris a single entity where a user could use the web application as a means of pointing at a data source such as Elasticsearch and running analytics on the fly rather than having dashboards. The app would consist of one analytics page where a user picks their Elasticsearch endpoint and runs aggregations against it using a user friendly interface to build the aggregations. These aggregations could then be displayed on charts.
+
+The issue with this idea is that it was very similar to Kibana and Grafana and only allowed a user to view their analytics but didn’t offer anything more to the user. The user would also have to set up their charts every time they wanted to use the application, this might be ok for on the fly analytics but when a user wants to monitor an application it should be a dashboard containing continuously updated. It is for this reason this design was dropped. 
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris_single_page_app}
+\newline
+Two applications are sending data to a single Iris controller action. A user then views this data using the single analytics view. This is how Iris might have looked as a single page application.
+\end{tcolorbox}
+\caption{Iris Single Page Application Implementation}
+\end{figure}
+
+\section{Iris \& Kibana as a Single Entity}
+
+While researching similar products to Iris, Kibana was looked at extensively. During the research it was noted that Kibana is open source, meaning it may be possible to extend it rather than to build software to compete with it. Due to Kibana not allowing transformation of data and not allowing a user friendly way to insert data into Elasticsearch, Iris had advantages over Kibana. 
+
+Rather than completely rebuild a dashboard system and an aggregation system, it is possible to use Kibana as a frontend for viewing your analytics and to use Iris as a means of routing, transforming and managing your data. This implementation would require a reverse proxy to be put in place to make Iris and Kibana appear as a single entity. The reverse proxy would redirect requests from Iris to Kibana and vice versa, making the two appear as a single entity.
+
+This approach looks very appealing, as it would save a lot of work in having to make a dashboard system and an aggregation system. However because Kibana is public and has no concept of a user, the illusion of a single entity is broken when a user must sign into Iris and then doesn’t have to sign into Kibana. Another issue is when a user wants to go from Kibana back to Iris, Kibana must be modified to include links that redirect back to Iris this is doable seeing as Kibana supports plugins and is open source. However due to Kibana not supporting users; personal dashboards are no longer supported in the system which is something Iris wishes to achieve.
+
+This kind of architecture is best suited for SSO (Single Sign On) technology such as Gluu. However the amount of  time required to implement a SSO solution along with building a piece of software to integrate with existing software scales the project and it becomes difficult to estimate a completion time. It is for this reason and the lack of personalised aspects of Kibana that Iris will be a standalone application.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris_kibana_single_entity}
+\newline
+Iris and Kibana working together as a single entity.
+\end{tcolorbox}
+\caption{Iris \& Kibana as a Single Entity}
+\end{figure}
+Documentation on Gluu can be found here \url{https://gluu.org/docs/}
+
+\chapter{Iris Trello Board}
+Iris’ issues and sprints are being tracked using Trello. These are organised using the kanban system and custom labels inside of Trello. Trello allows filtering of cards by their labels, meaning issues related to a particular sprint can be the only cards visible. This makes tracking sprints and issues for the sprint easy to manage.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{trello_labels}
+\newline
+Here are some of the labels being used to manage Iris issues in Trello.
+\end{tcolorbox}
+\caption{Iris’ Trello Labels}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trello_sprint_1}
+\newline
+An image of the Trello issues for the first sprint of Iris, containing label 0.0.1
+\newline
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trello_sprint_2}
+\newline
+An image of the Trello issues for the second sprint of Iris, containing label 0.0.2
+\end{tcolorbox}
+\caption{Iris Sprint Issues}
+\end{figure}
+
+\chapter{Dashboard Library Comparisons}
+Some time was spent researching dashboard libraries that could be used in Iris, below are the four libraries compared in detail.
+
+\section{Gridster}
+
+Gridster (\url{http://dsmorse.github.io/gridster.js}) is a great candidate for controlling the dashboard functionality in Iris as it covers all of the requirements needed. The biggest advantage of using Gridster for Iris is that the dashboard can be serialized as a JSON object which is perfect for saving and restoring dashboards. The only issue with Gridster is that it is no longer in active development which means if any issues occur it becomes extremely difficult to get support for the issue being tackled.
+
+Gridster demos can be found here \url{http://dsmorse.github.io/gridster.js/#demo}
+
+\section{Packery}
+
+Packery (\url{https://packery.metafizzy.co}) is arguably one of the most popular grid libraries. However Packery is not suited for Iris as it is doesn’t come with serialisation built into the library. Serialisation can be achieved but it requires a lot of understanding of the library to see how it can be implemented. The main reason Iris can not use Packery is due to it not being under the MIT license — a requirement for Onaware.
+
+\section{GridList}
+
+GridList (\url{https://github.com/hootsuite/grid}) is a library which takes a different approach to grid systems compared to Gridster. Upon reading GridList’s API it seems to have a very small amount of functionality open to the developer. There was no sign of common functions to add or remove widgets, it looked like DOM elements needed to already be in place before they could be turned into Grid items, which is not ideal for Iris as Iris needs to be able to add grid items dynamically. It is for this reason Iris will not be using GridList to implement a dashboard system.
+
+\section{GridStack}
+
+GridStack (\url{http://gridstackjs.com/}) is an expanded version of Gridster, it carries the same functionality as Gridster as well as some extra functionality. A major reason for GridStack being useful for Iris is that the developer is very active on github and is quick to reply to issues. The developer also spends time helping people adapt Gridstack to people's specific needs which is perfect for something like Iris as it is hard to tell in the early stages of development what issues may arise in the later stages of the project. Gridstack also meets all of the requirements needed for Iris.
+
+Gridstack demos can be found here \url{http://gridstackjs.com/demo/}
+
+
+
+\chapter{Chart Library Comparisons}
+
+Some time was spent researching chart libraries that could be used in Iris, below are the four libraries compared in detail.
+
+\section{Why D3 is not being used directly}
+
+D3 is one of the most popular visualization libraries at present. The library allows a great amount of control over your data visualization and has a very powerful API. The issue with D3 is that it has a steep learning curve and would require a lot of time to understand how the charts are being constructed. D3 is also very raw by nature as it is essentially a visualization library not a chart library and requires you to implement your own legends and axis. This puts a lot more work on the developer. Due to the large scale of Iris a library which comes with these features is preferable. D3 has recently moved up to v4, the majority of tutorials and examples available for D3 are implemented in v3, due to v4 being relatively new. This means Iris would either have to use a the older version of D3 to ensure stability or attempt to implement the charts in the newer version which has less resources to learn from.
+
+\section{C3}
+
+C3 (\url{http://c3js.org/gettingstarted.html}) is a wrapper library for D3v3, the library focuses on taking away the boilerplate code needed to implement charts in plain D3. C3 manages to achieve this by providing axis, legends, chart constructors and easy data manipulation immediately without any extra code. C3 suits all of the charting requirements for Iris which makes it a promising candidate. The issue with C3 is that it is based on D3v3. Due to C3 being based on the older version of C3, it seems that development has slowed down on C3 and there isn’t active support on their Github. Iris would benefit more as a new system by working with newer versions of libraries.
+
+C3 demos can be found here along with the code for creating the charts \url{http://c3js.org/examples.html}
+
+
+\section{Billboardjs}
+
+Billboardjs (\url{https://naver.github.io/billboard.js}) is a wrapper library for D3v4, it is also a fork from C3. Billboard was created to solve the issues mentioned previously, which was to port the functionality of C3 to a new library which supported D3v4. Due to Billboardjs being a fork of C3, they carry the same functionality which is ideal for Iris. Billboardjs has an excellent API and their documentation is very well laid out. 
+
+Based on the research to date Billboardjs does not appear to have any issues which will affect Iris, so is currently the most likely charting component for use with Iris.
+
+Billboardjs examples can be found here along with the code for creating the charts \url{https://naver.github.io/billboard.js/demo/}
+
+\section{Chartjs}
+
+Chartjs (\url{http://www.chartjs.org/docs/latest/getting-started/}) is a popular lightweight charting library which aims to simplify chart construction by automatically supporting legends, axis, zooming, panning and responsiveness. Chartjs has a very active community and has been compared to D3 without the complexity. Chartjs has a limited amount of charts to choose from, but users of the library are actively creating add ons supporting additional charts. 
+
+Due to Iris having another lifecycle after this project cycle it is preferable to select a larger charting library with more features in order to satisfy, as yet, unfinalised  requirements.
+
+Chartjs demos can be found here \url{http://www.chartjs.org/docs/latest/charts}
+\end{appendices}
 \end{document}

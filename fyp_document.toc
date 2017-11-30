@@ -69,3 +69,35 @@
 \contentsline {section}{\numberline {4.1} Design Iterations}{24}{section.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.1}Iris (Current)}{24}{subsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Appendices}{27}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Iris Iterations}{28}{Appendix.1.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1} MEAN (MongoDB, Express, Angular, Nodejs) Stack}{28}{section.1.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Iris Single Page Application}{30}{section.1.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.3}Iris \& Kibana as a Single Entity}{32}{section.1.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Iris Trello Board}{34}{Appendix.1.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {C}Dashboard Library Comparisons}{37}{Appendix.1.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.1}Gridster}{37}{section.1.C.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.2}Packery}{37}{section.1.C.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.3}GridList}{37}{section.1.C.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C.4}GridStack}{38}{section.1.C.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {D}Chart Library Comparisons}{39}{Appendix.1.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.1}Why D3 is not being used directly}{39}{section.1.D.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.2}C3}{39}{section.1.D.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.3}Billboardjs}{40}{section.1.D.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D.4}Chartjs}{40}{section.1.D.4}
