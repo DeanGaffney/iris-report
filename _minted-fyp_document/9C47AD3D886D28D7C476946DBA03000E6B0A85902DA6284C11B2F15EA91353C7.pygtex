@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+	\PYG{n+nt}{\PYGZdq{}writeSpeed\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{3000}\PYG{p}{,}
+	\PYG{n+nt}{\PYGZdq{}tableName\PYGZdq{}}\PYG{p}{:}  \PYG{l+s+s2}{\PYGZdq{}students\PYGZdq{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
