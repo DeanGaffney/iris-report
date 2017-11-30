@@ -62,7 +62,7 @@ Users of Iris will consist of Onaware developers who will be monitoring IAM proj
 
 \section{Description}
 Iris will act as a web interface for a user to create an application monitor and allow the user to query and create personalised dashboards of their data through the use of Elasticsearch. A user may setup an application schema definition within Iris that matches the data they wish to monitor, a schema will consist of field names and corresponding data types specific to the application. Using the schema Iris will know what data to expect from the user. Once a schema is in place, Iris will generate a unique endpoint associated with the schema, this unique endpoint will be given to the user as a means of sending data to Iris. Data sent to the schema endpoint will be in JSON format and will conform to the schema definition created by the user in Iris.
-\begin{figure}
+\begin{figure}[H]
 \begin{tcolorbox}
 A user creates an application monitor for an SQL database, they may create a schema like the following:
 \\
@@ -85,10 +85,9 @@ Iris will then expect a json object to come back in the form:
 \caption{Example Schema Created for Iris}
 \end{figure}
 
-\pagebreak
 Iris will take the users data and create data mappings (Elastic.co, Mapping) inside Elasticsearch, as well as insert any incoming data into the correct Elasticsearch index (Elastic.co, Basic Concepts). With a schema in place a user can route their data through Iris; turning Iris into a centralised area for monitoring application performance data. With Iris being the centralised location to route and view your data a user can write a data transformation script for incoming data. The advantage of this is that it can help reduce the need for applications being redeployed to view new data or to transform data.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{tcolorbox}
 
 The user releases their application, and it is downloaded by 500 people. This data is now being sent from 500 instances of this application. To make any change to this data the developer must add in their desired field and and redeploy the app, those 500 users would then need to download an update for the application in order for it to take effect. The original JSON object passing through Iris looks like the following:
@@ -109,6 +108,26 @@ In this example let’s say the developer prefers to have the data mapped to a f
 \end{minted}
 \end{tcolorbox}
 \caption{Iris Transforming Data}
+\end{figure}
+
+To aid performance monitoring, Iris will allow users to create personalised dashboards where they can create charts from their data and place them in the dashboard. This allows each user to have their own set of visualised data relative to them. To help a user see their data and charts rapidly an Elasticsearch aggregation (Elastic.co, Aggregations, 2017) playground will be put into place in order to allow a user create charts and get results back immediately, this will help a user to plan their dashboard charts before setting them up. The playground will also allow a user to chain several aggregations together which will allow them to create complex queries without having to have any prior knowledge of how Elasticsearch works.
+
+Iris will also come with some common scripts that will be downloadable for users to use straight away, some of these scripts will include JVM monitoring which can be placed into a java application, web page statistics which are retrieved from using Selenium web driver. Not all of the pre packaged monitoring scripts have been decided at this time, as the web application must be in place first.
+
+\section{Use Cases}
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{dynamic_performance_framework_pi_flow}
+In this example the user creates a schema in Iris for a raspberry pi. The user has a raspberry pi set up with a sensor to act as a home alarm. The user has written a script on the pi to send JSON data to the schema endpoint in Iris containing room name, room temperature and if there is any movement in the room. Data is being sent every five seconds to Iris. The user then logs into Iris and creates a dashboard for visualising the raspberry pi data.
+\end{tcolorbox}
+\caption{Raspberry Pi Monitor for Iris}
+\end{figure}
+\begin{figure}[H]
+\begin{tcolorbox}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{dynamic_performance_framework_android_flow}
+In this example the user creates a schema in Iris for an android application. The android application is sending network data to the Iris generated endpoint, the user sends the network name, latency and if the network is currently active in the form of a JSON object, every five seconds. The user then logs into Iris and build a dashboard to visualise the android data coming into Iris.
+\end{tcolorbox}
+\caption{Android Network Monitor for Iris}
 \end{figure}
 
 \end{document}
