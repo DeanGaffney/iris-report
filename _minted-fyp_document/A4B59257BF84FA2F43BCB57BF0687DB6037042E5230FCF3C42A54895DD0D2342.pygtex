@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{void} \PYG{l+s+s2}{\PYGZdq{}test delete Schema\PYGZdq{}}\PYG{o}{()\PYGZob{}}
+	\PYG{n+nl}{setup:}
+	\PYG{n}{setupData}\PYG{o}{()}
+
+	\PYG{n+nl}{when:} \PYG{l+s+s2}{\PYGZdq{}I delete a Schema\PYGZdq{}}
+	\PYG{n}{schema}\PYG{o}{.}\PYG{n+na}{delete}\PYG{o}{(}\PYG{n+nl}{flush:} \PYG{k+kc}{true}\PYG{o}{)}
+
+	\PYG{n+nl}{then:} \PYG{l+s+s2}{\PYGZdq{}It is deleted from the database\PYGZdq{}}
+	\PYG{k}{assert} \PYG{n}{Schema}\PYG{o}{.}\PYG{n+na}{count}\PYG{o}{()} \PYG{o}{==} \PYG{l+m+mi}{0}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

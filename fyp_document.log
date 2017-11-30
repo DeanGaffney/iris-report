@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.30)  30 NOV 2017 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.30)  30 NOV 2017 19:14
 entering extended mode
 **./fyp_document.tex
 (fyp_document.tex
@@ -709,8 +709,8 @@ ure.2.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.116 
       ]
-<diagrams/dynamic_performance_framework_pi_flow.jpg, id=91, 747.79375pt x 463.7
-325pt>
+<diagrams/dynamic_performance_framework_pi_flow.jpg, id=124, 747.79375pt x 463.
+7325pt>
 File: diagrams/dynamic_performance_framework_pi_flow.jpg Graphic file (type jpg
 )
 <use diagrams/dynamic_performance_framework_pi_flow.jpg>
@@ -723,8 +723,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--122
 [][]
  []
 
-<diagrams/dynamic_performance_framework_android_flow.jpg, id=92, 747.79375pt x 
-463.7325pt>
+<diagrams/dynamic_performance_framework_android_flow.jpg, id=125, 747.79375pt x
+ 463.7325pt>
 File: diagrams/dynamic_performance_framework_android_flow.jpg Graphic file (typ
 e jpg)
 <use diagrams/dynamic_performance_framework_android_flow.jpg>
@@ -749,35 +749,88 @@ ady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.133 \end{document}
-                     <./diagrams/dynamic_performance_framework_android_flow.jpg
->]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+l.133 \chapter
+              {Relevant Technologies} <./diagrams/dynamic_performance_framework
+_android_flow.jpg>]
+Chapter 3.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+[12
+
+]
+\openout3 = `fyp_document.pyg'.
+
+
+(_minted-fyp_document/257B7837001B989C4EBF65069B235164037042E5230FCF3C42A54895D
+D0D2342.pygtex)
+\openout3 = `fyp_document.pyg'.
+
+
+(_minted-fyp_document/A4B59257BF84FA2F43BCB57BF0687DB6037042E5230FCF3C42A54895D
+D0D2342.pygtex) [13pdfTeX warning (ext4): destination with the same identifier 
+(name{figure.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.187 P
+       eter Niederwieser has a concise introduction tutorial on Spock at the...
+]
+\openout3 = `fyp_document.pyg'.
+
+runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o _mi
+nted-fyp_document/7721BB163B97EBD22A1B824BC6BD5DBE6B0A85902DA6284C11B2F15EA9135
+3C7.pygtex fyp_document.pyg)...executed.
+
+
+(_minted-fyp_document/7721BB163B97EBD22A1B824BC6BD5DBE6B0A85902DA6284C11B2F15EA
+91353C7.pygtex)
+runsystem(del _minted-fyp_document\F690AFCEF507CFDA6519D634E0001EB76B0A85902DA6
+284C11B2F15EA91353C7.pygtex)...executed.
+
+ [14pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.213 \end{document}
+                    pdfTeX warning (ext4): destination with the same identifier
+ (name{figure.3.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.213 \end{document}
+                    ]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
  (fyp_document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
 Package rerunfilecheck Info: File `fyp_document.out' has not changed.
-(rerunfilecheck)             Checksum: 23ED7F0989653749E550A53C9A307FF3;339.
+(rerunfilecheck)             Checksum: D8F4D66EE4E9EB363CFA5F4A0EA54CC4;616.
 runsystem(del fyp_document.pyg)...executed.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
  ) 
 Here is how much of TeX's memory you used:
- 17375 strings out of 493312
- 335677 string characters out of 3138889
+ 17414 strings out of 493312
+ 337291 string characters out of 3138889
  539336 words of memory out of 3000000
- 20610 multiletter control sequences out of 15000+200000
- 9276 words of font info for 33 fonts, out of 3000000 for 9000
+ 20627 multiletter control sequences out of 15000+200000
+ 9444 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,8n,73p,1024b,589s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on fyp_document.pdf (12 pages, 212684 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on fyp_document.pdf (15 pages, 234729 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

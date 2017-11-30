@@ -130,4 +130,84 @@ In this example the user creates a schema in Iris for an android application. Th
 \caption{Android Network Monitor for Iris}
 \end{figure}
 
+\chapter{Relevant Technologies}
+
+In this chapter the technologies that will be used and the rationale for their selection, in the development of the Iris system are outlined. One section in particular Generating Dynamic Elasticsearch Queries is long but is important because the choice of technology is not obvious and the advantages/disadvantages of the alternatives is of particular importance to Onaware.
+
+\section{Grails}
+
+Iris will be built using the MVC web framework Grails. Grails is suited to for Iris due its rapid scaffolding capabilities, meaning a web application with CRUD (Create, Read, Update, Delete) actions can be implemented extremely fast. Due to the scale of the project a framework which will provide a fast POC (Proof of Concept) is needed, due to Grails’ command line interface a web application skeleton can be auto generated in a couple of commands. 
+
+Also a significant factor in selecting Grails is that Onaware have several of their applications written using Grails and Iris will have a new lifecycle after this project cycle in which Onaware developers will be extending upon Iris. 
+
+\section{Groovy}
+
+Groovy is used by default within the Grails framework, this is a major factor as to why the technology is being used in Iris. However due to Grails being built on the JVM pure Java code could be used instead of Groovy, the major advantages of using Groovy over Java is its expressive nature and syntactic sugar, which allow you to write less code and do more. Groovy integrates seamlessly with any Java library, which is a major factor for using Groovy in Grails. Due to the popularity of Java, if Grails doesn’t have a native plugin for some needed functionality, a Java library more than likely exists to provide the required functionality, this library can then be used with Groovys expressive syntax.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{groovy}
+//dynamic typing, will be cast as a string
+def name = 'Dean'
+
+//built in regex support
+def matches = (name ==~ /\w+/)   
+
+def message = (matches) ? "Matches" :
+		 "No match found in string $name"
+
+println message
+\end{minted}
+Output:
+Matches
+\end{tcolorbox}
+\caption{Example of Groovy Syntax}
+\end{figure}
+
+\section{Spock}
+Spock (\url{http://spockframework.org/spock/docs/1.1/getting_started.html}) is the default testing framework for Groovy and due to Grails using Groovy as its primary language. All unit and integration tests are written using the Spock framework. An advantage of the spock framework is that assertions are written in a behavior driven manner, which makes tests clear and concise unlike other JVM testing frameworks such as JUnit which relies on simple assertions.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{groovy}
+void "test delete Schema"(){
+	setup:
+	setupData()
+
+	when: "I delete a Schema"
+	schema.delete(flush: true)
+
+	then: "It is deleted from the database"
+	assert Schema.count() == 0
+}
+\end{minted}
+\end{tcolorbox}
+\caption{Example of Spock Test in Iris}
+\end{figure}
+Peter Niederwieser has a concise introduction tutorial on Spock at the following link \url{ http://spockframework.org/spock/docs/1.1/introduction.html }
+
+\section{Elasticsearch}
+
+Elasticsearch is a RESTful based search engine for indexing documents of data. Elasticsearch is suited for Iris as it accepts structured data in the form of index mappings, as well as unstructured data. 
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{json}
+{
+   "mappings":{
+      "tweet":{
+         "properties":{
+            "message":{
+               "type":"text"
+            }
+         }
+      }
+   }
+}
+\end{minted}
+\end{tcolorbox}
+\caption{Example of Spock Test in Iris}
+\end{figure}
+
+
 \end{document}

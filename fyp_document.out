@@ -4,3 +4,8 @@
 \BOOKMARK [0][-]{chapter.2}{Specification}{}% 4
 \BOOKMARK [1][-]{section.2.1}{Description}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.2}{Use Cases}{chapter.2}% 6
+\BOOKMARK [0][-]{chapter.3}{Relevant Technologies}{}% 7
+\BOOKMARK [1][-]{section.3.1}{Grails}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.2}{Groovy}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.3}{Spock}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.4}{Elasticsearch}{chapter.3}% 11
