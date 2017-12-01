@@ -34,7 +34,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.4.1.3}Solution using Javascript}{18}{subsubsection.3.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {3.4.1.3.1}Advantages of using Javascript}{19}{paragraph.3.4.1.3.1}
+\contentsline {paragraph}{\numberline {3.4.1.3.1}Advantages of using Javascript}{20}{paragraph.3.4.1.3.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.5}JQuery}{20}{section.3.5}
 \defcounter {refsection}{0}\relax 
@@ -46,7 +46,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.8.1} Dashboard Library Requirements}{22}{subsection.3.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.8.2} Review of Dashboard Libraries}{22}{subsection.3.8.2}
+\contentsline {subsection}{\numberline {3.8.2}Review of Dashboard Libraries}{22}{subsection.3.8.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.9}Chart Libraries}{23}{section.3.9}
 \defcounter {refsection}{0}\relax 
@@ -60,13 +60,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.10.2}Grafana}{24}{subsection.3.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.10.3} New Relic}{24}{subsection.3.10.3}
+\contentsline {subsection}{\numberline {3.10.3}New Relic}{24}{subsection.3.10.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.10.4}AWS (Amazon Web Services)}{24}{subsection.3.10.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Iris Current Progress}{25}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1} Design Iterations}{25}{section.4.1}
+\contentsline {section}{\numberline {4.1}Design Iterations}{25}{section.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.1}Iris (Current)}{25}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
@@ -78,26 +78,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.2}Iris Single Page Application}{32}{section.1.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Iris \& Kibana as a Single Entity}{34}{section.1.A.3}
+\contentsline {section}{\numberline {A.3}Iris \& Kibana as a Single Entity}{33}{section.1.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Iris Trello Board}{36}{Appendix.1.B}
+\contentsline {chapter}{\numberline {B}Iris Trello Board}{35}{Appendix.1.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Dashboard Library Comparisons}{39}{Appendix.1.C}
+\contentsline {chapter}{\numberline {C}Dashboard Library Comparisons}{37}{Appendix.1.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.1}Gridster}{39}{section.1.C.1}
+\contentsline {section}{\numberline {C.1}Gridster}{37}{section.1.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.2}Packery}{39}{section.1.C.2}
+\contentsline {section}{\numberline {C.2}Packery}{37}{section.1.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.3}GridList}{39}{section.1.C.3}
+\contentsline {section}{\numberline {C.3}GridList}{37}{section.1.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.4}GridStack}{40}{section.1.C.4}
+\contentsline {section}{\numberline {C.4}GridStack}{38}{section.1.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {D}Chart Library Comparisons}{41}{Appendix.1.D}
+\contentsline {chapter}{\numberline {D}Chart Library Comparisons}{39}{Appendix.1.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.1}Why D3 is not being used directly}{41}{section.1.D.1}
+\contentsline {section}{\numberline {D.1}Why D3 is not being used directly}{39}{section.1.D.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.2}C3}{41}{section.1.D.2}
+\contentsline {section}{\numberline {D.2}C3}{39}{section.1.D.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.3}Billboardjs}{42}{section.1.D.3}
+\contentsline {section}{\numberline {D.3}Billboardjs}{40}{section.1.D.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D.4}Chartjs}{42}{section.1.D.4}
+\contentsline {section}{\numberline {D.4}Chartjs}{40}{section.1.D.4}

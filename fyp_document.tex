@@ -49,11 +49,8 @@ The aim of this project is the design a full implementation of a system for appl
 On completion, Iris will provide users with a dynamic performance framework which will allow them to fully customise and centralise their application performance monitoring. This will be achieved through a web interface where a user can specify a schema for a specific application they wish to monitor. Once a schema has been set up, a REST endpoint will be generated for the application. This endpoint will allow a user to send their monitoring data from their desired application to the framework in the form of JSON (matching the specified schema). Iris will also contain features which allow a user to monitor and analyse incoming data, using an intelligent, fully customisable graph and dashboard builder. Iris will then visualise any received data in real time using to the appropriate dashboards using websockets. Iris will come with some out of the box scripts/applications that users can use to monitor typical tasks such as JVM (Java Virtual Machine) performance, Linux OS System Performance.
 
 \section{Motivation for Iris}
-Onaware are IAM (Identity and Access Management) specialists.
 
-Onaware is an international company that deal with IAM and have offices of 20 staff in Waterford.
-
-More information on Onaware can be found here \url{https://onaware.com/}
+Onaware is an international company that sepecialises in IAM (Identity and Access Management) and has offices with 20 staff in Waterford.\footnote{More information on Onaware can be found here \url{https://onaware.com/}}
 
 The motivation for this project comes from database and system performance issues that Onaware has experienced in recent projects. It is often the case that they must deal with large amounts of identity data being aggregated into a third party system called ‘IIQ’. 
 
@@ -112,7 +109,7 @@ In this example let’s say the developer prefers to have the data mapped to a f
 {
 	"firstName": "Dean",
 	"lastName":  "Gaffney",
-    	"fullName":  "Dean Gaffney"
+	"fullName":  "Dean Gaffney"
 }
 \end{minted}
 \end{tcolorbox}
@@ -313,10 +310,11 @@ This diagram shows how a Groovy implementation of Elasticsearch aggregations may
 \begin{figure}[H]
 \begin{tcolorbox}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{intellij_agg_diagram}
-The diagram above is a screenshot from IntelliJ. The diagram shows my Groovy implementation class structure.
+The diagram\footnotemark above is a screenshot from IntelliJ. The diagram shows my Groovy implementation class structure.
 \end{tcolorbox}
 \caption{Iris Aggregation Groovy Implementation}
 \end{figure}
+\footnotetext{This figure is for illustrative purposes only, to demonstrate the level of complexity required in the Groovy implementation.}
 \paragraph{Advantages of using Groovy/Grails}
 \begin{itemize}
   \item Groovy constructors are maps which can assign default values
@@ -336,8 +334,8 @@ An example of how command objects work can be found here:
 Currently a separate implementation is in development for Iris to deal with aggregation objects using Javascript. This implementation depends on building the aggregation object dynamically from user input on the front end. As the user builds the aggregation object on the front end, an aggregation JSON object is being built along with it, this JSON object will then be saved in Iris as a String object.
 \begin{figure}[H]
 \begin{tcolorbox}
-\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{js_agg_builder_flow_1}
-\newline
+\centerline{\includegraphics[width=\textwidth]{js_agg_builder_flow_1}}
+
 This diagram shows the flow of how a user would create an aggregation using the frontend of Iris and shows how the Javascript builds the aggregation incrementally.
 \end{tcolorbox}
 \caption{Javascript Implementation POC}
@@ -384,8 +382,9 @@ Iris will allow users to create dashboards which consist of charts, the dashboar
 \item Active Developer Support (Optional, but preferable)
 \end{itemize}
 
-\subsection{ Review of Dashboard Libraries}
-Four libraries were researched in the design process of Iris’ dashboard system. Refer to Appendix C for a detailed comparison of the dashboard libraries. Below is a table summarising the comparisons.
+\subsection{Review of Dashboard Libraries}
+
+Four libraries were researched in the design process of Iris’ dashboard system. Refer to Appendix~\ref{sec:dashboards} for a detailed comparison of the dashboard libraries. Below is a table summarising the comparisons.
 \begin{table}[H]
 \centering
 \small
@@ -411,16 +410,17 @@ Library & Tiles &   Tiles &   Dynamically &   Tiles & Serializable  &   Licensed
 \subsection{Chart Library Requirements}
 \begin{itemize}
 \item D3v4 wrapper library or better alternative to D3
-\item Support basic chart types (Bar, Bubble, Pie, Line etc…)
+\item Support basic chart types (Bar, Bubble, Pie, Line, \ldots)
 \item Out of the box legends, zooming and responsiveness
 \item Allow for chart updates without the need for redrawing
 \item JSON data support
 \item Active Developer Support (Optional, but preferable)
-\item Advanced Chart Types (Radar, Heatmap etc…)
+\item Advanced Chart Types (Radar, Heatmap, \ldots)
 \end{itemize}
 
 \subsection{Review of Chart Libraries}
-Four libraries were researched in the design process of Iris’ charting system. Refer to Appendix D for a detailed comparison of the chart libraries as well as a information on why D3 is not being used for Iris. Below is a table summarising the comparisons.
+Four libraries were researched in the design process of Iris’ charting system. 
+Refer to Appendix~\ref{sec:charts} for a detailed comparison of the chart libraries as well as a information on why D3 is not being used for Iris. Below is a table summarising the comparisons.
 
 \begin{table}[H]
 \centering
@@ -450,7 +450,7 @@ Kibana (\url{https://www.elastic.co/guide/en/kibana/5.6/getting-started.html}) i
 
 Grafana (\url{http://docs.grafana.org/features/datasources/elasticsearch/}) is an open source dashboard tool for visualising time series data. Grafana supports several backend data sources, including Elasticsearch. Each data source has a corresponding query editor for users to query their data. Grafana is extremely powerful and has a very active community where users can collaborate and share dashboards. Grafana has the same issues as Kibana and doesn’t allow a user to enter data into the data source without having background knowledge of the data source.
 
-\subsection{ New Relic}
+\subsection{New Relic}
 
 New Relic (\url{https://newrelic.com/application-monitoring/features}) is a monitoring application which comes close to what Iris wishes to achieve. New Relic is mainly used for anticipating bottlenecks and issues with applications. It is extremely powerful and supports multiple languages (Java, Nodejs and Python) and frameworks however it won’t support data for unsupported languages and frameworks and is not dynamic — this is a fundamental feature of Iris.
 
@@ -460,23 +460,24 @@ AWS will be used for hosting an Elasticsearch instance which Iris can use throug
 
 \chapter{Iris Current Progress}
 
-\section{ Design Iterations}
+\section{Design Iterations}
 
-Iris has had four design iterations up to this point. This section will talk about Iris’ current design. See Appendix A, for details on the other design iterations of Iris. 
+Iris has had four design iterations up to this point. This section will talk about Iris’ current design. See Appendix~\ref{sec:iterations}, for details on the other design iterations of Iris. 
 
 Iris’ development process is being carried out using the agile methodology of BDD (Behavior Driven Development). Iris is developed in iterations of two week sprints. Every two weeks Iris is branched over to a new branch and Trello is updated with a new label which corresponds to the branch number. Iris is currently on version 0.0.3. For more information on Trellos roll in the development of Iris please refer to Appendix B.
 
 \subsection{Iris (Current)}
 
-Iris currently has all of the models from the following diagram in place.
-\begin{figure}[H]
+Fugure~\ref{fig:iris_uml} is a high level UML representation of the current implementation of Iris. 
+This has been fully implemented and tested in Grails. Iris currently allows a user to create a schema with schema fields, which in turn creates Elasticsearch mappings and indices specific to the created schema. With a mapping setup Iris allows a user to target an endpoint to send their data, the logic for putting this data into Elasticsearch has been written and tested but it is not linked up yet.
+
+\begin{figure}[h]
 \begin{tcolorbox}
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris_models}
+\includegraphics[width=\textwidth]{iris_models}
 \end{tcolorbox}
-\caption{Iris UML Diagram}
+\caption{Iris UML Diagram}\label{fig:iris_uml}
 \end{figure}
 
-All models in the previous diagram have been implemented and fully tested in Grails. Iris currently allows a user to create a schema with schema fields, which in turn creates Elasticsearch mappings and indices specific to the created schema. With a mapping setup Iris allows a user to target an endpoint to send their data, the logic for putting this data into Elasticsearch has been written and tested but it is not linked up yet.
 
 Iris has an Elasticsearch instance hosted on AWS (Amazon Web Services) which will be used for the remainder of the development process.
 
@@ -500,7 +501,8 @@ Iris will act as several single page web applications. As show in the diagram, e
 \pagebreak
 
 \begin{appendices}
-\chapter{Iris Iterations}
+\chapter{Iris Iterations}\label{sec:iterations}
+
 Currently Iris has had four different design iterations. The Iris’ current iteration was previously discussed, below are the other three designs that were considered for Iris in the early stages of development.
 
 \section{ MEAN (MongoDB, Express, Angular, Nodejs) Stack}
@@ -509,8 +511,7 @@ Before any development had started on Iris there was talks of potentially implem
 
 \begin{figure}[H]
 \begin{tcolorbox}
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{mongo_relation}
-\newline
+\centerline{\includegraphics[width=\textwidth]{mongo_relation}}
 How Iris may have looked using a relational approach to suit MongoDB.
 \end{tcolorbox}
 \caption{MEAN Stack Implementation}
@@ -526,8 +527,8 @@ The issue with this idea is that it was very similar to Kibana and Grafana and o
 
 \begin{figure}[H]
 \begin{tcolorbox}
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris_single_page_app}
-\newline
+\centerline{\includegraphics[width=.55\textwidth]{iris_single_page_app}}
+
 Two applications are sending data to a single Iris controller action. A user then views this data using the single analytics view. This is how Iris might have looked as a single page application.
 \end{tcolorbox}
 \caption{Iris Single Page Application Implementation}
@@ -553,13 +554,14 @@ Iris and Kibana working together as a single entity.
 \end{figure}
 Documentation on Gluu can be found here \url{https://gluu.org/docs/}
 
-\chapter{Iris Trello Board}
+\chapter{Iris Trello Board}\label{sec:trello}
+
 Iris’ issues and sprints are being tracked using Trello. These are organised using the kanban system and custom labels inside of Trello. Trello allows filtering of cards by their labels, meaning issues related to a particular sprint can be the only cards visible. This makes tracking sprints and issues for the sprint easy to manage.
 
-\begin{figure}[H]
-\begin{tcolorbox}
-\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{trello_labels}
-\newline
+\begin{figure}[H]\centering
+\begin{tcolorbox}[text width=.8\textwidth]
+\centerline{\includegraphics[width=.4\textwidth]{trello_labels}}
+
 Here are some of the labels being used to manage Iris issues in Trello.
 \end{tcolorbox}
 \caption{Iris’ Trello Labels}
@@ -567,18 +569,19 @@ Here are some of the labels being used to manage Iris issues in Trello.
 
 \begin{figure}[H]
 \begin{tcolorbox}
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trello_sprint_1}
+\includegraphics[width=\textwidth]{trello_sprint_1}
 \newline
 An image of the Trello issues for the first sprint of Iris, containing label 0.0.1
 \newline
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{trello_sprint_2}
+\includegraphics[width=\textwidth]{trello_sprint_2}
 \newline
 An image of the Trello issues for the second sprint of Iris, containing label 0.0.2
 \end{tcolorbox}
 \caption{Iris Sprint Issues}
 \end{figure}
 
-\chapter{Dashboard Library Comparisons}
+\chapter{Dashboard Library Comparisons}\label{sec:dashboards}
+
 Some time was spent researching dashboard libraries that could be used in Iris, below are the four libraries compared in detail.
 
 \section{Gridster}
@@ -603,7 +606,7 @@ Gridstack demos can be found here \url{http://gridstackjs.com/demo/}
 
 
 
-\chapter{Chart Library Comparisons}
+\chapter{Chart Library Comparisons}\label{sec:charts}
 
 Some time was spent researching chart libraries that could be used in Iris, below are the four libraries compared in detail.
 

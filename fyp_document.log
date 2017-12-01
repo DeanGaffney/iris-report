@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.1)  1 DEC 2017 12:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.1)  1 DEC 2017 14:05
 entering extended mode
 **./fyp_document.tex
 (fyp_document.tex
@@ -946,7 +946,7 @@ ument.tocpdfTeX warning (ext4): destination with the same identifier (name{page
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 ...ibrary Requirements}{20}{subsection.3.8.1}
+l.47 ...ibrary Requirements}{22}{subsection.3.8.1}
                                                    [1
 
 ] [2])
@@ -1007,8 +1007,12 @@ Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 \openout3 = `fyp_document.pyg'.
 
+runsystem(pygmentize -l json -f latex -P commandprefix=PYG -F tokenmerge -o _mi
+nted-fyp_document/D563FC92D8302881867E68A2ACEFB7586B0A85902DA6284C11B2F15EA9135
+3C7.pygtex fyp_document.pyg)...executed.
 
-(_minted-fyp_document/5CE6131953EFF8CBBF758A9D9E66C5476B0A85902DA6284C11B2F15EA
+
+(_minted-fyp_document/D563FC92D8302881867E68A2ACEFB7586B0A85902DA6284C11B2F15EA
 91353C7.pygtex) [8
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
@@ -1016,46 +1020,46 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.120 \end{figure}
+l.117 \end{figure}
                   ]
-<diagrams/dynamic_performance_framework_pi_flow.jpg, id=350, 747.79375pt x 463.
+<diagrams/dynamic_performance_framework_pi_flow.jpg, id=355, 747.79375pt x 463.
 7325pt>
 File: diagrams/dynamic_performance_framework_pi_flow.jpg Graphic file (type jpg
 )
 <use diagrams/dynamic_performance_framework_pi_flow.jpg>
 Package pdftex.def Info: diagrams/dynamic_performance_framework_pi_flow.jpg  us
-ed on input line 129. on input line 129.
+ed on input line 126. on input line 126.
 Package pdftex.def Info: Requested size: 452.39949pt x 280.5484pt on input line
- 129.
+ 126.
  [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.134 
+l.131 
       ]
-<diagrams/dynamic_performance_framework_android_flow.jpg, id=355, 747.79375pt x
+<diagrams/dynamic_performance_framework_android_flow.jpg, id=360, 747.79375pt x
  463.7325pt>
 File: diagrams/dynamic_performance_framework_android_flow.jpg Graphic file (typ
 e jpg)
 <use diagrams/dynamic_performance_framework_android_flow.jpg>
 Package pdftex.def Info: diagrams/dynamic_performance_framework_android_flow.jp
-g  used on input line 137. on input line 137.
+g  used on input line 134. on input line 134.
 Package pdftex.def Info: Requested size: 452.39949pt x 280.5484pt on input line
- 137.
+ 134.
  [10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.142 
+l.139 
        <./diagrams/dynamic_performance_framework_pi_flow.jpg>] [11pdfTeX warnin
 g (ext4): destination with the same identifier (name{figure.2.4}) has been alre
 ady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.143 \chapter
+l.140 \chapter
               {Relevant Technologies} <./diagrams/dynamic_performance_framework
 _android_flow.jpg>]
 Chapter 3.
@@ -1086,13 +1090,13 @@ D0D2342.pygtex)
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.222 \end{figure}
+l.219 \end{figure}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.3.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.222 \end{figure}
+l.219 \end{figure}
                   ]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
@@ -1139,7 +1143,7 @@ Missing character: There is no ™ in font cmr12!
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.258 T
+l.255 T
        he API is catered more towards having prebuilt aggregations in the ba...
 ]
 Missing character: There is no â in font cmr12!
@@ -1163,36 +1167,36 @@ Missing character: There is no ‹ in font cmtt12!
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.303 \end{figure}
+l.300 \end{figure}
                   ] [16pdfTeX warning (ext4): destination with the same identif
 ier (name{figure.3.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.305 T
+l.302 T
        he Groovy implementation follows a standard OOP (Object Orientated Pr...
 ]
-<diagrams/groovy_agg_builder_logic_1.jpg, id=393, 3240.105pt x 2268.475pt>
+<diagrams/groovy_agg_builder_logic_1.jpg, id=398, 3240.105pt x 2268.475pt>
 File: diagrams/groovy_agg_builder_logic_1.jpg Graphic file (type jpg)
 <use diagrams/groovy_agg_builder_logic_1.jpg>
 Package pdftex.def Info: diagrams/groovy_agg_builder_logic_1.jpg  used on input
- line 308. on input line 308.
+ line 305. on input line 305.
 Package pdftex.def Info: Requested size: 452.37561pt x 316.71898pt on input lin
-e 308.
+e 305.
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
+Underfull \hbox (badness 10000) in paragraph at lines 305--307
 [][]
  []
 
-<diagrams/intellij_agg_diagram.jpg, id=394, 1370.11874pt x 389.95688pt>
+<diagrams/intellij_agg_diagram.jpg, id=399, 1370.11874pt x 389.95688pt>
 File: diagrams/intellij_agg_diagram.jpg Graphic file (type jpg)
 <use diagrams/intellij_agg_diagram.jpg>
 Package pdftex.def Info: diagrams/intellij_agg_diagram.jpg  used on input line 
-315. on input line 315.
+312. on input line 312.
 Package pdftex.def Info: Requested size: 452.39146pt x 128.75757pt on input lin
-e 315.
+e 312.
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--317
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 [][]
  []
 
@@ -1201,45 +1205,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--317
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.322   \item G
+l.320   \item G
                roovy constructors are maps which can assign default valuespdfTe
 X warning (ext4): destination with the same identifier (name{figure.3.7}) has b
 een already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.322   \item G
+l.320   \item G
                roovy constructors are maps which can assign default values <./d
 iagrams/groovy_agg_builder_logic_1.jpg> <./diagrams/intellij_agg_diagram.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 322.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 320.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 322.
-<diagrams/js_agg_builder_flow_1.jpg, id=400, 2457.18pt x 3798.19pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 320.
+<diagrams/js_agg_builder_flow_1.jpg, id=407, 2457.18pt x 3798.19pt>
 File: diagrams/js_agg_builder_flow_1.jpg Graphic file (type jpg)
 <use diagrams/js_agg_builder_flow_1.jpg>
 Package pdftex.def Info: diagrams/js_agg_builder_flow_1.jpg  used on input line
- 339. on input line 339.
-Package pdftex.def Info: Requested size: 331.1426pt x 511.8642pt on input line 
-339.
- [18] [19pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.3.8}) has been already used, duplicate ignored
+ 337. on input line 337.
+Package pdftex.def Info: Requested size: 452.39893pt x 699.29274pt on input lin
+e 337.
+ [18]
+Overfull \vbox (46.14037pt too high) has occurred while \output is active []
+
+
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.354 
+l.343 
        <./diagrams/js_agg_builder_flow_1.jpg>]
-<diagrams/iris_sockets.jpg, id=413, 2481.27pt x 2396.955pt>
+<diagrams/iris_sockets.jpg, id=420, 2481.27pt x 2396.955pt>
 File: diagrams/iris_sockets.jpg Graphic file (type jpg)
 <use diagrams/iris_sockets.jpg>
-Package pdftex.def Info: diagrams/iris_sockets.jpg  used on input line 362. on 
-input line 362.
+Package pdftex.def Info: diagrams/iris_sockets.jpg  used on input line 360. on 
+input line 360.
 Package pdftex.def Info: Requested size: 452.36421pt x 436.99261pt on input lin
-e 362.
+e 360.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ˜ in font cmr12!
@@ -1251,7 +1259,7 @@ re.3.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.372 
+l.370 
        <./diagrams/iris_sockets.jpg>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
@@ -1261,14 +1269,8 @@ Missing character: There is no ™ in font cmr12!
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.414 \item S
-             upport basic chart types (Bar, Bubble, Pie, Line etcâ€¦)]
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ¦ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ¦ in font cmr12!
+l.413 \item S
+             upport basic chart types (Bar, Bubble, Pie, Line, \ldots)]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -1278,8 +1280,9 @@ Missing character: There is no ™ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [23pdfTeX warning (ext4): destination with the same identifier (name{table.3.2
-}) has been already used, duplicate ignored
+
+[23pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1299,25 +1302,28 @@ Missing character: There is no ™ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-<diagrams/iris_models.jpg, id=444, 1167.36125pt x 578.16pt>
+<diagrams/iris_models.jpg, id=454, 1167.36125pt x 578.16pt>
 File: diagrams/iris_models.jpg Graphic file (type jpg)
 <use diagrams/iris_models.jpg>
-Package pdftex.def Info: diagrams/iris_models.jpg  used on input line 474. on i
-nput line 474.
-Package pdftex.def Info: Requested size: 452.40125pt x 224.06114pt on input lin
-e 474.
+Package pdftex.def Info: diagrams/iris_models.jpg  used on input line 476. on i
+nput line 476.
+Package pdftex.def Info: Requested size: 452.39893pt x 224.06114pt on input lin
+e 476.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [25
 
 ]
-<diagrams/single_html_container.jpg, id=449, 2497.33pt x 2806.485pt>
+<diagrams/single_html_container.jpg, id=459, 2497.33pt x 2806.485pt>
 File: diagrams/single_html_container.jpg Graphic file (type jpg)
 <use diagrams/single_html_container.jpg>
 Package pdftex.def Info: diagrams/single_html_container.jpg  used on input line
- 491. on input line 491.
+ 492. on input line 492.
 Package pdftex.def Info: Requested size: 452.39607pt x 508.4001pt on input line
- 491.
+ 492.
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--493
+Underfull \hbox (badness 10000) in paragraph at lines 492--494
 [][]
  []
 
@@ -1326,14 +1332,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 491--493
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.496 
+l.497 
        <./diagrams/iris_models.jpg>] [27pdfTeX warning (ext4): destination with
  the same identifier (name{figure.4.2}) has been already used, duplicate ignore
 d
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.499 
+l.500 
        <./diagrams/single_html_container.jpg>] [28
 
 ] [29
@@ -1345,17 +1351,17 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-Overfull \hbox (11.50891pt too wide) in paragraph at lines 506--506
+Overfull \hbox (11.50891pt too wide) in paragraph at lines 508--508
 |[] \OT1/cmr/bx/n/17.28 MEAN (Mon-goDB, Ex-press, An-gu-lar, Nodejs) Stack| 
  []
 
-<diagrams/mongo_relation.jpg, id=493, 2445.135pt x 3416.765pt>
+<diagrams/mongo_relation.jpg, id=502, 2445.135pt x 3416.765pt>
 File: diagrams/mongo_relation.jpg Graphic file (type jpg)
 <use diagrams/mongo_relation.jpg>
-Package pdftex.def Info: diagrams/mongo_relation.jpg  used on input line 512. o
-n input line 512.
-Package pdftex.def Info: Requested size: 452.3802pt x 632.14378pt on input line
- 512.
+Package pdftex.def Info: diagrams/mongo_relation.jpg  used on input line 514. o
+n input line 514.
+Package pdftex.def Info: Requested size: 452.39893pt x 632.14378pt on input lin
+e 514.
 [30
 
 ] [31pdfTeX warning (ext4): destination with the same identifier (name{figure.1
@@ -1363,88 +1369,88 @@ Package pdftex.def Info: Requested size: 452.3802pt x 632.14378pt on input line
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.522 
+l.523 
        <./diagrams/mongo_relation.jpg>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-<diagrams/iris_single_page_app.jpg, id=503, 2384.91pt x 2922.92pt>
+<diagrams/iris_single_page_app.jpg, id=512, 2384.91pt x 2922.92pt>
 File: diagrams/iris_single_page_app.jpg Graphic file (type jpg)
 <use diagrams/iris_single_page_app.jpg>
 Package pdftex.def Info: diagrams/iris_single_page_app.jpg  used on input line 
-529. on input line 529.
-Package pdftex.def Info: Requested size: 452.37341pt x 554.42398pt on input lin
-e 529.
- [32] [33pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.1.A.2}) has been already used, duplicate ignored
+530. on input line 530.
+Package pdftex.def Info: Requested size: 248.82079pt x 304.93095pt on input lin
+e 530.
+ [32pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.539 
+l.540 
        <./diagrams/iris_single_page_app.jpg>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-<diagrams/iris_kibana_single_entity.jpg, id=512, 3296.315pt x 2445.135pt>
+<diagrams/iris_kibana_single_entity.jpg, id=517, 3296.315pt x 2445.135pt>
 File: diagrams/iris_kibana_single_entity.jpg Graphic file (type jpg)
 <use diagrams/iris_kibana_single_entity.jpg>
 Package pdftex.def Info: diagrams/iris_kibana_single_entity.jpg  used on input 
-line 548. on input line 548.
+line 549. on input line 549.
 Package pdftex.def Info: Requested size: 452.37709pt x 335.5635pt on input line
- 548.
- [34] [35pdfTeX warning (ext4): destination with the same identifier (name{figu
+ 549.
+ [33] [34pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.1.A.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.556 \chapter
-              {Iris Trello Board} <./diagrams/iris_kibana_single_entity.jpg>]
+l.557 \chapter
+              {Iris Trello Board}\label{sec:trello} <./diagrams/iris_kibana_sin
+gle_entity.jpg>]
 Appendix B.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-<diagrams/trello_labels.png, id=522, 323.2075pt x 527.9725pt>
+<diagrams/trello_labels.png, id=527, 323.2075pt x 527.9725pt>
 File: diagrams/trello_labels.png Graphic file (type png)
 <use diagrams/trello_labels.png>
-Package pdftex.def Info: diagrams/trello_labels.png  used on input line 561. on
- input line 561.
-Package pdftex.def Info: Requested size: 313.34322pt x 511.8588pt on input line
- 561.
+Package pdftex.def Info: diagrams/trello_labels.png  used on input line 563. on
+ input line 563.
+Package pdftex.def Info: Requested size: 154.78122pt x 252.84387pt on input lin
+e 563.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[36
-
-]
 <diagrams/trello_sprint_1.png, id=529, 1924.18875pt x 937.5025pt>
 File: diagrams/trello_sprint_1.png Graphic file (type png)
 <use diagrams/trello_sprint_1.png>
-Package pdftex.def Info: diagrams/trello_sprint_1.png  used on input line 570. 
-on input line 570.
-Package pdftex.def Info: Requested size: 452.38995pt x 220.41325pt on input lin
-e 570.
+Package pdftex.def Info: diagrams/trello_sprint_1.png  used on input line 572. 
+on input line 572.
+Package pdftex.def Info: Requested size: 452.39893pt x 220.41325pt on input lin
+e 572.
 <diagrams/trello_sprint_2.png, id=530, 1445.4pt x 711.4078pt>
 File: diagrams/trello_sprint_2.png Graphic file (type png)
 <use diagrams/trello_sprint_2.png>
-Package pdftex.def Info: diagrams/trello_sprint_2.png  used on input line 574. 
-on input line 574.
-Package pdftex.def Info: Requested size: 452.39215pt x 222.66176pt on input lin
-e 574.
- [37pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-B.1}) has been already used, duplicate ignored
+Package pdftex.def Info: diagrams/trello_sprint_2.png  used on input line 576. 
+on input line 576.
+Package pdftex.def Info: Requested size: 452.39893pt x 222.66176pt on input lin
+e 576.
+[35
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B.1}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.580 
-       <./diagrams/trello_labels.png>] [38pdfTeX warning (ext4): destination wi
+l.582 
+       <./diagrams/trello_labels.png>] [36pdfTeX warning (ext4): destination wi
 th the same identifier (name{figure.1.B.2}) has been already used, duplicate ig
 nored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.581 \chapter
-              {Dashboard Library Comparisons} <./diagrams/trello_sprint_1.png> 
-<./diagrams/trello_sprint_2.png>]
+l.583 \chapter
+              {Dashboard Library Comparisons}\label{sec:dashboards} <./diagrams
+/trello_sprint_1.png> <./diagrams/trello_sprint_2.png>]
 Appendix C.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
@@ -1455,67 +1461,57 @@ Missing character: There is no ” in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[39
+[37
 
-] [40]
+] [38]
 Appendix D.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-[41
+[39
 
-] [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 637.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
+]
+runsystem(del _minted-fyp_document\5CE6131953EFF8CBBF758A9D9E66C5476B0A85902DA6
+284C11B2F15EA91353C7.pygtex)...executed.
+
+ [40]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 640.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 640.
  (fyp_document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 637.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
-
-
-Package rerunfilecheck Warning: File `fyp_document.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `fyp_document.out':
-(rerunfilecheck)             Before: A782F066C64366F60E85143D89950527;3567
-(rerunfilecheck)             After:  90E27423441EC2CBA6D5C5DD505F422D;3567.
-
-LaTeX Warning: There were undefined references.
-
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 640.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 640.
+Package rerunfilecheck Info: File `fyp_document.out' has not changed.
+(rerunfilecheck)             Checksum: 6D0919BE8A6A55A4AE6FA7956099575B;3564.
 runsystem(del fyp_document.pyg)...executed.
-
-
-Package biblatex Warning: Please rerun LaTeX.
 
 Package logreq Info: Writing requests to 'fyp_document.run.xml'.
 \openout1 = `fyp_document.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 637.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 640.
  ) 
 Here is how much of TeX's memory you used:
- 24854 strings out of 493312
- 473085 string characters out of 3138890
- 1015627 words of memory out of 3000000
- 27856 multiletter control sequences out of 15000+200000
- 16592 words of font info for 63 fonts, out of 3000000 for 9000
+ 24868 strings out of 493312
+ 473350 string characters out of 3138890
+ 1016080 words of memory out of 3000000
+ 27868 multiletter control sequences out of 15000+200000
+ 17237 words of font info for 66 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,12n,73p,1024b,1205s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section*.4} has been referenced but does not exis
-t, replaced by a fixed one
-
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt1
-2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on fyp_document.pdf (43 pages, 2204639 bytes).
+ 54i,12n,73p,1024b,1204s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on fyp_document.pdf (41 pages, 2222112 bytes).
 PDF statistics:
- 639 PDF objects out of 1000 (max. 8388607)
- 129 named destinations out of 1000 (max. 500000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 128 named destinations out of 1000 (max. 500000)
  491 words of extra memory for PDF output out of 10000 (max. 10000000)
 
