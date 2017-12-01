@@ -1,20 +1,15 @@
 [1] Config.pm:302> INFO - This is Biber 2.9
-[5] Config.pm:305> INFO - Logfile is 'fyp_document.blg'
-[128] biber-MSWIN64:313> INFO - === 
-[248] Biber.pm:371> INFO - Reading 'fyp_document.bcf'
-[616] Biber.pm:854> INFO - Using all citekeys in bib section 0
-[673] Biber.pm:3981> INFO - Processing section 0
-[733] Biber.pm:4154> INFO - Looking for bibtex format file 'references.bib' for section 0
+[4] Config.pm:305> INFO - Logfile is 'fyp_document.blg'
+[123] biber-MSWIN64:313> INFO - === 
+[253] Biber.pm:371> INFO - Reading 'fyp_document.bcf'
+[610] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[669] Biber.pm:3981> INFO - Processing section 0
+[730] Biber.pm:4154> INFO - Looking for bibtex format file 'references.bib' for section 0
 [744] bibtex.pm:1479> INFO - LaTeX decoding ...
-[793] bibtex.pm:1305> INFO - Found BibTeX data source 'references.bib'
-[825] Utils.pm:169> WARN - Entry 'h' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring
-[840] Utils.pm:169> WARN - Entry 'e' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring
-[872] Utils.pm:169> WARN - Entry 'd' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring
-[918] Utils.pm:169> WARN - Entry 'c' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring
-[978] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[980] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[981] Biber.pm:3809> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[982] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[1045] bbl.pm:617> INFO - Writing 'fyp_document.bbl' with encoding 'ascii'
-[1065] bbl.pm:720> INFO - Output to fyp_document.bbl
-[1088] Biber.pm:110> INFO - WARNINGS: 4
+[794] bibtex.pm:1305> INFO - Found BibTeX data source 'references.bib'
+[957] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[959] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[960] Biber.pm:3809> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[962] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[1027] bbl.pm:617> INFO - Writing 'fyp_document.bbl' with encoding 'ascii'
+[1048] bbl.pm:720> INFO - Output to fyp_document.bbl

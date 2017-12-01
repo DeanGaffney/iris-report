@@ -96,14 +96,17 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Aggregations}
+      \field{urlday}{4}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
       \field{year}{2017}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
       \endverb
       \verb{url}
       \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
       \endverb
-      \warn{\item Entry 'c' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
     \endentry
     \entry{d}{online}{}
       \name{author}{1}{}{%
@@ -122,14 +125,17 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Basic Concepts}
+      \field{urlday}{4}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
       \field{year}{2017}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
       \endverb
       \verb{url}
       \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
       \endverb
-      \warn{\item Entry 'd' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
     \endentry
     \entry{e}{online}{}
       \name{author}{1}{}{%
@@ -148,14 +154,17 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Mapping}
+      \field{urlday}{4}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
       \field{year}{2017}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
       \endverb
       \verb{url}
       \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
       \endverb
-      \warn{\item Entry 'e' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
     \endentry
     \entry{f}{online}{}
       \name{author}{1}{}{%
@@ -234,14 +243,17 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{TIOBE Index}
+      \field{urlday}{4}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
       \field{year}{2017}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.tiobe.com/tiobe-index/
       \endverb
       \verb{url}
       \verb https://www.tiobe.com/tiobe-index/
       \endverb
-      \warn{\item Entry 'h' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
     \endentry
   \enddatalist
 \endrefsection
