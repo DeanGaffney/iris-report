@@ -4,53 +4,53 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Example Schema Created for Iris}}{7}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Example Schema Created for Iris}}{8}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Iris Transforming Data}}{8}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Iris Transforming Data}}{9}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Raspberry Pi Monitor for Iris}}{9}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Raspberry Pi Monitor for Iris}}{10}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Android Network Monitor for Iris}}{10}{figure.2.4}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of Groovy Syntax}}{12}{figure.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of Spock Test in Iris}}{12}{figure.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Example of an Elasticsearch Mapping}}{13}{figure.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example Aggregation for Elasticsearch}}{14}{figure.3.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Example of Groovy Constructor}}{15}{figure.3.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Iris Aggregation Implementation POC}}{16}{figure.3.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Iris Aggregation Groovy Implementation}}{16}{figure.3.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Javascript Implementation POC}}{18}{figure.3.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Iris Socket POC}}{20}{figure.3.9}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Android Network Monitor for Iris}}{11}{figure.2.4}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Iris UML Diagram}}{25}{figure.4.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of Groovy Syntax}}{13}{figure.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Several Single Page Applications Design}}{26}{figure.4.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of Spock Test in Iris}}{13}{figure.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Example of an Elasticsearch Mapping}}{14}{figure.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example Aggregation for Elasticsearch}}{15}{figure.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Example of Groovy Constructor}}{16}{figure.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Iris Aggregation Implementation POC}}{17}{figure.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Iris Aggregation Groovy Implementation}}{17}{figure.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Javascript Implementation POC}}{19}{figure.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Iris Socket POC}}{21}{figure.3.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces MEAN Stack Implementation}}{29}{figure.1.A.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Iris UML Diagram}}{26}{figure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Iris Single Page Application Implementation}}{31}{figure.1.A.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Iris \& Kibana as a Single Entity}}{33}{figure.1.A.3}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Several Single Page Applications Design}}{27}{figure.4.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Iris’ Trello Labels}}{35}{figure.1.B.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces MEAN Stack Implementation}}{31}{figure.1.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Iris Sprint Issues}}{36}{figure.1.B.2}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Iris Single Page Application Implementation}}{33}{figure.1.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Iris \& Kibana as a Single Entity}}{35}{figure.1.A.3}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Iris’ Trello Labels}}{37}{figure.1.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Iris Sprint Issues}}{38}{figure.1.B.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

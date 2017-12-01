@@ -1,0 +1,249 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{a}{online}{}
+      \name{author}{1}{}{%
+        {{hash=33d0751ce3177ea192680e959fe9894c}{%
+           family={Bobriakov},
+           familyi={B\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{33d0751ce3177ea192680e959fe9894c}
+      \strng{fullhash}{33d0751ce3177ea192680e959fe9894c}
+      \strng{bibnamehash}{33d0751ce3177ea192680e959fe9894c}
+      \strng{authorbibnamehash}{33d0751ce3177ea192680e959fe9894c}
+      \strng{authornamehash}{33d0751ce3177ea192680e959fe9894c}
+      \strng{authorfullhash}{33d0751ce3177ea192680e959fe9894c}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Elasticsearch Aggregations for Analytics}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://qbox.io/blog/elasticsearch-aggregations-for-analytics
+      \endverb
+      \verb{url}
+      \verb https://qbox.io/blog/elasticsearch-aggregations-for-analytics
+      \endverb
+    \endentry
+    \entry{b}{online}{}
+      \name{author}{1}{}{%
+        {{hash=32eda798946922ca8e46e152f14c68f6}{%
+           family={Docs.spring.io},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{32eda798946922ca8e46e152f14c68f6}
+      \strng{fullhash}{32eda798946922ca8e46e152f14c68f6}
+      \strng{bibnamehash}{32eda798946922ca8e46e152f14c68f6}
+      \strng{authorbibnamehash}{32eda798946922ca8e46e152f14c68f6}
+      \strng{authornamehash}{32eda798946922ca8e46e152f14c68f6}
+      \strng{authorfullhash}{32eda798946922ca8e46e152f14c68f6}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{STOMP Support}
+      \field{urlday}{14}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://docs.spring.io/spring-integration/reference/html/stomp.html
+      \endverb
+      \verb{url}
+      \verb https://docs.spring.io/spring-integration/reference/html/stomp.html
+      \endverb
+    \endentry
+    \entry{c}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8233b1a7c5860daf491009dd470a1c8e}{%
+           family={Elastic.co},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{fullhash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{bibnamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authorbibnamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authornamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authorfullhash}{8233b1a7c5860daf491009dd470a1c8e}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aggregations}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
+      \endverb
+      \verb{url}
+      \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
+      \endverb
+      \warn{\item Entry 'c' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{d}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8233b1a7c5860daf491009dd470a1c8e}{%
+           family={Elastic.co},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{fullhash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{bibnamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authorbibnamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authornamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authorfullhash}{8233b1a7c5860daf491009dd470a1c8e}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Basic Concepts}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
+      \endverb
+      \verb{url}
+      \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html
+      \endverb
+      \warn{\item Entry 'd' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{e}{online}{}
+      \name{author}{1}{}{%
+        {{hash=8233b1a7c5860daf491009dd470a1c8e}{%
+           family={Elastic.co},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{fullhash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{bibnamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authorbibnamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authornamehash}{8233b1a7c5860daf491009dd470a1c8e}
+      \strng{authorfullhash}{8233b1a7c5860daf491009dd470a1c8e}
+      \field{sortinit}{E}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mapping}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
+      \endverb
+      \verb{url}
+      \verb https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html
+      \endverb
+      \warn{\item Entry 'e' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{f}{online}{}
+      \name{author}{1}{}{%
+        {{hash=ebda096a84d133aef7437c80e1e355d8}{%
+           family={Logz.io},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebda096a84d133aef7437c80e1e355d8}
+      \strng{fullhash}{ebda096a84d133aef7437c80e1e355d8}
+      \strng{bibnamehash}{ebda096a84d133aef7437c80e1e355d8}
+      \strng{authorbibnamehash}{ebda096a84d133aef7437c80e1e355d8}
+      \strng{authornamehash}{ebda096a84d133aef7437c80e1e355d8}
+      \strng{authorfullhash}{ebda096a84d133aef7437c80e1e355d8}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Grafana vs. Kibana: The Key Differences to Know}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://logz.io/blog/grafana-vs-kibana/
+      \endverb
+      \verb{url}
+      \verb https://logz.io/blog/grafana-vs-kibana/
+      \endverb
+    \endentry
+    \entry{g}{online}{}
+      \name{author}{1}{}{%
+        {{hash=d2d08e616b3e9c9f24a816a49d997084}{%
+           family={Peter\bibnamedelima Niederwieser},
+           familyi={P\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={T},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2d08e616b3e9c9f24a816a49d997084}
+      \strng{fullhash}{d2d08e616b3e9c9f24a816a49d997084}
+      \strng{bibnamehash}{d2d08e616b3e9c9f24a816a49d997084}
+      \strng{authorbibnamehash}{d2d08e616b3e9c9f24a816a49d997084}
+      \strng{authornamehash}{d2d08e616b3e9c9f24a816a49d997084}
+      \strng{authorfullhash}{d2d08e616b3e9c9f24a816a49d997084}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introduction}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2017}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://spockframework.org/spock/docs/1.1/introduction.html
+      \endverb
+      \verb{url}
+      \verb http://spockframework.org/spock/docs/1.1/introduction.html
+      \endverb
+    \endentry
+    \entry{h}{online}{}
+      \name{author}{1}{}{%
+        {{hash=5d4f7b2f5cbd28c63d15fbd19b57f3a9}{%
+           family={Tiobe.com},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d4f7b2f5cbd28c63d15fbd19b57f3a9}
+      \strng{fullhash}{5d4f7b2f5cbd28c63d15fbd19b57f3a9}
+      \strng{bibnamehash}{5d4f7b2f5cbd28c63d15fbd19b57f3a9}
+      \strng{authorbibnamehash}{5d4f7b2f5cbd28c63d15fbd19b57f3a9}
+      \strng{authornamehash}{5d4f7b2f5cbd28c63d15fbd19b57f3a9}
+      \strng{authorfullhash}{5d4f7b2f5cbd28c63d15fbd19b57f3a9}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{TIOBE Index}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://www.tiobe.com/tiobe-index/
+      \endverb
+      \verb{url}
+      \verb https://www.tiobe.com/tiobe-index/
+      \endverb
+      \warn{\item Entry 'h' (references.bib): Invalid format '2017-11-4' of date field 'urldate' - ignoring}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

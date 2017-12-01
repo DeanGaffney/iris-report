@@ -1,15 +1,9 @@
 \documentclass[12pt,a4paper,titlepage]{report}
 
-\usepackage{hyperref}
+\pagenumbering{arabic}
+
+\usepackage[colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=blue]{hyperref}
 \usepackage[margin=2cm]{geometry}
-
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=blue
-}
-
 \usepackage{graphicx}
 \graphicspath{ {diagrams/} }
  
@@ -27,7 +21,7 @@
 \setlength\extrarowheight{2pt}
 \usepackage[toc,page]{appendix}
 
-\usepackage[backend=biber]{biblatex}
+\usepackage{biblatex} 
 \addbibresource{references.bib}
 
 \newcommand{\q}[1]{``#1''}
@@ -35,6 +29,7 @@
 \setlength{\parindent}{0em}
 
 \usepackage{titlesec}
+\setcounter{tocdepth}{5}
 \setcounter{secnumdepth}{5}
 
 \begin{document}
@@ -334,7 +329,9 @@ The diagram above is a screenshot from IntelliJ. The diagram shows my Groovy imp
   \item Link between frontend and backend requires complex command objects
   \item Command objects become very hard to maintain, as it must be index within HTML
 \end{itemize}
-An example of how command objects work can be found here \url{http://guides.grails.org/command-objects-and-forms/guide/index.html}
+An example of how command objects work can be found here:
+\newline
+\url{http://guides.grails.org/command-objects-and-forms/guide/index.html}
 \subsubsection{Solution using Javascript}
 Currently a separate implementation is in development for Iris to deal with aggregation objects using Javascript. This implementation depends on building the aggregation object dynamically from user input on the front end. As the user builds the aggregation object on the front end, an aggregation JSON object is being built along with it, this JSON object will then be saved in Iris as a String object.
 \begin{figure}[H]
