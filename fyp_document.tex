@@ -9,7 +9,7 @@
 \newcommand\Date{December 2017}
 \newcommand\Report{Status Report (Semester 1)}
 \newcommand\Reader{Supervisor: Dr.~Kieran Murphy}
-%\newcommand\Reader{Second Reader: David Drohan}
+\newcommand\SecondReader{Second Reader: David Drohan}
 
 \usepackage{fyp_document}
 
@@ -35,6 +35,8 @@
 {\fontsize{14pt}{20pt}\selectfont \bfseries \StudentID\ Panel X}
 \vfill
 {\fontsize{14pt}{20pt}\selectfont \bfseries \Reader}
+\vfill
+{\fontsize{14pt}{20pt}\selectfont \bfseries \SecondReader}
 \vfill
 {\fontsize{14pt}{20pt}\selectfont \bfseries BSc (Hons) in Entertainment Systems}
 \vfill
@@ -82,12 +84,6 @@ Iris will act as a web interface for a user to create an application monitor and
 \begin{figure}[H]
 \begin{tcolorbox}
 A user creates an application monitor for an SQL database, they may create a schema like the following:
-%\\Schema Name: \q{SQL Monitor}
-%\\Schema Fields: 
-%\\\hspace*{2em}-field name: \q{writeSpeed}, fieldType: \q{double}
-%\\\hspace*{2em}-field name: \q{tableName}, fieldType: \q{string}
-%\\
-
 \begin{minted}{yaml}
 Schema Name: "SQL Monitor"
 Schema Fields:
@@ -404,7 +400,7 @@ Selenide (\url{http://selenide.org/documentation.html}) will be used for functio
 \section{Dashboards}
 
 Iris will allow users to create dashboards which consist of charts, the dashboard tiles should be moveable and resizable and most importantly serialisable.
-\subsection{ Dashboard Library Requirements}
+\subsection{Dashboard Library Requirements}
 \begin{itemize}
 \item Moveable tiles
 \item Resizeable tiles
@@ -544,7 +540,7 @@ Iris will act as several single page web applications. As show in the diagram, e
 
 Currently Iris has had four different design iterations. The current iteration of Iris was previously discussed, below are the other three designs that were considered for Iris in the early stages of development.
 
-\section{ MEAN (MongoDB, Express, Angular, Nodejs) Stack}
+\section{MEAN (MongoDB, Express, Angular, Nodejs) Stack}
 
 Before any development had started on Iris there was talks of potentially implementing Iris using the MEAN stack. Due to Nodejs being one of the leading web frameworks it would have been unwise to not at least consider what an implementation may look like using the MEAN stack. However when Iris was planned out with Onaware, they did not want to develop Iris in Nodejs due to existing applications being built using Grails. The solution would not have differed dramatically as both Grails and Nodejs share similar concepts, meaning architecture would have been the only major difference. Below is a design showing class relationships to suit MongoDB.
 
