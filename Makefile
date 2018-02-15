@@ -1,4 +1,4 @@
-MAIN = fyp_document
+MAIN = fyp_document2
 
 default:  $(MAIN).pdf
 
