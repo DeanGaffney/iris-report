@@ -120,7 +120,16 @@ of the following sections describe a data source and its unique features.
 
 \subsection{Android App}
 \subsubsection{Description of Data Source}
-What's so special about this data source?
+The android application demonstrates how Iris handles stateful data. The application is very simple, but demonstrates how simple it is to monitor an application states through Iris. The application is simply a screen consiting of six tiles. Each tile represents a different state, each state has three colours and three numerical values linked to the states and colours. The android application allows the user to change the states of these tiles, which then changes the state of the tile colour and value. When a user is satifised with the states they wish to send to Iris they simply tap the screen. This results in a JSON object being sent to Iris consisting of the current numerical value for each state tile i.e the current state of the tiles.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.7\textheight]{android-agent}
+\end{center}
+A screenshot of the android agent and its state based tiles.
+\end{tcolorbox}
+\caption{Android agent for Iris.}
+\end{figure}
 \subsubsection{Linkage with Iris}
 Resulting dashboard (some images)
 
