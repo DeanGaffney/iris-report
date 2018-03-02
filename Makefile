@@ -1,17 +1,18 @@
+MAIN = fyp_document2
 
-default:  fyp_document.pdf
+default:  $(MAIN).pdf
 
-b build: fyp_document.pdf
-	biber fyp_document
-	pdflatex --shell-escape fyp_document
+b build: $(MAIN).pdf
+	biber $(MAIN)
+	pdflatex --shell-escape $(MAIN)
 
-fyp_document.pdf: fyp_document.tex
-	pdflatex --shell-escape fyp_document
+$(MAIN).pdf: $(MAIN).tex
+	pdflatex --shell-escape $(MAIN)
 
 clean:
-	rm -f fyp_document.aux fyp_document.bbl fyp_document.bcf fyp_document.blg \
-	fyp_document.lof fyp_document.toc fyp_document.log fyp_document.lot \
-	fyp_document.out fyp_document.run.out fyp_document.run.xml
+	rm -f $(MAIN).aux $(MAIN).bbl $(MAIN).bcf $(MAIN).blg \
+	$(MAIN).lof $(MAIN).toc $(MAIN).log $(MAIN).lot \
+	$(MAIN).out $(MAIN).run.out $(MAIN).run.xml
 
 cleanall: clean
-	rm -f fyp_document.pdf
+	rm -f $(MAIN).pdf
