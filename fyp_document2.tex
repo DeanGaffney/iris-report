@@ -133,9 +133,10 @@ A screenshot of the android agent and its state based tiles.
 \end{figure}
 
 \subsubsection{Linkage with Iris}
-The android application is linked to Iris through a unique REST endpoint specific to the android application. All of the data being sent from the android application is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
+The android application is linked to Iris through a unique REST endpoint specific to the android agent schema. All of the data being sent from the android application is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
 %Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
 In this case the charts are state based and will update according to the state values that are given to them.
+
 %Iris Android agent dashboard screenshot
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -149,6 +150,10 @@ A screenshot of the android agent dashboard in Iris and its state based tiles.
 
 
 \subsection{Raspberry Pi}
+The Raspberry Pi agent is used to demonstrate the plug and play ability of a Raspberry Pi combined with the versatility of Iris.
+
+\subsubsection{Description}
+The Raspberry Pi agent demonstrates how a user can use a Raspberry Pi to run a script to continuously monitor an API. In the case the Raspberry Pi monitors crypto currency exchange rates using a python script through a library called `coinmarketcap'. The python script simply retrieves the latest crypto currency data through the `coinmarketcap' library and sends the data to the corresponding `crypto\_agent' endpoint in Iris. The Raspberry Pi agent is configured to run the script every minute with crontab and is also configured to automatically sign in to the terminal. This results in a plug and play agent wherever their is a network cable available.
 
 %Crypto-currency script
 \begin{figure}[H]
@@ -188,13 +193,24 @@ for currency in filterd_currencies:
     print resp.json()
 \end{minted}
 \end{tcolorbox}
-\caption{iris-crypto-rates.py soure code}
+\caption{Raspberry Pi Agent, iris-crypto-rates.py source code}
 \end{figure}
 
-\subsubsection{Description}
-What's so special about this data source?
 \subsubsection{Linkage with Iris}
-Resulting dashboard (some images)
+The Raspberry Pi agent is linked to Iris through a unique REST endpoint specific to the Raspberry Pi agent schema. All of the data being sent from the Raspberry Pi is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
+%Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
+In this case Iris is monitoring raw data on two charts that are monitoring the current price in euro and usd. The other charts are using Elasticsearch aggregations to monitor the min and max prices reached for currencies in both euro and usd.
+
+%Iris Raspberry Pi agent dashboard screenshot
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-crypto-agent-dashboard}
+\end{center}
+A screenshot of the Raspberry Pi agent dashboard in Iris.
+\end{tcolorbox}
+\caption{Raspberry Pi agent dashboard in Iris}
+\end{figure}
 
 \subsection{Nodejs}
 \subsubsection{Description}
