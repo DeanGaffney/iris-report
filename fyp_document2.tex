@@ -84,7 +84,7 @@ semester 1 required not further changes in thus sesmter,. Hence, this section is
 semester 1 report
 Distinguish between subparts that were implemented (and so their overview here is similar to that in semester 1 report) and
 subparts that were implemented during this semester (and so the overview here is new).
-In this chapter the implementation of Iris is summaried. The components completed in semester were described in the
+In this chapter the implementation of Iris is summarised. The components completed in semester were described in the
 Semester 1 report and that summary is reproduced here (with minor modification) for completeness. The subsections dealing
 with components impleneted in semester 2 is fundmental new. Table REF lists the components adn when they were completed.
 \begin{center}
@@ -119,8 +119,9 @@ A number of data source have been implemented to demonstrate the flexibility of 
 of the following sections describe a data source and its unique features.
 
 \subsection{Android App}
-\subsubsection{Description of Data Source}
-The android application demonstrates how Iris handles stateful data. The application is very simple, but demonstrates how simple it is to monitor an application states through Iris. The application is simply a screen consiting of six tiles. Each tile represents a different state, each state has three colours and three numerical values linked to the states and colours. The android application allows the user to change the states of these tiles, which then changes the state of the tile colour and value. When a user is satifised with the states they wish to send to Iris they simply tap the screen. This results in a JSON object being sent to Iris consisting of the current numerical value for each state tile i.e the current state of the tiles.
+\subsubsection{Description}
+The android application demonstrates how Iris handles state based data. The application is very simple, but demonstrates how simple it is to monitor an application's state through Iris. The application is simply a screen consisting of six tiles. Each tile represents a different state, each state has three colours and three numerical values linked to the states and colours. The android application allows the user to change the states of these tiles, which then changes the state of the tile colour and value. When a user is satisfied with the states they wish to send to Iris they simply tap the screen. This results in a JSON object being sent to Iris consisting of the current numerical value for each state tile i.e the current state of the tiles.
+%Iris Android app screenshot
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -128,31 +129,56 @@ The android application demonstrates how Iris handles stateful data. The applica
 \end{center}
 A screenshot of the android agent and its state based tiles.
 \end{tcolorbox}
-\caption{Android agent for Iris.}
+\caption{Android agent for Iris}
 \end{figure}
+
 \subsubsection{Linkage with Iris}
-Resulting dashboard (some images)
+The android application is linked to Iris through a unique REST endpoint specific to the android application. All of the data being sent from the android application is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
+%Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
+In this case the charts are state based and will update according to the state values that are given to them.
+%Iris Android agent dashboard screenshot
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-android-dashboard}
+\end{center}
+A screenshot of the android agent dashboard in Iris and its state based tiles.
+\end{tcolorbox}
+\caption{Android agent dashboard in Iris}
+\end{figure}
+
 
 \subsection{Raspberry Pi}
-\subsubsection{Description of Data Source}
+
+%Crypto-currency script
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{python}
+
+\end{minted}
+\end{tcolorbox}
+\caption{iris-crypto-rates.py soure code}
+\end{figure}
+
+\subsubsection{Description}
 What's so special about this data source?
 \subsubsection{Linkage with Iris}
 Resulting dashboard (some images)
 
 \subsection{Nodejs}
-\subsubsection{Description of Data Source}
+\subsubsection{Description}
 What's so special about this data source?
 \subsubsection{Linkage with Iris}
 Resulting dashboard (some images)
 
 \subsection{Selenium}
-\subsubsection{Description of Data Source}
+\subsubsection{Description}
 What's so special about this data source?
 \subsubsection{Linkage with Iris}
 Resulting dashboard (some images)
 
 \subsection{MySQL}
-\subsubsection{Description of Data Source}
+\subsubsection{Description}
 What's so special about this data source?
 \subsubsection{Linkage with Iris}
 Resulting dashboard (some images)
