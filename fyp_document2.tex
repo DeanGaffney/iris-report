@@ -137,6 +137,16 @@ The android application is linked to Iris through a unique REST endpoint specifi
 %Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
 In this case the charts are state based and will update according to the state values that are given to them.
 
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-android-schema}
+\end{center}
+A screenshot of the Android agent schema in Iris
+\end{tcolorbox}
+\caption{Android agent schema in Iris}
+\end{figure}
+
 %Iris Android agent dashboard screenshot
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -201,6 +211,17 @@ The Raspberry Pi agent is linked to Iris through a unique REST endpoint specific
 %Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
 In this case Iris is monitoring raw data on two charts that are monitoring the current price in euro and usd. The other charts are using Elasticsearch aggregations to monitor the min and max prices reached for currencies in both euro and usd.
 
+%Raspberry Pi agent schema screenshot in Iris
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-crypto-schema}
+\end{center}
+A screenshot of the Raspberry Pi agent schema in Iris
+\end{tcolorbox}
+\caption{Raspberry Pi agent schema in Iris}
+\end{figure}
+
 %Iris Raspberry Pi agent dashboard screenshot
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -212,23 +233,94 @@ A screenshot of the Raspberry Pi agent dashboard in Iris monitoring crypto curre
 \caption{Raspberry Pi agent dashboard in Iris}
 \end{figure}
 
-\subsection{Nodejs}
+\subsection{Node.js}
+The Node.js agent shows how Iris can integrate with one of the most popular server-side frameworks and how it can monitor the status of the system running Node.js through the npm (node package manager) package `systeminformation'.
+
 \subsubsection{Description}
-What's so special about this data source?
+Due to Node.js' rise in popularity in recent years this agent demonstrates how Iris can easily monitor a system using the `systeminformation' package from npm. The `systeminformation' package offers various levels of detail about the system running Node. Iris' schema for the Node.js agent measures the following attributes:
+\begin{itemize}
+    \item Operating System Name
+    \item Current Uptime of the Operating System
+    \item Current CPU Speed
+    \item Total Memory Available
+    \item Total Memory Free
+    \item Total Memory Used
+    \item Current CPU Load
+\end{itemize}
+A full list of all the obtainable attributes through `systeminformation' can be found here \url{https://github.com/sebhildebrandt/systeminformation}.
+
+An important thing to note about this agent is that it takes use of Iris' ability to transform incoming data through scripting. Many of the memory attributes retrieved from `systeminformation' are represented in bytes, this agent uses Iris' centralised transformation abilities to transform the `memFree' attribute to be represented as gigabytes rather than bytes. This script also transforms all the `osName' attributes to be uppercase. Transforming these attributes in Iris through scripting removed the need for a redeployment of the Node.js application.
+
+%Node.js agent transformation script
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{node-transformation-script}
+\end{center}
+The transformation script for the Node.js agent which turns the `osName' attribute to uppercase and the `memFree' attribute to be gigabytes rather than bytes.
+\end{tcolorbox}
+\caption{Node.js agent transformation script}
+\end{figure}
+
 \subsubsection{Linkage with Iris}
-Resulting dashboard (some images)
+The Node.js agent is linked to Iris through a unique REST endpoint specific to the Node.js agent schema. All of the data being sent from the Node.js agent is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
+%Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
+In this case Iris is monitoring raw data on three charts that are monitoring the current memory free in gigabytes, the current memory used and the current uptime of the system. The other charts display the max memory used over all operating systems and the pie chart shows all the types of operating systems which have run the agent, both of these use Elasticsearch aggregations to calculate the data for the charts.
+
+%Node.js agent schema screenshot in Iris
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-node-schema}
+\end{center}
+A screenshot of the Node.js agent schema in Iris
+\end{tcolorbox}
+\caption{Node.js agent schema in Iris}
+\end{figure}
+
+%Iris Node agent dashboard screenshot
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-node-agent-dashboard}
+\end{center}
+A screenshot of the Node.js agent dashboard in Iris monitoring system information
+\end{tcolorbox}
+\caption{Node.js agent dashboard in Iris}
+\end{figure}
+
 
 \subsection{Selenium}
 \subsubsection{Description}
 What's so special about this data source?
 \subsubsection{Linkage with Iris}
-Resulting dashboard (some images)
+
+%add dashboard images
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-selenium-schema}
+\end{center}
+A screenshot of the Selenium agent schema in Iris
+\end{tcolorbox}
+\caption{Selenium agent schema in Iris}
+\end{figure}
 
 \subsection{MySQL}
 \subsubsection{Description}
 What's so special about this data source?
 \subsubsection{Linkage with Iris}
-Resulting dashboard (some images)
+
+%add dashboard images
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-mysql-schema}
+\end{center}
+A screenshot of the MySQL agent schema in Iris
+\end{tcolorbox}
+\caption{MySQL agent schema in Iris}
+\end{figure}
 
 \chapter{Conclusions}
 
