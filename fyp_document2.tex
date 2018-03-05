@@ -206,6 +206,8 @@ for currency in filterd_currencies:
 \caption{Raspberry Pi Agent, iris-crypto-rates.py source code}
 \end{figure}
 
+For more information on coinmarketcap see their site here \url{https://coinmarketcap.com/}
+
 \subsubsection{Linkage with Iris}
 The Raspberry Pi agent is linked to Iris through a unique REST endpoint specific to the Raspberry Pi agent schema. All of the data being sent from the Raspberry Pi is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
 %Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
@@ -291,11 +293,18 @@ A screenshot of the Node.js agent dashboard in Iris monitoring system informatio
 
 
 \subsection{Selenium}
+The Selenium agent demonstrates the versatility of Iris by monitoring the price of a guitar by scraping music store websites and monitoring the price of the guitar. This agent focuses on versatility over complexity.
 \subsubsection{Description}
-What's so special about this data source?
-\subsubsection{Linkage with Iris}
+The Selenium agent demonstrates Iris' versatility through the Selenium web driver which is commonly used for web automation and functional testing. In this case Selenium is used in conjunction with a Selenium wrapper called `Selenide' to automate the scraping of music store websites for a specific guitar. On each site the guitar's price is taken from the webpage as well as the name of the music store, the price of the guitar and the name of the music store is then sent to Iris so that it may be monitored.
 
-%add dashboard images
+For more information on Selenide see their site here \url{http://selenide.org/}
+
+\subsubsection{Linkage with Iris}
+The Selenium agent is linked to Iris through a unique REST endpoint specific to the Selenium agent schema. All of the data being sent from the Selenium agent is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
+%Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
+In this case Iris is monitoring raw data on a bar chart. The bar chart monitors the price of the guitar in euro and labels the chart based on the music store website that the price has been scraped from. In this case two sites have been scraped `Thomann' and `MusicStore.de', both sites are competitors and this reflects in the chart as both sites have matched the price of the guitar at the same price.
+
+%Iris selenium agent schema screenshot
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -306,12 +315,43 @@ A screenshot of the Selenium agent schema in Iris
 \caption{Selenium agent schema in Iris}
 \end{figure}
 
-\subsection{MySQL}
-\subsubsection{Description}
-What's so special about this data source?
-\subsubsection{Linkage with Iris}
+%Iris selenium agent dashboard screenshot
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-selenium-dashboard}
+\end{center}
+A screenshot of the Selenium agent dashboard in Iris
+\end{tcolorbox}
+\caption{Selenium agent dashboard in Iris}
+\end{figure}
 
-%add dashboard images
+\subsection{MySQL}
+The MySQL agent demonstrates how a user can monitor their database by converting the MySQL `performance\_schema' results into JSON and sending them to Iris.
+\subsubsection{Description}
+The MySQL agent is significant for Iris as this agent was the inspiration for Iris in the beginning, as Onaware developers wanted a way to monitor a remote MySQL database with scripts and be able to monitor the database memory locally with a web application. The MySQL agent is a simple python script that connects to the MySQL instance and monitors all the databases as well as the amount of memory they use. The database name and the amount of memory it currently uses is then sent to Iris to be monitored. The python script is run every day at 8:00pm on the same AWS server that Iris is running on using a cron job.
+
+%Crypto-currency script
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{mysql}
+SELECT table_schema AS "databaseName", 
+ROUND(SUM(data_length + index_length) / 1024 /  1024, 2) as "memoryMB" 
+FROM information_schema.TABLES 
+GROUP BY table_schema;
+\end{minted}
+\end{tcolorbox}
+\caption{MySQL Agent, MySql `performance\_schema' table query used in iris-mysql.py source code}
+\end{figure}
+
+More information on the MySQL `performance\_schema' table can be found here \url{https://dev.mysql.com/doc/refman/5.6/en/performance-schema-quick-start.html}
+
+
+\subsubsection{Linkage with Iris}
+The MySQL agent is linked to Iris through a unique REST endpoint specific to the MySQL agent schema. All of the data being sent from the MySQL agent is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
+%Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
+The MySQL agent dashboard monitors the average memory taken up by each database in the MySQL instance and displays the results as a line chart in Iris.
+%Iris mysql schema screenshot
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -322,10 +362,21 @@ A screenshot of the MySQL agent schema in Iris
 \caption{MySQL agent schema in Iris}
 \end{figure}
 
+%Iris mysql dashboard screenshot
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-mysql-dashboard}
+\end{center}
+A screenshot of the MySQL agent dashboard in Iris
+\end{tcolorbox}
+\caption{MySQL agent dashboard in Iris}
+\end{figure}
+
 \chapter{Conclusions}
 
 
-
+%No cite prints all references even if they are not in the document!!
 \nocite{*}
 \printbibliography
 
