@@ -111,7 +111,7 @@ data sources & \\
 \subsection{Jetty}
 \subsection{Gradle}
 \subsection{WAR}
-\subsection{MySql GORM Mapper}
+\subsection{MySQL GORM Mapper}
 
 \section{Testing and Evaluation - Data Sources}
 \subsection{Introduction}
@@ -327,7 +327,7 @@ A screenshot of the Selenium agent dashboard in Iris
 \end{figure}
 
 \subsection{MySQL}
-The MySQL agent demonstrates how a user can monitor their database by converting the MySQL `performance\_schema' results into JSON and sending them to Iris.
+The MySQL agent demonstrates how a user can monitor their database by converting the MySQL `information\_schema' results into JSON and sending them to Iris.
 \subsubsection{Description}
 The MySQL agent is significant for Iris as this agent was the inspiration for Iris in the beginning, as Onaware developers wanted a way to monitor a remote MySQL database with scripts and be able to monitor the database memory locally with a web application. The MySQL agent is a simple python script that connects to the MySQL instance and monitors all the databases as well as the amount of memory they use. The database name and the amount of memory it currently uses is then sent to Iris to be monitored. The python script is run every day at 8:00pm on the same AWS server that Iris is running on using a cron job.
 
@@ -341,10 +341,10 @@ FROM information_schema.TABLES
 GROUP BY table_schema;
 \end{minted}
 \end{tcolorbox}
-\caption{MySQL Agent, MySql `performance\_schema' table query used in iris-mysql.py source code}
+\caption{MySQL Agent, MySQL `information\_schema' table query used in iris-mysql.py source code}
 \end{figure}
 
-More information on the MySQL `performance\_schema' table can be found here \url{https://dev.mysql.com/doc/refman/5.6/en/performance-schema-quick-start.html}
+More information on the MySQL `information\_schema' table can be found here \url{https://dev.mysql.com/doc/refman/5.7/en/information-schema.html}
 
 
 \subsubsection{Linkage with Iris}
