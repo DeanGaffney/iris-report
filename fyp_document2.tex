@@ -200,7 +200,7 @@ A screenshot of the expected JSON for the Raspberry Pi data source in Iris.
 \end{figure}
 
 \paragraph{Transformation/Rule Script editor}
-Due to Iris' ability to allow users to write transformation scripts that run on incoming data which is discussed in \cref{rule:executor:backend}, a code editor was embedded into Iris. The code editor being used is the `Ace' code editor with Groovy syntax highlighting which aims to aid the user in writing small transformation scripts.
+Due to Iris' ability to allow users to write transformation scripts that run on incoming data which is discussed in \cref{para:rule:executor:backend}, a code editor was embedded into Iris. The code editor being used is the `Ace' code editor with Groovy syntax highlighting which aims to aid the user in writing small transformation scripts.
 
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -210,6 +210,7 @@ Due to Iris' ability to allow users to write transformation scripts that run on 
 A screenshot of the Transformation Rule script on the Node.js schema written using the `Ace' code editor.
 \end{tcolorbox}
 \caption{Node.js Transformation Rule script}
+\label{fig:rule:executor}
 \end{figure}
 
 More information on the `Ace' code editor can be found here \url{https://ace.c9.io/}
@@ -228,10 +229,39 @@ A screenshot of the Node.js agent schema in Iris.
 \end{figure}
 
 \subsubsection{Backend}
+This section will discuss the improvements made to the backend of Iris in regards to the Schema section.
+
 \paragraph{Transformation/Rule Script Execution}
-\label{rule:executor:backend}
+\label{para:rule:executor:backend}
+In the semester 1 report it was briefly discussed that Iris would allow users to write their own scripts inside Iris to allow a user to modify incoming data, which would avoid a user having to redeploy their data source to make a small change to the data they are pushing ot Iris. A user would mainly use this feature for formatting dates, strings and numerical values before it is inserted into Elasticsearch and rendered on the user's dashboard. This feature is now fully supported in Iris and an image of a transformation script can be found in \cref{fig:rule:executor}
+
 \paragraph{Data Source Endpoint Retrieval}
+Iris now accepts `POST' requests to the endpoint \url{SERVER_BASE/schema/getAgentUrl} and expects a JSON body with the request like the following:
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}{json}
+{
+    "name": "someSchemaName"
+}
+\end{minted}
+\end{tcolorbox}
+\caption{SchemaController getAgentUrl endpoint JSON payload.}
+\end{figure}
+Assuming the user is authenticated, Iris will look for a Schema matching this name and return the unique endpoint for this schema. The advantage of this is that a user may create a schema and not be satisfied with it. The user may then decide to delete the schema and create a new schema using the same name with extra attributes attached to it. The issue here is that Iris will give the new schema a new url different from the previous schema. This now means a user must go back to their agent code and change a hardcoded url to a new url and then redeploy the agent. However if a user writes their code to take advantage of the `getAgentUrl' endpoint in Iris, they will be able to dynamically obtain a new unique endpoint for the new schema as long as the schema name stays the same. This means there is no need to redeploy the agent with a new url as it is obtained dynamically from Iris.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-get-agent-url}
+\end{center}
+A screenshot of the `getAgentUrl' endpoint being used in Postman to retrieve the Node.js agent's endpoint.
+\end{tcolorbox}
+\caption{SchemaController `getAgentUrl' endpoint in Postman.}
+\end{figure}
+
 \paragraph{Timestamping Data}
+Iris now puts a timestamp on all incoming data before it is inserted into Elasticsearch. The timestamp is added as a schema field called `insertionDate' under the schema to which the data belongs. This field is used in the background of the Aggregation Builder in Iris and will be discussed in that section.
 
 \subsection{Dashboards}
 
@@ -322,47 +352,6 @@ The Raspberry Pi agent is used to demonstrate the plug and play ability of a Ras
 
 \subsubsection{Description}
 The Raspberry Pi agent demonstrates how a user can use a Raspberry Pi to run a script to continuously monitor an API. In the case the Raspberry Pi monitors crypto currency exchange rates using a python script through a library called `coinmarketcap'. The python script simply retrieves the latest crypto currency data through the `coinmarketcap' library and sends the data to the corresponding `crypto\_agent' endpoint in Iris. The Raspberry Pi agent is configured to run the script every minute with crontab and is also configured to automatically sign in to the terminal. This results in a plug and play agent wherever their is a network cable available.
-
-%Crypto-currency script
-\begin{figure}[H]
-\begin{tcolorbox}
-\begin{minted}{python}
-#!/usr/bin/python
-
-import requests, json
-from coinmarketcap import Market
-
-headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-
-agentData = {'name': 'crypto_agent'}
-
-urlResp = requests.post('http://ec2-52-16-53-220.eu-west-1.compute.'+
-'amazonaws.com:8080/iris/schema/getAgentUrl', 
-data=json.dumps(agentData), headers=headers)
-
-endpoint = urlResp.json()['url']
-
-wanted_keys = ['price_usd', 'price_eur','name', 
-               'percent_change_24h', 'rank']
-
-def extract(data):
-    return dict((k, data[k]) for k in wanted_keys if k in data)
-
-coinmarketcap = Market()
-
-crypto_currencies = coinmarketcap.ticker(limit=4, convert='EUR')
-
-filterd_currencies = list(map(extract, crypto_currencies))
-
-for currency in filterd_currencies:
-    resp = requests.post(endpoint, 
-                         data=json.dumps(currency), 
-                         headers=headers)
-    print resp.json()
-\end{minted}
-\end{tcolorbox}
-\caption{Raspberry Pi Agent, iris-crypto-rates.py source code.}
-\end{figure}
 
 For more information on coinmarketcap see their site here \url{https://coinmarketcap.com/}
 
@@ -489,7 +478,7 @@ The MySQL agent demonstrates how a user can monitor their database by converting
 \subsubsection{Description}
 The MySQL agent is significant for Iris as this agent was the inspiration for Iris in the beginning, as Onaware developers wanted a way to monitor a remote MySQL database with scripts and be able to monitor the database memory locally with a web application. The MySQL agent is a simple python script that connects to the MySQL instance and monitors all the databases as well as the amount of memory they use. The database name and the amount of memory it currently uses is then sent to Iris to be monitored. The python script is run every day at 8:00pm on the same AWS server that Iris is running on using a cron job.
 
-%Crypto-currency script
+%MYSQL statement script
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{minted}{mysql}
