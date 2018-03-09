@@ -310,6 +310,27 @@ Major issues during development include: ans status
 \end{itemize}
 
 \subsection{Aggregation Builder}
+%basics of this were implemented in semester 1
+\subsubsection{Aggregation Types}
+% List all possible aggregations you can test
+%Talk about being able to aggregate over all data in elasticsearch, not advisable for dashboards if data is large
+%that it supports moving numerical data like moving average, max, min etc.... which aggregates a number of the most recent documents
+\subsubsection{Aggregation Builder Preview}
+%talk about how the user can see the json being built as they nest aggregations
+
+\subsection{Security}
+% talk about the addition of security in iris
+
+\subsubsection{Spring Security Core}
+%spring security core was used to generate a user, role and user role and secure the app from unauthenticated users
+\subsubsection{Spring Security REST Plugin}
+%talk about securing the rest endpoints with spring security rest, jwt and login api
+
+\subsubsection{Testing Security}
+%tested using postman
+
+\subsubsection{Data Source Adaptation}
+%now use login api to get authenticated and given a token, they then send this token with every request to iris
 
 
 \section{Data Sources}
