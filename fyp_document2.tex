@@ -264,10 +264,38 @@ A screenshot of the `getAgentUrl' endpoint being used in Postman to retrieve the
 Iris now puts a timestamp on all incoming data before it is inserted into Elasticsearch. The timestamp is added as a schema field called `insertionDate' under the schema to which the data belongs. This field is used in the background of the Aggregation Builder in Iris and will be discussed in that section.
 
 \subsection{Dashboards}
+In the semester 1 report the javascript libraries for building Iris' dashboard system were selected and tested on a very small scale. The design for implementing the dashboard and updating the charts in realtime have remained the same throughout the implementation this semester. The dashboard system features and implementation will be discussed in terms of frontend and backend logic in the following sections. A brief overview of how the data flows into the dashboard will also be discussed.
+
+\subsubsection{Flow of data}
+%maybe draw a diagram of how the data looks flowing to the dashboard
 
 \subsubsection{Frontend}
+This section will discuss the major factors of the frontend of the Iris dashboard system.
+
+\paragraph{Gridstack.js}
+%talk about how gridstack was used for the dashboard tiling system
+\paragraph{Billboard.js}
+%talk about how billboard was used for the dashboard charting 
+\paragraph{Vue.js}
+%talk about how the introduction of Vue.js aided in making conditional page rendering depending on chart types
+\paragraph{Chart Types}
+% discuss all the chart types supported
+\paragraph{Downloadable Chart Data}
+% discuss how you can download chart data as a json file
+\paragraph{Revision History}
+% discuss how you can easily select previous revisions of a dashboard as well as create new revisions
 
 \subsubsection{Backend}
+
+\paragraph{Chart Types}
+%talk bout how the different chart types are handles in iris
+\paragraph{Serilization}
+%talk about the dashboard being stored as a json object in the database
+%this makes it possible in the future to upload premade dashboards to iris
+\paragraph{Revision History}
+%revision history
+\paragraph{Scalabitility}
+%talk about not subscription updates occurring if a dashboard is not marked as rendering
 
 By end of semester 1 the javascript libraries that will be used were selected but only basic testing of features was carried out.  In this semester the dashboards were designed and implemented.
 
