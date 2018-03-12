@@ -265,10 +265,7 @@ Iris now puts a timestamp on all incoming data before it is inserted into Elasti
 
 \subsection{Dashboards}
 In the semester 1 report the javascript libraries for building Iris' dashboard system were selected and tested on a very small scale. The design for implementing the dashboard and updating the charts in realtime have remained the same throughout the implementation this semester. The dashboard system features and implementation will be discussed in terms of frontend and backend logic in the following sections. A brief overview of how the data flows into the dashboard will also be discussed.
-
-\subsubsection{Flow of data}
-%maybe draw a diagram of how the data looks flowing to the dashboard
-
+ 
 \subsubsection{Frontend}
 This section will discuss the major factors of the frontend of the Iris dashboard system.
 
@@ -277,9 +274,7 @@ Gridstack.js was briefly discussed in the semester 1 report as being the library
 
 Due to the extensive research on the library in semester 1 and the active github support from the Gridstack.js developers there was no major issues during the implementation phase in semester 2. Gridstack.js was used to contain the contents of a dashboard in a grid format. Whenever a chart is created for a dashboard a new widget is created containing the chart and added to the Gridstack grid. This widget automatically becomes resizeable, draggable and serializeable.
 
-%Add description on how girdstack devs posted code to serialize the gird and widget positions, then explain how you expanded on that and added chart types and aggregation data to it
 The logic used to format the Gridstack grid into a serializeable object was retrieved from the Gridstack.js serialize demo, which can be found here \url{https://dsmorse.github.io/gridster.js/demos/serialize.html}. Using the basic structure supplied by the Gridstack.js developers, Iris' client code expanded upon this functionality to support chart types and aggregation objects to be included in the serialized data.
-
 \begin{figure}[H]
 \centering
 \begin{tcolorbox}
@@ -330,8 +325,6 @@ The logic used to format the Gridstack grid into a serializeable object was retr
 \end{tcolorbox}
 \caption{Iris extension of Gridstack.js Serialization}
 \end{figure}
-
-
 One main issue that was found with the Gridstack library is that if a chart contains no data it does not scale the chart correctly and makes the chart overflow to one side making it appear compact. Unfortunately this issue is not consistent and as a result was not fixed. Currently the only fix is to click on the resizeable handles of a widget and the chart then scales correctly.
 
 For a basic demo of Gridstack.js refer to this url \url{http://gridstackjs.com/demo/}
@@ -346,36 +339,193 @@ For examples of charts created with Billboard.js see this url \url{https://naver
 \paragraph{Chart Types}
 \label{para:charts:fontend}
 % discuss all the chart types supported
+Iris supports the following chart types:
+\begin{itemize}
+    \item Bar Chart
+    \item Bubble Chart
+    \item Pie Chart
+    \item Line Chart
+    \item State Disc Chart (A chart used for monitoring state based data)
+    %TODO ADD PIC OF EACH CHART
+\end{itemize}
 \paragraph{Chart Subscriptions}
 \label{para:charts:subs:frontend}
+The design for how Iris would handle sending incoming data to the correct charts was created and documented in the semester 1 report. However the design was not tested and implemented until semester 2. The libraries chosen in semester 1 for web socket functionality remained the same. Iris uses the Grails Web Socket plugin to add socket communication between dashboard charts and the server, allowing charts to subscribe to incoming data. 
+
+Each client chart on an Iris dashboard subscribes to messages from the server on a unique socket endpoint, which ensures the correct data gets sent to the correct chart. This design was discussed in the semester 1 report and remained the same for the implementation of the chart subscription logic in Iris.
+
+For more information on he Grails 3 `grails-spring-websocket' plugin refer to \url{https://github.com/zyro23/grails-spring-websocket}.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}[breaklines]{javascript}
+function setChartSubscription(subscriptionId, chart, chartType, schemaId){
+    //this subscription is for updates being sent to the chart
+    client.subscribe("/topic/" + schemaId + "/" + chartType + "/" + subscriptionId, function(message) {
+        var parsedMsg = JSON.parse(message.body);
+        //update the chart
+        if(chartType != chartTypes.StateDisc){  //REGULAR CHARTS
+            updateBasicCharts(chart, parsedMsg);
+        }else{  //STATE BASED CHARTS
+            updateStateDiscChart(chart, parsedMsg);
+        }
+    });
+
+    //this subscription is for initial loading data for the chart
+    client.subscribe("/topic/load/" + schemaId + "/" + chartType + "/" + subscriptionId, function(message){
+        var parsedMsg = JSON.parse(message.body);
+    // update the chart
+        chart.instance.load({
+            columns: parsedMsg.data.columns,
+            length: 0
+        });
+    });
+}
+\end{minted}
+\end{tcolorbox}
+\caption{Iris Client Side Chart Subscription logic.}
+\end{figure}
 \paragraph{Downloadable Chart Data}
-% discuss how you can download chart data as a json file
+Iris now supports the ability to download a JSON file consisting of the current data being displayed on the chart that was picked to be downloaded. Each chart on the dashboard has this functionality. This functionality was built by using the Billboard.js api and retrieving the chart data, and adding custom logic to put that data into a file to be downloaded upon request.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-downloaded-chart}
+\end{center}
+A screenshot of a downloadable chart in Iris, taken from the `selenium agent' dashboard in Iris. The file icon in the top right is clicked to start the download.
+\end{tcolorbox}
+\caption{Downloadable Chart Example}
+\label{fig:downloaded:chart}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}[breaklines]{json}
+[{"id":"Music Store","id_org":"Music Store","values":[{"x":0,"value":888,"id":"Music Store","index":0},{"x":1,"value":888,"id":"Music Store","index":1,"name":"Music Store"},{"x":2,"value":888,"id":"Music Store","index":2},{"x":3,"value":888,"id":"Music Store","index":3},{"x":4,"value":888,"id":"Music Store","index":4}]},{"id":"Thomann","id_org":"Thomann",
+"values":[{"x":0,"value":888,"id":"Thomann","index":0},
+{"x":1,"value":888,"id":"Thomann","index":1,"name":"Thomann"},
+{"x":2,"value":888,"id":"Thomann","index":2},
+{"x":3,"value":888,"id":"Thomann","index":3},
+{"x":4,"value":888,"id":"Thomann","index":4}]}]
+\end{minted}
+\end{tcolorbox}
+\caption{JSON file data downloaded from a chart on the  `selenium agent' dashboard as shown in \cref{fig:downloaded:chart}.}
+\end{figure}
+
 \paragraph{Revision History}
-% discuss how you can easily select previous revisions of a dashboard as well as create new revisions
+Iris now supports revision history for all dashboards, meaning a user can navigate between previous versions of a dashboard by simply using a select box on the dashboard page which allows the user select the revision they wish to view.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-node-dash-rev-1}
+\end{center}
+A screenshot of the Node.js dashboard in Iris capturing its fourth revision.
+\end{tcolorbox}
+\caption{Node.js Dashboard Revision No. 4}
+\label{fig:dash:rev:4}
+\end{figure}
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-node-agent-dashboard}
+\end{center}
+A screenshot of the Node.js dashboard in Iris capturing its fifth revision. Note the extra chart `OS Types' that was added to this revision compared to the fourth revision show in \cref{fig:dash:rev:4}.
+\end{tcolorbox}
+\caption{Node.js Dashboard Revision No. 5}
+\end{figure}
 
 \subsubsection{Backend}
-
+This section will focus on the backend implementation of the Iris dashboard system.
 \paragraph{Chart Types}
-%talk bout how the different chart types are handles in iris
+The Iris chart types are handled by using enums in Iris. This allows for the code in Iris to be easily expanded upon when a new chart type is needed, and the use of enums allows for more readable code when dealing with different types of charts.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}[breaklines]{groovy}
+enum ChartType {
+
+    BAR("Bar"),
+    BUBBLE("Bubble"),
+    PIE("Pie"),
+    LINE("Line"),
+    STATE_LIST("StateList"),
+    STATE_DISC("StateDisc");
+
+    private String value;
+
+    private ChartType(String value){
+        this.value = value;
+    }
+
+    String getValue(){ return this.value; }
+}
+\end{minted}
+\end{tcolorbox}
+\caption{ChartType.groovy enum from Iris.}
+\end{figure}
+Due to Iris supporting different chart types as well as different types of data, each chart has optional attributes such as an Elasticsearch aggregation if the user created the chart using an aggregation, and a raw attribute in the case of a user wishing to just send raw data to the chart and not have Elasticsearch perform any aggregations over the incoming data.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{minted}[breaklines]{groovy}
+class Chart {
+
+    String name
+    String chartType
+    String subscriptionId
+    Aggregation aggregation
+    IrisSchema schema
+    boolean isRaw = false
+    boolean archived = false
+
+    static constraints = {
+        name(nullable: false, blank: false)
+        chartType(nullable: false, inList: ChartType.values()*.getValue())
+        aggregation(nullable: false)
+        schema(nullable: false)
+        archived(nullable: true)
+        subscriptionId(nullable: true)
+        isRaw(nullable: true)
+    }
+
+    static belongsTo = [grid: Grid]
+}
+\end{minted}
+\end{tcolorbox}
+\caption{Chart.groovy domain for representing Charts in Iris.}
+\end{figure}
+
+\paragraph{Chart Subscriptions}
+When data enters Iris, Iris uses the chart type to figure out how a chart should be updated. For all charts the flow of data is the same, a data source will send data to Iris and Iris will send the data to the chart using a Grails Service which which comes as part of the `grails-spring-websocket' plugin. If a chart is marked as raw or of type `State Disc' then the data being sent to the chart is not modified, if a chart instance has an Elasticsearch aggregation attached to it the aggregation is executed in Elasticsearch and the result is parsed and formatted to suit the chart type and then sent to the chart to be updated on the frontend.
+
 \paragraph{Serilization}
-%talk about the dashboard being stored as a json object in the database
-%this makes it possible in the future to upload premade dashboards to iris
+Iris serializes Dashboard domains through composition. Each Dashboard domain has a Grid domain object which stores the entire dashboard in JSON. This means that serializing and loading dashboards is simply done with a string of JSON. This JSON is passed to the frontend where it is parsed by the client to create the dashboard.
+
+Due to Iris storing the dashboard grid as a JSON string, it allows for Iris to extend its dashboard system in the future by allowing users to build dashboards offline or locally and upload a JSON file which represents their dashboard. Iris will be able to save and load the dashboard as long as the user conforms to the existing dashboard JSON structure which is in place.
+
 \paragraph{Revision History}
-%revision history
-\paragraph{Scalabitility}
-%talk about not subscription updates occurring if a dashboard is not marked as rendering
+Iris supports revision history for its dashboard system. When a dashboard is initially created Iris will create a new Revision domain object to associate with the dashboard. This revision object has a unique id which is referred to as the `revisionId', this id is specific to each dashboard. Along with the revision id, a revision number is also stored, meaning all revisions specific to a dashboard have the same revision id and different revision numbers. Whenever a dashboard is updated and the changes are committed, Iris will create a new revision for the dashboard by coping the revision id of the most recent revision and then incrementing the revision number of the most recent revision. This results in a brand new revision being created. When a dashboard is rendered on the frontend of Iris the backend sends down all the revisions associated with the dashboard which allows the user to select what version of the dashboard they wish to view.
 
-By end of semester 1 the javascript libraries that will be used were selected but only basic testing of features was carried out.  In this semester the dashboards were designed and implemented.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-dash-revision}
+\end{center}
+An image showing how the revision history of dashboards works in Iris.
+\end{tcolorbox}
+\caption{Iris Dashboard Revision Diagram.}
+\end{figure}
 
-What libraries are used ?
+\paragraph{Scalability}
+A big concern with Iris in the beginning was to see how scalable the dashboard system would be if a lot of data was being sent to Iris. In an effort to make the dashboard system more efficient Iris dashboards have a boolean attribute called `isRendering'. When a dashboard is being viewed by a user the backend toggles the `isRendering' state of the dashboard to true, this is switched to false once a dashboard is no longer being viewed. The reason for this is to prevent data being modified and formatted for a dashboard which is not being rendered to the user. By having this state attached to a dashboard, a dashboard will only be sent updates if it is being viewed by a user, otherwise the data will simply be entered into Elasticsearch and no more code will be executed. This makes the dashboards much more efficient and scalable as Iris is only dealing with dashboards that are being viewed.
 
-use table, two columns, library name, purpose
-
-Major issues during development include: ans status
-\begin{itemize}
-    \item sdf
-    \item 
-\end{itemize}
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-dash-scalability}
+\end{center}
+A flow chart showing how Iris handles dashboards that are rendering versus dashboards that are not rendering.
+\end{tcolorbox}
+\caption{Iris Dashboard Scalability.}
+\end{figure}
 
 \subsection{Aggregation Builder}
 %basics of this were implemented in semester 1
