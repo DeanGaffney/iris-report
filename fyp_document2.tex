@@ -412,7 +412,7 @@ A screenshot of a downloadable chart in Iris, taken from the `selenium agent' da
 \end{figure}
 
 \paragraph{Revision History}
-Iris now supports revision history for all dashboards, meaning a user can navigate between previous versions of a dashboard by simply using a select box on the dashboard page which allows the user select the revision they wish to view.
+Iris now supports revision history for all dashboards, meaning a user can navigate between previous versions of a dashboard by simply using a select box on the dashboard page which allows the user select the revision they wish to view. Each revision commit allows a user to write a comment about what changed for the new revision. A user may also delete revisions they no longer wish to keep, once all revisions are deleted then a dashboard is deleted.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -528,14 +528,86 @@ A flow chart showing how Iris handles dashboards that are rendering versus dashb
 \end{figure}
 
 \subsection{Aggregation Builder}
-%basics of this were implemented in semester 1
+The aggregation builder was partially implemented in semester 1, the aggregation types were in place and the logic for building an Elasticsearch aggregation through the Iris UI were in place. In semester 2 some more features were added to allow for more fine grained data monitoring. In the following sections the current aggregation types that Iris supports will be listed and the new Aggregation Builder previewer will be discussed.
 \subsubsection{Aggregation Types}
 % List all possible aggregations you can test
-%Talk about being able to aggregate over all data in elasticsearch, not advisable for dashboards if data is large
-%that it supports moving numerical data like moving average, max, min etc.... which aggregates a number of the most recent documents
-\subsubsection{Aggregation Builder Preview}
-%talk about how the user can see the json being built as they nest aggregations
+In this section the aggregations which Iris currently supports are discussed. The following list contains the aggregations that Iris can currently build through the aggregation builder.
+\begin{itemize}
+    \item Average (Calculates the average of a numerical field).
+    \item Cardinality (Calculates the approximate count of distinct values).
+    \item Stats (Returns basic stats on a numerical field such as count, min, max, avg, sum).
+    \item Extended Stats (Returns a grouping of stats on a numerical field such as max, min, count, avg, sum, sum of squares, variance, standard deviation).
+    \item Max (Calculates the max of a numerical field).
+    \item Min (Calculates the min of a numerical field).
+    \item Sum (Calculates the sum of a numerical field).
+    \item Value Count (Calculates the number of values extracted from aggregated documents).
+\end{itemize}  
+Some of the aggregations listed above are not suited for use on charts as the data they return are not suited for charts, for example the stats and extended stats aggregations would not be ideal for fitting to a chart. However they are very useful to get an overall view of the data quickly without having to worry about fitting the data to a chart.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-agg-options}
+\end{center}
+A screenshot showing the aggregation options available inside the Iris Aggregation Builder.
+\end{tcolorbox}
+\caption{Iris Aggregation Builder Options.}
+\end{figure}
 
+In semester 1 the aggregations were running over all documents in the Elasticsearch index, this was fine for demonstrating the aggregation builder's ability to build aggregations, but for realtime data this would be an expensive way to run aggregations, especially if the Elasticsearch index contained a large amount of data. To tackle this issue there was an option to run aggregations over the most recent entries in the Elasticsearch index and to specify how many entries you want to run the aggregation over. This is a powerful modification to the aggregation builder as now users can take advantage of creating charts that display moving averages, minimums and maximums, as well as avoid running an aggregation over all of the entries in the Elasticsearch index which would be slow. 
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-agg-recent}
+\end{center}
+A screenshot showing the aggregation most recent option.
+\end{tcolorbox}
+\caption{Iris Aggregation Most Recent Option.}
+\end{figure}
+
+It is not advisable to create aggregations for charts which are not run over the most recent entries, especially if the data in the Elasticsearch index is large. If a user wishes to run these aggregations they should do so in the Aggregation Builder area, where no dashboards need to be updated and time is not a concern.
+
+\subsubsection{Aggregation Builder Preview}
+Iris now supports a preview of the aggregation JSON object being built as the user interacts with the Aggregation Builder UI. This gives the user a look into how the aggregation objects are constructed and allows them to copy the aggregation object in case they wish to execute the aggregation outside of Iris and don't know how to construct an Elasticsearch aggregation.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[width=0.9\linewidth]{iris-current-agg-1}
+\caption{Current Aggregation with one level.}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[width=\linewidth]{iris-current-agg-2}
+\caption{Current Aggregation after nesting an aggregation inside the previous aggregation.}
+\end{subfigure}
+\end{center}
+\end{tcolorbox}
+\caption{Iris Aggregation Builder Preview.}
+\end{figure}
+
+\subsubsection{Testing Aggregations}
+In semester 1 it was demonstrated that Iris could test users could use the Aggregation Builder area to test their aggregations before putting using the aggregation for a chart. However the Aggregation Builder was on a different page to that of the dashboards. In semester 2 the aggregation builder was added to the dashboard creation area, giving users the full functionality of the Aggregation Builder as they make a chart for a dashboard. This allows a user to test their aggregations before saving a chart to a dashboard to make sure the data being returned is satisfactory.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=0.8\textwidth,height=0.8\textheight]{iris-agg-test}
+\end{center}
+A screenshot showing the aggregation result returned from testing an aggregation inside the Aggregation Builder area.
+\end{tcolorbox}
+\caption{Iris Aggregation Test Result (Aggregation Builder area).}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-chart-agg-builder}
+\end{center}
+A screenshot showing the Aggregation Builder in the dashboard section.
+\end{tcolorbox}
+\caption{Iris Aggregation Test Result (Dashboard area).}
+\end{figure}
 \subsection{Security}
 % talk about the addition of security in iris
 
