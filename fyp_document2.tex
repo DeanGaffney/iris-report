@@ -264,17 +264,27 @@ A screenshot of the `getAgentUrl' endpoint being used in Postman to retrieve the
 Iris now puts a timestamp on all incoming data before it is inserted into Elasticsearch. The timestamp is added as a schema field called `insertionDate' under the schema to which the data belongs. This field is used in the background of the Aggregation Builder in Iris and will be discussed in that section.
 
 \subsection{Dashboards}
-In the semester 1 report the javascript libraries for building Iris' dashboard system were selected and tested on a very small scale. The design for implementing the dashboard and updating the charts in realtime have remained the same throughout the implementation this semester. The dashboard system features and implementation will be discussed in terms of frontend and backend logic in the following sections. A brief overview of how the data flows into the dashboard will also be discussed.
+
+During the Autumn semester the javascript libraries for building the Iris dashboard system were selected and tested in detail. As a result, the design for implementing the dashboard and updating the charts in realtime has remained essentially  unchanged during the implementation this semester. The dashboard system features and implementation is discussed in terms of frontend and backend logic in the following sections. A brief overview of how the data flows into the dashboard is also be discussed.
  
 \subsubsection{Frontend}
-This section will discuss the major factors of the frontend of the Iris dashboard system.
+
+%This section will discuss the major factors of the frontend of the Iris dashboard system.
+
+The frontend of the Iris system, is concerned with the charting and dashboard configuration components
+
+NEED better sentence here.
+
 
 \paragraph{Gridstack.js}
-Gridstack.js was briefly discussed in the semester 1 report as being the library that was selected to aid in the dashboard creation. In semester 1 the library was and it's api was researched to ensure it supported the features Iris required.
 
-Due to the extensive research on the library in semester 1 and the active github support from the Gridstack.js developers there was no major issues during the implementation phase in semester 2. Gridstack.js was used to contain the contents of a dashboard in a grid format. Whenever a chart is created for a dashboard a new widget is created containing the chart and added to the Gridstack grid. This widget automatically becomes resizeable, draggable and serializeable.
+Gridstack.js is a jQuery plugin that provides a drag-and-drop multi-column grid for generic widgets. 
+Its features and the basis for selecting gridstack.js is covered in the Semester 1 report.  
+ 
+Due to the extensive research and testing on this library in semester 1 and the active github support from Gridstack.js developers there was no major issues during the implementation phase in semester 2. Gridstack.js is used to contain the components (charts) of the dashboard in a grid format. Whenever a chart is created for a dashboard a new container widget is created containing the chart and added to the gridstack grid. This widget automatically becomes resizable, draggable and serialisable.
 
-The logic used to format the Gridstack grid into a serializeable object was retrieved from the Gridstack.js serialize demo, which can be found here \url{https://dsmorse.github.io/gridster.js/demos/serialize.html}. Using the basic structure supplied by the Gridstack.js developers, Iris' client code expanded upon this functionality to support chart types and aggregation objects to be included in the serialized data.
+The logic used to format the gridstack grid into a serialisable object was retrieved from the Gridstack.js serialise demo\footnote{\url{https://dsmorse.github.io/gridster.js/demos/serialize.html}}. Using the basic structure supplied by the gridstack.js developers, the Iris client code was developed and expanded the existing functionality to support chart types and aggregation objects. (see \Cref{fig:Serialization_logic})
+%to be included in the serialized data.
 \begin{figure}[H]
 \centering
 \begin{tcolorbox}
@@ -293,7 +303,7 @@ The logic used to format the Gridstack grid into a serializeable object was retr
             };
         }, this);
         \end{minted}
-        \caption{Gridstack.js Developer's Serialization logic}
+        \caption{Gridstack.js Developer's Serialization logic}\label{fig:Serialization_logic}
     \end{tcolorbox}
     \end{subfigure}%
     \newline
@@ -325,18 +335,31 @@ The logic used to format the Gridstack grid into a serializeable object was retr
 \end{tcolorbox}
 \caption{Iris extension of Gridstack.js Serialization}
 \end{figure}
-One main issue that was found with the Gridstack library is that if a chart contains no data it does not scale the chart correctly and makes the chart overflow to one side making it appear compact. Unfortunately this issue is not consistent and as a result was not fixed. Currently the only fix is to click on the resizeable handles of a widget and the chart then scales correctly.
+
+One issue with gidstack.js, that was found during the implementation phase, is that the width is can be incorrectly calculated when the containing chart does not contain data. Unfortunately this issue is not consistent and has proven difficult to resolve. Currently the only fix is for the user to click on the resizable handles of a widget and the chart then scales correctly.
+
+
+%One main issue that was found with the Gridstack library is that if a chart contains no data it does not scale the chart correctly and makes the chart overflow to one side making it appear compact. 
+%Unfortunately this issue is not consistent and as a result was not fixed. Currently the only fix is to click on the resizeable handles of a widget and the chart then scales correctly.
+
 
 For a basic demo of Gridstack.js refer to this url \url{http://gridstackjs.com/demo/}
-\paragraph{Billboard.js}
-In the semester 1 report Billboard.js was selected as the charting library that Iris would use in its dashboard system. Billboard.js was researched and tested heavily in semester 1 but was not implemented within Iris until semester 2.
 
-Implementing Billboard.js into Iris was relatively straight forward because of the testing done in semester 1, the only difference was that the Billboard.js charts were now going to be dynamically added to a grid and contained within a Gridstack.js widget. This was not difficult as it was simply an extra parent container to be added around the chart element.
+\paragraph{Billboard.js}
+
+Billboard.js is a charting library based on D3.js.  Billboard.js was researched and tested in detail during semester 1 but was not integrated within Iris until semester 2.
+
+Integrating Billboard.js into Iris, and more specifically with Gridstack.js, was relatively straight forward, the only issue was sizing issue for empty charts mentioned above.  
+Dynamically adding a Billboard.js chart to an existing Gridstack.js grid required an extra parent container to be wrapped around the chart element, effectively converting it to a Gridstack.js widget.
+
+%integration with Gridstack.js which resulted was that the Billboard.js charts were now going to be dynamically added to a grid and contained within a Gridstack.js widget. This was not difficult as it was simply an extra parent container to be added around the chart element.
+
 The chart type support will be discussed in \cref{para:charts:fontend} and the chart subscriptions will be discussed in \cref{para:charts:subs:frontend}.
 
 For examples of charts created with Billboard.js see this url \url{https://naver.github.io/billboard.js/demo/}
 
 \paragraph{Chart Types}
+
 \label{para:charts:fontend}
 % discuss all the chart types supported
 Iris supports the following chart types:
@@ -348,11 +371,12 @@ Iris supports the following chart types:
     \item State Disc Chart (A chart used for monitoring state based data)
     %TODO ADD PIC OF EACH CHART
 \end{itemize}
-\paragraph{Chart Subscriptions}
-\label{para:charts:subs:frontend}
-The design for how Iris would handle sending incoming data to the correct charts was created and documented in the semester 1 report. However the design was not tested and implemented until semester 2. The libraries chosen in semester 1 for web socket functionality remained the same. Iris uses the Grails Web Socket plugin to add socket communication between dashboard charts and the server, allowing charts to subscribe to incoming data. 
 
-Each client chart on an Iris dashboard subscribes to messages from the server on a unique socket endpoint, which ensures the correct data gets sent to the correct chart. This design was discussed in the semester 1 report and remained the same for the implementation of the chart subscription logic in Iris.
+\paragraph{Chart Subscriptions}\label{para:charts:subs:frontend}
+
+The design for how Iris would handle sending incoming data to the correct charts is documented in the Semester 1 report. However the design was not implemented until semester 2. The libraries chosen in semester 1 for web socket functionality remained the same. Iris uses the Grails Web Socket plugin to add socket communication between dashboard charts and the server, allowing charts to subscribe to incoming data. 
+
+Each client chart on an Iris dashboard subscribes to messages from the server on a unique socket endpoint, which ensures the correct data gets sent to the correct chart. This design is discussed in the semester 1 report and has remained the same during the implementation of the chart subscription logic in Iris.
 
 For more information on he Grails 3 `grails-spring-websocket' plugin refer to \url{https://github.com/zyro23/grails-spring-websocket}.
 \begin{figure}[H]
@@ -384,8 +408,10 @@ function setChartSubscription(subscriptionId, chart, chartType, schemaId){
 \end{tcolorbox}
 \caption{Iris Client Side Chart Subscription logic.}
 \end{figure}
+
 \paragraph{Downloadable Chart Data}
-Iris now supports the ability to download a JSON file consisting of the current data being displayed on the chart that was picked to be downloaded. Each chart on the dashboard has this functionality. This functionality was built by using the Billboard.js api and retrieving the chart data, and adding custom logic to put that data into a file to be downloaded upon request.
+
+Iris supports the ability to download a JSON file consisting of the current data being displayed on any chart. This functionality was built by using the Billboard.js API and retrieving the chart data, and adding custom logic to format that data into a file to be downloaded upon request.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -412,6 +438,7 @@ A screenshot of a downloadable chart in Iris, taken from the `selenium agent' da
 \end{figure}
 
 \paragraph{Revision History}
+
 Iris now supports revision history for all dashboards, meaning a user can navigate between previous versions of a dashboard by simply using a select box on the dashboard page which allows the user select the revision they wish to view. Each revision commit allows a user to write a comment about what changed for the new revision. A user may also delete revisions they no longer wish to keep, once all revisions are deleted then a dashboard is deleted.
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -462,7 +489,7 @@ enum ChartType {
 \end{tcolorbox}
 \caption{ChartType.groovy enum from Iris.}
 \end{figure}
-Due to Iris supporting different chart types as well as different types of data, each chart has optional attributes such as an Elasticsearch aggregation if the user created the chart using an aggregation, and a raw attribute in the case of a user wishing to just send raw data to the chart and not have Elasticsearch perform any aggregations over the incoming data.
+Due to Iris supporting multiple chart types as well as different types of data, each chart has optional attributes such as an Elasticsearch aggregation if the user created the chart using an aggregation, and a raw attribute in the case of a user wishing to just send raw data to the chart and not have Elasticsearch perform any aggregations over the incoming data.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{minted}[breaklines]{groovy}
@@ -517,6 +544,9 @@ An image showing how the revision history of dashboards works in Iris.
 \paragraph{Scalability}
 A big concern with Iris in the beginning was to see how scalable the dashboard system would be if a lot of data was being sent to Iris. In an effort to make the dashboard system more efficient Iris dashboards have a boolean attribute called `isRendering'. When a dashboard is being viewed by a user the backend toggles the `isRendering' state of the dashboard to true, this is switched to false once a dashboard is no longer being viewed. The reason for this is to prevent data being modified and formatted for a dashboard which is not being rendered to the user. By having this state attached to a dashboard, a dashboard will only be sent updates if it is being viewed by a user, otherwise the data will simply be entered into Elasticsearch and no more code will be executed. This makes the dashboards much more efficient and scalable as Iris is only dealing with dashboards that are being viewed.
 
+
+QUESTION - how is this implemented? Is it a heartbeat ?
+
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -528,8 +558,10 @@ A flow chart showing how Iris handles dashboards that are rendering versus dashb
 \end{figure}
 
 \subsection{Aggregation Builder}
-The aggregation builder was partially implemented in semester 1, the aggregation types were in place and the logic for building an Elasticsearch aggregation through the Iris UI were in place. In semester 2 some more features were added to allow for more fine grained data monitoring. In the following sections the current aggregation types that Iris supports will be listed and the new Aggregation Builder previewer will be discussed.
+The aggregation builder was partially implemented in semester 1, the aggregation types were in place and the logic for building an Elasticsearch aggregation through the Iris UI were in place. In semester 2 some more features were added to allow for more fine grained data monitoring. In the following sections the current aggregation types that Iris supports is listed and the new Aggregation Builder previewer are discussed.
+
 \subsubsection{Aggregation Types}
+
 % List all possible aggregations you can test
 In this section the aggregations which Iris currently supports are discussed. The following list contains the aggregations that Iris can currently build through the aggregation builder.
 \begin{itemize}
