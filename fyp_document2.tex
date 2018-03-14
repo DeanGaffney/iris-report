@@ -578,7 +578,7 @@ Some of the aggregations listed above are not suited for use on charts as the da
 \end{center}
 A screenshot showing the aggregation options available inside the Iris aggregation builder.
 \end{tcolorbox}
-\caption{Iris aggregation builder Options.}
+\caption{Iris Aggregation Builder Options.}
 \end{figure}
 
 In Semester 1 the aggregations were running over all documents in the Elasticsearch index, this was fine for demonstrating the aggregation builder's ability to build aggregations, but for realtime data this would be an expensive way to run aggregations, especially if the Elasticsearch index contained a large amount of data. To tackle this issue there was an option to run aggregations over the most recent entries in the Elasticsearch index and to specify how many entries you want to run the aggregation over. This is a powerful modification to the aggregation builder as now users can take advantage of creating charts that display moving averages, minimums and maximums, as well as avoid running an aggregation over all of the entries in the Elasticsearch index which would be slow. 
@@ -693,7 +693,7 @@ The two REST endpoints Iris exposes to data sources are `/schema/route/' and `/s
 \begin{center}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-secured-route}
 \end{center}
-A screenshot showing the `/schema/route/' endpoint being secured with the \@Secured annotation.
+A screenshot showing the `/schema/route/' endpoint being secured with the `Secured' annotation.
 \end{tcolorbox}
 \caption{Iris Secured Route.}
 \end{figure}
