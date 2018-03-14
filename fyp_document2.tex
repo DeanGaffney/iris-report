@@ -719,7 +719,7 @@ For more information on JWT, Spring Security Core and Spring Security Rest, plea
 
 
 \subsubsection{Data Source Adaptation}
-Data sources communicating with Iris now need to get authenticated by sending valid user credentials to the `/api/login' endpoint. The data source must then use the JWT token with every request as part of the X-Auth-Token header which was given to them from Iris upon a successfully logging in.
+Data sources communicating with Iris now need to get authenticated by sending valid user credentials to the `/api/login' endpoint. The data source must then use the JWT token with every request as part of the X-Auth-Token header which was given to them from Iris upon successfully logging in.
 
 The data sources used to test Iris have hardcoded JWTs in their code to make testing easier, however all real use cases must use the `/login/api' to retrieve their JWTs.
 
