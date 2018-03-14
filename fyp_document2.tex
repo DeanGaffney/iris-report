@@ -82,14 +82,14 @@ Users of Iris will consist of Onaware developers who will be monitoring IAM proj
 numerical, categorical and textural
 
 \chapter{Implementation}
-During semester 1 a number of implementation were designed and tested. As a result the implementation described in
-semester 1 required not further changes in thus semester. Hence, this section is fundamentally unchanged from that in
-semester 1 report
-Distinguish between subparts that were implemented (and so their overview here is similar to that in semester 1 report) and
-subparts that were implemented during this semester (and so the overview here is new).
-In this chapter the implementation of Iris is summarised. The components completed in semester were described in the
+During Semester 1 a number of implementation were designed and tested. As a result the implementation described in
+Semester 1 required not further changes in thus Semester. Hence, this section is fundamentally unchanged from that in
+Semester 1 report
+Distinguish between subparts that were implemented (and so their overview here is similar to that in Semester 1 report) and
+subparts that were implemented during this Semester (and so the overview here is new).
+In this chapter the implementation of Iris is summarised. The components completed in Semester were described in the
 Semester 1 report and that summary is reproduced here (with minor modification) for completeness. The subsections dealing
-with components implemented in semester 2 is fundamentally new. Table REF lists the components adn when they were completed.
+with components implemented in Semester 2 is fundamentally new. Table REF lists the components adn when they were completed.
 \begin{center}
 \begin{tabular}{llll}
 Component                         & When prototyped  & When completed \\\hline
@@ -102,7 +102,7 @@ data sources & \\
 \end{center}
 
 \section{Core Framework/Services}
-In the Semester 1 report the design of Iris is described. Due to the testing of the designs in the first semester the final design needed no further modifications this semester. Hence the description of Iris given here follows closely that given in report 1.
+In the Semester 1 report the design of Iris is described. Due to the testing of the designs in the first Semester the final design needed no further modifications this Semester. Hence the description of Iris given here follows closely that given in report 1.
 
 \subsection{Description}
 Iris will act as a web interface for a user to create an application monitor and allow the user to query and create personalised dashboards of their data through the use of Elasticsearch. A user may setup an application schema definition within Iris that matches the data they wish to monitor, a schema will consist of field names and corresponding data types specific to the application. Using the schema Iris will know what data to expect from the user. Once a schema is in place, Iris will generate a unique endpoint associated with the schema, this unique endpoint will be given to the user as a means of sending data to Iris. Data sent to the schema endpoint will be in JSON format and will conform to the schema definition created by the user in Iris.
@@ -157,7 +157,7 @@ To aid performance monitoring, Iris will allow users to create personalised dash
 
  
 \subsection{Schemas}
-Schemas in Iris have not changed from semester 1 in terms of their design, they are still used as a representation of a data source in Iris which is created by the user. However there were some improvements made on both the front and backend of Iris to make the creation and interaction of agents with schemas easier for the user. These improvements will be discussed in the following sections.
+Schemas in Iris have not changed from Semester 1 in terms of their design, they are still used as a representation of a data source in Iris which is created by the user. However there were some improvements made on both the front and backend of Iris to make the creation and interaction of agents with schemas easier for the user. These improvements will be discussed in the following sections.
 \subsubsection{Frontend}
 This section will discuss the improvements made to the frontend of Iris in regards to the Schema section.
 
@@ -233,7 +233,7 @@ This section will discuss the improvements made to the backend of Iris in regard
 
 \paragraph{Transformation/Rule Script Execution}
 \label{para:rule:executor:backend}
-In the semester 1 report it was briefly discussed that Iris would allow users to write their own scripts inside Iris to allow a user to modify incoming data, which would avoid a user having to redeploy their data source to make a small change to the data they are pushing ot Iris. A user would mainly use this feature for formatting dates, strings and numerical values before it is inserted into Elasticsearch and rendered on the user's dashboard. This feature is now fully supported in Iris and an image of a transformation script can be found in \cref{fig:rule:executor}
+In the Semester 1 report it was briefly discussed that Iris would allow users to write their own scripts inside Iris to allow a user to modify incoming data, which would avoid a user having to redeploy their data source to make a small change to the data they are pushing ot Iris. A user would mainly use this feature for formatting dates, strings and numerical values before it is inserted into Elasticsearch and rendered on the user's dashboard. This feature is now fully supported in Iris and an image of a transformation script can be found in \cref{fig:rule:executor}
 
 \paragraph{Data Source Endpoint Retrieval}
 Iris now accepts `POST' requests to the endpoint \url{$SERVER_BASE/schema/getAgentUrl} and expects a JSON body with the request like the following:
@@ -261,27 +261,23 @@ A screenshot of the `getAgentUrl' endpoint being used in Postman to retrieve the
 \end{figure}
 
 \paragraph{Timestamping Data}
-Iris now puts a timestamp on all incoming data before it is inserted into Elasticsearch. The timestamp is added as a schema field called `insertionDate' under the schema to which the data belongs. This field is used in the background of the Aggregation Builder in Iris and will be discussed in that section.
+Iris now puts a timestamp on all incoming data before it is inserted into Elasticsearch. The timestamp is added as a schema field called `insertionDate' under the schema to which the data belongs. This field is used in the background of the aggregation builder in Iris and will be discussed in that section.
 
 \subsection{Dashboards}
 
-During the Autumn semester the javascript libraries for building the Iris dashboard system were selected and tested in detail. As a result, the design for implementing the dashboard and updating the charts in realtime has remained essentially  unchanged during the implementation this semester. The dashboard system features and implementation is discussed in terms of frontend and backend logic in the following sections. A brief overview of how the data flows into the dashboard is also be discussed.
+During the Autumn Semester the javascript libraries for building the Iris dashboard system were selected and tested in detail. As a result, the design for implementing the dashboard and updating the charts in realtime has remained essentially  unchanged during the implementation this Semester. The dashboard system features and implementation is discussed in terms of frontend and backend logic in the following sections. A brief overview of how the data flows into the dashboard is also be discussed.
  
 \subsubsection{Frontend}
+This section will discuss the major factors of the frontend of the Iris dashboard system.
 
-%This section will discuss the major factors of the frontend of the Iris dashboard system.
-
-The frontend of the Iris system, is concerned with the charting and dashboard configuration components
-
-NEED better sentence here.
-
+The frontend of the Iris system, is concerned with the charting and dashboard configuration components, which have been built using libraries discussed in the Semester 1 report.
 
 \paragraph{Gridstack.js}
 
 Gridstack.js is a jQuery plugin that provides a drag-and-drop multi-column grid for generic widgets. 
 Its features and the basis for selecting gridstack.js is covered in the Semester 1 report.  
  
-Due to the extensive research and testing on this library in semester 1 and the active github support from Gridstack.js developers there was no major issues during the implementation phase in semester 2. Gridstack.js is used to contain the components (charts) of the dashboard in a grid format. Whenever a chart is created for a dashboard a new container widget is created containing the chart and added to the gridstack grid. This widget automatically becomes resizable, draggable and serialisable.
+Due to the extensive research and testing on this library in Semester 1 and the active github support from Gridstack.js developers there was no major issues during the implementation phase in Semester 2. Gridstack.js is used to contain the components (charts) of the dashboard in a grid format. Whenever a chart is created for a dashboard a new container widget is created containing the chart and added to the gridstack grid. This widget automatically becomes resizable, draggable and serialisable.
 
 The logic used to format the gridstack grid into a serialisable object was retrieved from the Gridstack.js serialise demo\footnote{\url{https://dsmorse.github.io/gridster.js/demos/serialize.html}}. Using the basic structure supplied by the gridstack.js developers, the Iris client code was developed and expanded the existing functionality to support chart types and aggregation objects. (see \Cref{fig:Serialization_logic})
 %to be included in the serialized data.
@@ -336,23 +332,16 @@ The logic used to format the gridstack grid into a serialisable object was retri
 \caption{Iris extension of Gridstack.js Serialization}
 \end{figure}
 
-One issue with gidstack.js, that was found during the implementation phase, is that the width is can be incorrectly calculated when the containing chart does not contain data. Unfortunately this issue is not consistent and has proven difficult to resolve. Currently the only fix is for the user to click on the resizable handles of a widget and the chart then scales correctly.
-
-
-%One main issue that was found with the Gridstack library is that if a chart contains no data it does not scale the chart correctly and makes the chart overflow to one side making it appear compact. 
-%Unfortunately this issue is not consistent and as a result was not fixed. Currently the only fix is to click on the resizeable handles of a widget and the chart then scales correctly.
-
+One issue with gridstack.js, that was found during the implementation phase, is that the width of a widget can be incorrectly calculated at the upon loading a dashboard. Unfortunately this issue is not consistent and has proven difficult to resolve. Currently the only fix is for the user to click on the resizable handles of a widget and the chart then scales correctly.
 
 For a basic demo of Gridstack.js refer to this url \url{http://gridstackjs.com/demo/}
 
 \paragraph{Billboard.js}
 
-Billboard.js is a charting library based on D3.js.  Billboard.js was researched and tested in detail during semester 1 but was not integrated within Iris until semester 2.
+Billboard.js is a charting library based on D3.js. Billboard.js was researched and tested in detail during Semester 1 but was not integrated within Iris until Semester 2.
 
-Integrating Billboard.js into Iris, and more specifically with Gridstack.js, was relatively straight forward, the only issue was sizing issue for empty charts mentioned above.  
+Integrating Billboard.js into Iris, and more specifically with Gridstack.js, was relatively straight forward, the only issue was sizing issue for loading charts mentioned above.  
 Dynamically adding a Billboard.js chart to an existing Gridstack.js grid required an extra parent container to be wrapped around the chart element, effectively converting it to a Gridstack.js widget.
-
-%integration with Gridstack.js which resulted was that the Billboard.js charts were now going to be dynamically added to a grid and contained within a Gridstack.js widget. This was not difficult as it was simply an extra parent container to be added around the chart element.
 
 The chart type support will be discussed in \cref{para:charts:fontend} and the chart subscriptions will be discussed in \cref{para:charts:subs:frontend}.
 
@@ -374,9 +363,9 @@ Iris supports the following chart types:
 
 \paragraph{Chart Subscriptions}\label{para:charts:subs:frontend}
 
-The design for how Iris would handle sending incoming data to the correct charts is documented in the Semester 1 report. However the design was not implemented until semester 2. The libraries chosen in semester 1 for web socket functionality remained the same. Iris uses the Grails Web Socket plugin to add socket communication between dashboard charts and the server, allowing charts to subscribe to incoming data. 
+The design for how Iris handles sending incoming data to the correct charts is documented in the Semester 1 report. However the design was not implemented until Semester 2. The libraries chosen in Semester 1 for web socket functionality remained the same. Iris uses the Grails Web Socket plugin to add socket communication between dashboard charts and the server, allowing charts to subscribe to incoming data. 
 
-Each client chart on an Iris dashboard subscribes to messages from the server on a unique socket endpoint, which ensures the correct data gets sent to the correct chart. This design is discussed in the semester 1 report and has remained the same during the implementation of the chart subscription logic in Iris.
+Each client chart on an Iris dashboard subscribes to messages from the server on a unique socket endpoint, which ensures the correct data gets sent to the correct chart. This design is discussed in the Semester 1 report and has remained the same during the implementation of the chart subscription logic in Iris.
 
 For more information on he Grails 3 `grails-spring-websocket' plugin refer to \url{https://github.com/zyro23/grails-spring-websocket}.
 \begin{figure}[H]
@@ -461,7 +450,9 @@ A screenshot of the Node.js dashboard in Iris capturing its fifth revision. Note
 \end{figure}
 
 \subsubsection{Backend}
-This section will focus on the backend implementation of the Iris dashboard system.
+This section will focus on the major factors behind the backend implementation of the Iris dashboard system.
+
+Within this section designs from the Semester 1 report will be discussed in terms of their implementation phase during Semester 2 as well as some new features that were designed and added within Semester 2.
 \paragraph{Chart Types}
 The Iris chart types are handled by using enums in Iris. This allows for the code in Iris to be easily expanded upon when a new chart type is needed, and the use of enums allows for more readable code when dealing with different types of charts.
 
@@ -489,7 +480,7 @@ enum ChartType {
 \end{tcolorbox}
 \caption{ChartType.groovy enum from Iris.}
 \end{figure}
-Due to Iris supporting multiple chart types as well as different types of data, each chart has optional attributes such as an Elasticsearch aggregation if the user created the chart using an aggregation, and a raw attribute in the case of a user wishing to just send raw data to the chart and not have Elasticsearch perform any aggregations over the incoming data.
+Due to Iris supporting multiple chart types as well as different types of data, each chart has optional attributes. Some of these optional attributes consist of an Elasticsearch aggregation if the user created the chart using the aggregation builder, and a raw attribute in the case of a user wishing to just send raw data to a chart and not have Elasticsearch perform any aggregations over the incoming data.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{minted}[breaklines]{groovy}
@@ -545,7 +536,9 @@ An image showing how the revision history of dashboards works in Iris.
 A big concern with Iris in the beginning was to see how scalable the dashboard system would be if a lot of data was being sent to Iris. In an effort to make the dashboard system more efficient Iris dashboards have a boolean attribute called `isRendering'. When a dashboard is being viewed by a user the backend toggles the `isRendering' state of the dashboard to true, this is switched to false once a dashboard is no longer being viewed. The reason for this is to prevent data being modified and formatted for a dashboard which is not being rendered to the user. By having this state attached to a dashboard, a dashboard will only be sent updates if it is being viewed by a user, otherwise the data will simply be entered into Elasticsearch and no more code will be executed. This makes the dashboards much more efficient and scalable as Iris is only dealing with dashboards that are being viewed.
 
 
-QUESTION - how is this implemented? Is it a heartbeat ?
+%QUESTION - how is this implemented? Is it a heartbeat ?
+
+%ANSWER - no it's not as good as a heartbeat unfortunately. When a dashboard is opened an ajax call is made to the server to toggle the state of the specific dashboard. On the client side the dashboard is saved in local storage, once a user closes the dashboard the dashboard home page is loaded, upon load it checks to see if there are any rendering dashboards in local storage, if so ajax calls are made to toggle there state again and mark them as not rendering on the server. A heartbeat would be a better way of doing things, the websockets work using a heartbeat. Another idea I had was similar to my first approach but to cache the dashboards on the server side with no 'isRendering' attribute, as any dashboard in that cache would be considered to be rendering, this would save me some database calls and would probably be more efficient. However I am too lazy to go change things now.
 
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -557,8 +550,11 @@ A flow chart showing how Iris handles dashboards that are rendering versus dashb
 \caption{Iris Dashboard Scalability.}
 \end{figure}
 
+\paragraph{User Specific}
+In the Semester 1 report similar dashboard tools were compared with the design for Iris. One of the most obvious tools to compare against Iris was Kibana due to it being apart of the ELK (Elasticsearch, Logstash, Kibana) stack. In the Semester 1 report it was discussed that Kibana does not support user specific dashboards, meaning all users can see all dashboards. Iris treats both dashboards and schemas as being user specific, meaning each user has their own personal set of dashboards in comparison to Kibana which does not.
+
 \subsection{Aggregation Builder}
-The aggregation builder was partially implemented in semester 1, the aggregation types were in place and the logic for building an Elasticsearch aggregation through the Iris UI were in place. In semester 2 some more features were added to allow for more fine grained data monitoring. In the following sections the current aggregation types that Iris supports is listed and the new Aggregation Builder previewer are discussed.
+The aggregation builder was partially implemented in Semester 1, the aggregation types were in place and the logic for building an Elasticsearch aggregation through the Iris UI were in place. In Semester 2 some more features were added to allow for more fine grained data monitoring. In the following sections the current aggregation types that Iris supports are listed and the new aggregation builder previewer are discussed.
 
 \subsubsection{Aggregation Types}
 
@@ -580,12 +576,12 @@ Some of the aggregations listed above are not suited for use on charts as the da
 \begin{center}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-agg-options}
 \end{center}
-A screenshot showing the aggregation options available inside the Iris Aggregation Builder.
+A screenshot showing the aggregation options available inside the Iris aggregation builder.
 \end{tcolorbox}
-\caption{Iris Aggregation Builder Options.}
+\caption{Iris aggregation builder Options.}
 \end{figure}
 
-In semester 1 the aggregations were running over all documents in the Elasticsearch index, this was fine for demonstrating the aggregation builder's ability to build aggregations, but for realtime data this would be an expensive way to run aggregations, especially if the Elasticsearch index contained a large amount of data. To tackle this issue there was an option to run aggregations over the most recent entries in the Elasticsearch index and to specify how many entries you want to run the aggregation over. This is a powerful modification to the aggregation builder as now users can take advantage of creating charts that display moving averages, minimums and maximums, as well as avoid running an aggregation over all of the entries in the Elasticsearch index which would be slow. 
+In Semester 1 the aggregations were running over all documents in the Elasticsearch index, this was fine for demonstrating the aggregation builder's ability to build aggregations, but for realtime data this would be an expensive way to run aggregations, especially if the Elasticsearch index contained a large amount of data. To tackle this issue there was an option to run aggregations over the most recent entries in the Elasticsearch index and to specify how many entries you want to run the aggregation over. This is a powerful modification to the aggregation builder as now users can take advantage of creating charts that display moving averages, minimums and maximums, as well as avoid running an aggregation over all of the entries in the Elasticsearch index which would be slow. 
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -596,10 +592,10 @@ A screenshot showing the aggregation most recent option.
 \caption{Iris Aggregation Most Recent Option.}
 \end{figure}
 
-It is not advisable to create aggregations for charts which are not run over the most recent entries, especially if the data in the Elasticsearch index is large. If a user wishes to run these aggregations they should do so in the Aggregation Builder area, where no dashboards need to be updated and time is not a concern.
+It is not advisable to create aggregations for charts which are not run over the most recent entries, especially if the data in the Elasticsearch index is large. If a user wishes to run these aggregations they should do so in the aggregation builder area, where no dashboards need to be updated and time is not a concern.
 
 \subsubsection{Aggregation Builder Preview}
-Iris now supports a preview of the aggregation JSON object being built as the user interacts with the Aggregation Builder UI. This gives the user a look into how the aggregation objects are constructed and allows them to copy the aggregation object in case they wish to execute the aggregation outside of Iris and don't know how to construct an Elasticsearch aggregation.
+Iris now supports a preview of the aggregation JSON object being built as the user interacts with the aggregation builder UI. This gives the user a look into how the aggregation objects are constructed and allows them to copy the aggregation object in case they wish to execute the aggregation outside of Iris and don't know how to construct an Elasticsearch aggregation.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -615,20 +611,20 @@ Iris now supports a preview of the aggregation JSON object being built as the us
 \end{subfigure}
 \end{center}
 \end{tcolorbox}
-\caption{Iris Aggregation Builder Preview.}
+\caption{Iris aggregation builder Preview.}
 \end{figure}
 
 \subsubsection{Testing Aggregations}
-In semester 1 it was demonstrated that Iris could test users could use the Aggregation Builder area to test their aggregations before putting using the aggregation for a chart. However the Aggregation Builder was on a different page to that of the dashboards. In semester 2 the aggregation builder was added to the dashboard creation area, giving users the full functionality of the Aggregation Builder as they make a chart for a dashboard. This allows a user to test their aggregations before saving a chart to a dashboard to make sure the data being returned is satisfactory.
+In Semester 1 it was demonstrated that Iris test users could use the aggregation builder area to test their aggregations before putting using the aggregation for a chart. However the aggregation builder was on a different page to that of the dashboards. In Semester 2 the aggregation builder was added to the dashboard creation area, giving users the full functionality of the aggregation builder as they make a chart for a dashboard. This allows a user to test their aggregations before saving a chart to a dashboard to make sure the data being returned is satisfactory.
 
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
 \includegraphics[width=0.8\textwidth,height=0.8\textheight]{iris-agg-test}
 \end{center}
-A screenshot showing the aggregation result returned from testing an aggregation inside the Aggregation Builder area.
+A screenshot showing the aggregation result returned from testing an aggregation inside the aggregation builder area.
 \end{tcolorbox}
-\caption{Iris Aggregation Test Result (Aggregation Builder area).}
+\caption{Iris Aggregation Test Result (aggregation builder area).}
 \end{figure}
 
 \begin{figure}[H]
@@ -636,40 +632,115 @@ A screenshot showing the aggregation result returned from testing an aggregation
 \begin{center}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-chart-agg-builder}
 \end{center}
-A screenshot showing the Aggregation Builder in the dashboard section.
+A screenshot showing the aggregation builder in the dashboard section.
 \end{tcolorbox}
 \caption{Iris Aggregation Test Result (Dashboard area).}
 \end{figure}
 \subsection{Security}
 % talk about the addition of security in iris
+In Semester 1 it was mentioned that the Grails Spring Security plugin would be used for authentication in Iris. The following sections will discuss the security improvements made from Semester 1 to Semester 2.
 
-\subsubsection{Spring Security Core}
-%spring security core was used to generate a user, role and user role and secure the app from unauthenticated users
+\subsubsection{Spring Security Core Plugin}
+In Semester 1 Iris used the Spring Security Core plugin to create Users, Roles and User Roles. The plugin allowed Iris to authenticate all endpoints by not allowing a user access to the web application unless they are a valid user who has been fully authenticated i.e logged in.
+
+A basic role association was created for the user called `ROLE\_USER'. This tells Iris what access a user with this specific role has within the web application.
+
+Spring Security also automatically deals with hashing passwords for users which adds an extra layer of security for users.
 \subsubsection{Spring Security REST Plugin}
-%talk about securing the rest endpoints with spring security rest, jwt and login api
+Throughout Semester 2 it was apparent that the data sources sending data to Iris needed to be authenticated as they may be posing as a fake data source. The Grails Spring Security Rest plugin was decided upon as being an appropriate way to authenticate data sources accessing Iris API endpoints.
 
-\subsubsection{Testing Security}
-%tested using postman
+The plugin allows a user to login to Iris using a POST request which contains their credentials in a JSON payload. If a user is successfully authenticated Iris responds with a JWT (JSON Web Token) for the user to send as part of future requests to the Iris API endpoints. If a request is received with a valid JWT token in the X-Auth-Token header the data source is granted access to the API endpoint.
+
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-api-login}
+\end{center}
+A screenshot showing Iris API login being used to authenticate a valid Iris user, note the JWT token that was sent back.
+\end{tcolorbox}
+\caption{Iris Login API.}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-api-header}
+\end{center}
+A screenshot showing a data source being authenticated by its JWT in the `X-Auth-Token' header of the request.
+\end{tcolorbox}
+\caption{Iris JWT Validation}
+\end{figure}
+
+If the user's credentials are invalid or the JWT sent by the data source is invalid the user will be denied access to the endpoint.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-access-denied}
+\end{center}
+A screenshot showing the access denied message recieved upon authentication failure with Iris.
+\end{tcolorbox}
+\caption{Iris API Access Denied}
+\end{figure}
+
+Using the plugin, Iris configured its endpoint security based on the endpoints available to the user. All endpoints which are part of the frontend of Iris are completely locked unless a user is fully authenticated, meaning a user must sign in to use any of the user interface of Iris.
+
+The two REST endpoints Iris exposes to data sources are `/schema/route/' and `/schema/getAgentUrl'. These endpoints are used by data sources to get unique schema endpoints and sent data to Iris. Both of these endpoints are secured fully and need full authentication by logging in using the previously mentioned `/api/login' as well as a valid JWT. In the backend of Iris these methods are also marked as needing a user with the `ROLE\_USER' role to be given access.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-secured-route}
+\end{center}
+A screenshot showing the `/schema/route/' endpoint being secured with the \@Secured annotation.
+\end{tcolorbox}
+\caption{Iris Secured Route.}
+\end{figure}
+
+The only endpoints in Iris that require no authentication are the `/login/auth' endpoint which returns the login page for a user who is using the web application to login and the `/api/login' for a data source who is logging in through a POST request. All other endpoints are secured.
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-spring-security-config}
+\end{center}
+A screenshot showing the spring security configuration settings for all of the Iris endpoints.
+\end{tcolorbox}
+\caption{Iris Spring Security Configuration.}
+\end{figure}
+
+For more information on JWT, Spring Security Core and Spring Security Rest, please refer to these urls:
+\begin{itemize}
+    \item JWT - \url{https://jwt.io/}
+    \item \url Spring Security Core - {https://github.com/grails-plugins/grails-spring-security-core}
+    \item Spring Security Rest - \url{https://github.com/alvarosanchez/grails-spring-security-rest}
+\end{itemize}
+
 
 \subsubsection{Data Source Adaptation}
-%now use login api to get authenticated and given a token, they then send this token with every request to iris
+Data sources communicating with Iris now need to get authenticated by sending valid user credentials to the `/api/login' endpoint. The data source must then use the JWT token with every request as part of the X-Auth-Token header which was given to them from Iris upon a successfully logging in.
 
+The data sources used to test Iris have hardcoded JWTs in their code to make testing easier, however all real use cases must use the `/login/api' to retrieve their JWTs.
 
 \section{Data Sources}
-
-A DataSource can be any process that generates data and pushes it to Iris. %In \Cref{s:Implementation:DataSource}
-and number of examples of data sources are discussed. THe Implementation details of these data sources is not covered in detail because they are not germane to the this project and follow well know patterns.
+A data source can be any process that generates data and pushes it to Iris. In \cref{s:implementation:datasource}
+a number of examples of data sources are discussed. The implementation details of these data sources is not covered in detail because they are not germane to the this project and follow well know patterns.
 
 \chapter{Deployment, Testing and Evaluation}
 
 \section{Deployment}
 \subsection{AWS}
+\subsubsection{EC2 Instance}
+\subsubsection{Elasticsearch Instance}
+
 \subsection{Jetty}
-\subsection{Gradle}
-\subsection{WAR}
-\subsection{MySQL GORM Mapper}
+%used gradle to generate WAR file of IRIS, dropped this into Jetty Webapps folder
+
+\subsection{MySQL Instance}
 
 \section{Testing and Evaluation --- Data Sources}
+\label{s:implementation:datasource}
 \subsection{Introduction}
 A number of data source have been implemented to demonstrate the flexibility of Iris and to test the aggregation. Each
 of the following sections describe a data source and its unique features.
