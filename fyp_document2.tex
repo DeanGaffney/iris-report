@@ -1022,38 +1022,64 @@ A screenshot of the MySQL agent dashboard in Iris.
 
 
 \section{Overview of Code Repository}
+All of the code developed in this project is available on bitbucket. Following common conventions a separate repository is used for Iris and for each of the separate agents. They can all be found at the following urls:
+\begin{itemize}
+    \item Iris (Core) - \url{https://bitbucket.org/DeanGaffney/iris}.
+    \item Iris-Selenium - \url{https://bitbucket.org/DeanGaffney/iris-selenium}.
+    \item Iris-Raspberry Pi - \url{https://bitbucket.org/DeanGaffney/iris-crypto-rates}.
+    \item Iris-MySQL - \url{https://bitbucket.org/DeanGaffney/iris-mysql}.
+    \item Iris-Android - \url{https://bitbucket.org/DeanGaffney/iris-android}.
+    \item Iris-Node.js - \url{https://bitbucket.org/DeanGaffney/iris-node}.
+\end{itemize}
 
-All of the code developed in ths project is availalbe on bitbucket. Following common convewntions a seperate repository is used for the Irrs and for each of the separate agents. These are 
+Due to the amount of code developed it is impractical to include the code within this report. This overview will be limited to a high level summary. \Cref{fig:cloc} gives a breakdown of code by language using the cloc utility. Third party code was excluded from this count. Since the various components of the systems were developed using different languages the breakdown by language closely follows the breakdown by component.
 
- itemize
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-cloc}
+\end{center}
+A screenshot of the cloc utility run on Iris, the command filters all third party code and only counts the lines of code in Iris.
+\end{tcolorbox}
+\caption{Cloc Results.}
+\label{fig:cloc}
+\end{figure}
+
+The breakdown shown in \cref{table:component:breakdown} closely follows the separate components of the system.
+\begin{table}[H]
+\centering
+\small
+\setlength\tabcolsep{6pt}
+ \begin{tabular}{|c|c|c|c|}
+ \hline
+ Component & Language & Files & Line Count\\
+ \hline\hline
+ Schema & Groovy & 1 & 1\\ 
+ \hline
+\end{tabular}
+\caption{Summary of Component Completion.}
+\label{table:component:breakdown}
+\end{table}
  
- iris repository
- 
- agents repository 
- 
-Due to the amount of code developed it is inpracticable to include in this report. So this overview will be limited to high level summary.  Figure\_COUNT give a breakdown of code by lauguage, using the colc utility. Third paryty code was exclused from this count.  Since the various components of the systems wer edeveloped using different languages the breakdown by language slosely follows the breadown by component.
+% Due to the amount of code developed it is inpracticable to include in this report. So this overview will be limited to high level summary.  Figure\_COUNT give a breakdown of code by lauguage, using the colc utility. Third paryty code was exclused from this count.  Since the various components of the systems wer edeveloped using different languages the breakdown by language slosely follows the breadown by component.
 
-THis breakdown closely follows the seperate components of the sysysm were developed   
-see table 2
+% THis breakdown closely follows the seperate components of the sysysm were developed   
+% see table 2
 
 
-description
+% description
 
-item 
+% item 
 
-dashboards <-> javascript + grales 
+% dashboards <-> javascript + grales 
 
-iris <-> grovey
-
-
-
-
-grovey                             
-    Services             333
-    Domains              3333
-    Controlers           333
-    test                 4444       
-                                     3333
+% iris <-> grovey
+% grovey                             
+%     Services             333
+%     Domains              3333
+%     Controlers           333
+%     test                 4444       
+%                                      3333
 
 
 \end{appendices}
