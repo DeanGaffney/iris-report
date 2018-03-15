@@ -733,22 +733,59 @@ A data source can be any process that generates data and pushes it to Iris. In \
 a number of examples of data sources are discussed. The implementation details of these data sources is not covered in detail because they are not germane to the this project and follow well know patterns.
 
 \chapter{Deployment, Testing and Evaluation}
-
+In this chapter the procedure to deploy, test and evaluate Iris are discussed. In the Semester 1 report deployment was not taken into consideration meaning the deployment section is fundamentally new. The testing and evaluation of data sources is new in regards to the data sources being created and tested against Iris, however they were briefly discussed in the Semester 1 report in regards to what their overall interaction with Iris would be, but the details of what data they would send and what platform they would use to send the data were not discussed.
 \section{Deployment}
-\subsection{AWS}
+In this section the procedure of deploying Iris will be discussed in terms of how the application is is built and served as well as how it interacts with Elasticsearch and MySQL instances while in production.
+\subsection{AWS (Amazon Web Services)}
+Amazon Web Services is used to host Iris as well as host the Elasticsearch and MySQL processes which Iris interacts with, these will be discussed in the following subsections.
 \subsubsection{EC2 Instance}
+\label{sub:ec2}
+Iris is hosted on an AWS EC2 instance. The instance is part of the free tier options meaning the instance is limited in regards to its hardware specifications which can be found in \cref{table:ec2:specs}. The EC2 instance is configured to allow incoming HTTP requests on port 8080 so that users can send requests to Iris as well as receive responses from Iris. The EC2 instance also runs the MySQL process where Iris stores its user related data which will be discussed in \cref{sub:mysql:instance}.
+\begin{table}[H]
+\centering
+\small
+\setlength\tabcolsep{6pt}
+ \begin{tabular}{|c|c|c|c|}
+ \hline
+ Model & vCPU & Memory & Storage\\
+ \hline\hline
+ t2.micro & 1 & 1GB & 8GB\\ 
+ \hline
+\end{tabular}
+\caption{AWS EC2 Instance Specifications.}
+\label{table:ec2:specs}
+\end{table}
+
+For more information on the EC2 instance types refer to this url \url{https://aws.amazon.com/ec2/instance-types/}.
+
+\subsubsection{Jetty}
+Jetty is an open source HTTP server that can be used to act as web application container. Jetty was not the first choice for being the container for Iris. Tomcat was the original choice as Onaware have their java web applications in Tomcat instances, this meant Iris was also going to be a candidate for being put in a Tomcat container. However due to the limitations of the EC2 instance mentioned in \cref{table:ec2:specs}, Tomcat proved to be unstable and was running out of memory for the JVM (Java Virtual Machine) once it was launched. 
+
+Due to Tomcats instability, a different web application container was required. Several other containers were tested including GlassFish and JBoss, but these containers also failed to deploy Iris due to limited memory. Jetty was then tested and deployed Iris successfully. Due to the issues with the other containers, the Jetty container was launched and shutdown several times over several days to ensure the container was stable. Once Jetty proved to be satisfactory Iris was deployed definitely.
+
+for more information on Jetty refer to this url \url{https://www.eclipse.org/jetty/documentation/9.4.x/introduction.html}.
 \subsubsection{Elasticsearch Instance}
-
-\subsection{Jetty}
-%used gradle to generate WAR file of IRIS, dropped this into Jetty Webapps folder
-
-\subsection{MySQL Instance}
-
+The Elasticsearch instance which Iris interacts with is hosted on AWS as part of the Elasticsearch Services offered by Amazon. The instance is part of the free tier selection but proved to have sufficient hardware specifications for Iris which are detailed in \cref{table:elastic:specs}. The instance was tested heavily by sending requests from Iris at a rapid and constant rate over a period of time. The instance did not appear to have any issues dealing with the requests and was considered suitable for Iris.
+\begin{table}[H]
+\centering
+\small
+\setlength\tabcolsep{6pt}
+ \begin{tabular}{|c|c|c|c|}
+ \hline
+ E.S Version & Documents & Storage\\
+ \hline\hline
+ 5.5 & 46,590 & 7.22GB\\ 
+ \hline
+\end{tabular}
+\caption{AWS Elasticsearch Instance Specifications.}
+\label{table:elastic:specs}
+\end{table}
+\subsubsection{MySQL Instance}
+\label{sub:mysql:instance}
+The MySQL instance that Iris uses to store user specific data such as schemas, dashboards etc.\ is run on the EC2 mentioned in \cref{sub:ec2}. This allowed Iris to configure its database connector to use localhost, which made development and production environments easier to test as the database configuration was the same.
 \section{Testing and Evaluation --- Data Sources}
 \label{s:implementation:datasource}
-\subsection{Introduction}
-A number of data source have been implemented to demonstrate the flexibility of Iris and to test the aggregation. Each
-of the following sections describe a data source and its unique features.
+A number of data sources have been implemented to demonstrate the flexibility of Iris and to test the aggregation of data from Iris into Elasticsearch. Each of the following sections describe a data source and its unique features.
 
 \subsection{Android App}
 \subsubsection{Description}
