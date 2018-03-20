@@ -57,9 +57,9 @@
 
 \chapter{Abstract}
 
-The aim of this project is the design a full implementation of a system for application performance monitoring. The proposed system, has the working title,  Iris.
+The aim of this project is to design a full implementation of a system for application performance monitoring. The proposed system, has the working title,  Iris.
 
-On completion, Iris will provide users with a dynamic performance framework which will allow users to fully customise and centralise their application performance monitoring. This will be achieved through a web interface where a user can specify a schema for a specific application they wish to monitor. Once a schema has been set up, a REST endpoint will be generated for the application. This endpoint will allow a user to send their monitoring data from their desired application to the framework in the form of JSON (matching the specified schema). Iris will also contain features which allow a user to monitor and analyse incoming data, using an intelligent, fully customisable graph and dashboard builder. Iris will then visualise any received data in real time using to the appropriate dashboards using websockets. Iris will come with some out of the box scripts/applications that users can use to monitor typical tasks such as JVM (Java Virtual Machine) performance, Linux OS System Performance.
+Iris provides users with a dynamic performance framework which allows users to fully customise and centralise their application performance monitoring. This is achieved through a web interface where a user specifies a schema for a specific application they wish to monitor. Once a schema has been set up, a REST endpoint is generated for the application. This endpoint allows a user to send their monitoring data from their desired application to the framework in the form of JSON (matching the specified schema). Iris also contains features which allow a user to monitor and analyse incoming data, using an intelligent, fully customisable graph and dashboard builder. Iris then visualises any received data in real time to appropriate dashboards using websockets.
 
 \chapter{Introduction}
 
@@ -73,7 +73,7 @@ In one such instance of aggregating data issues several attempts were made to re
 
 In response to difficulties in identifying performance issues Onaware have tried to monitor specific application elements. The aim at the time was to try and combine SQL, JVM and Operating System scripts to track the performance of the tools, however this approach is not very scalable and it would need to be reconfigured for future projects.
 
-Iris is an attempt to solve this problem. Iris will allow a user create a new application monitor with little effort using a web interface, give the user a REST endpoint specific to the application for their scripts to target their data, and allow a user to monitor the data in real time using graphs and dashboards. The aim is to make the framework as flexible as possible and not specific to the issue Onaware faced, meaning a user can monitor any data they want from any application they want all they must do is send their data to a REST endpoint.
+Iris is an attempt to solve this problem. Iris allows a user create a new application monitor with little effort using a web interface, give the user a REST endpoint specific to the application for their scripts to target their data, and allow a user to monitor the data in real time using graphs and dashboards. The aim is to make the framework as flexible as possible and not specific to the issue Onaware faced, meaning a user can monitor any data they want from any application they want all they must do is send their data to a REST endpoint.
 
 Users of Iris will consist of Onaware developers who will be monitoring IAM project data and generic tools which may be released to clients at a later time.
 
@@ -110,7 +110,7 @@ During Semester 1 a number of implementation were designed and tested. As a resu
 In the Semester 1 report the design of Iris is described. Due to the testing of the designs in the first Semester the final design needed no further modifications this Semester. Hence the description of Iris given here follows closely that given in report 1.
 
 \subsection{Description}
-Iris will act as a web interface for a user to create an application monitor and allow the user to query and create personalised dashboards of their data through the use of Elasticsearch. A user may setup an application schema definition within Iris that matches the data they wish to monitor, a schema will consist of field names and corresponding data types specific to the application. Using the schema Iris will know what data to expect from the user. Once a schema is in place, Iris will generate a unique endpoint associated with the schema, this unique endpoint will be given to the user as a means of sending data to Iris. Data sent to the schema endpoint will be in JSON format and will conform to the schema definition created by the user in Iris.
+Iris acts as a web interface for a user to create an application monitor and allow the user to query and create personalised dashboards of their data through the use of Elasticsearch. A user may setup an application schema definition within Iris that matches the data they wish to monitor, a schema consists of field names and corresponding data types specific to the application. Iris uses the schema to know what data to expect from the user. Once a schema is in place, Iris generates a unique endpoint associated with the schema, this unique endpoint is made available to the user as a means of sending data to Iris. Data sent to the schema endpoint is in JSON format which conforms to the schema definition created by the user in Iris.
 \begin{figure}[H]
 \begin{tcolorbox}
 A user creates an application monitor for an SQL database, they may create a schema like the following:
@@ -122,7 +122,7 @@ Schema Fields:
     -field name: "tableName"
      fieldType: "String"
 \end{minted}
-Iris will then expect a json object to come back in the form:
+Iris then expects a json object to come back in the form:
 \begin{minted}{json}
 {
 	"writeSpeed": 3000,
@@ -133,7 +133,7 @@ Iris will then expect a json object to come back in the form:
 \caption{Example schema created for Iris.}
 \end{figure}
 
-Iris will take the users data and create data mappings \parencite{Elastic.co.Mapping} inside Elasticsearch, as well as insert any incoming data into the correct Elasticsearch index~\parencite{Elastic.co.Basic}. With a schema in place a user can route their data through Iris; turning Iris into a centralised area for monitoring application performance data. With Iris being the centralised location to route and view your data a user can write a data transformation script for incoming data. The advantage of this is that it can help reduce the need for applications being redeployed to view new data or to transform data.
+Iris takes the users data and creates data mappings \parencite{Elastic.co.Mapping} inside Elasticsearch, as well as insert any incoming data into the correct Elasticsearch index~\parencite{Elastic.co.Basic}. With a schema in place a user can route their data through Iris; turning Iris into a centralised area for monitoring application performance data. With Iris being the centralised location to route and view your data a user can write a data transformation script for incoming data. The advantage of this is that it can help reduce the need for applications being redeployed to transform data.
 
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -158,7 +158,7 @@ In this example let's say the developer prefers to have the data mapped to a fie
 \caption{Iris transforming data.}
 \end{figure}
 
-To aid performance monitoring, Iris will allow users to create personalised dashboards where they can create charts from their data and place them in the dashboard. This allows each user to have their own set of visualised data relative to them. To help a user see their data and charts rapidly an Elasticsearch aggregation~\parencite{Elastic.co.Aggregations} playground will be put into place in order to allow a user create charts and get results back immediately, this will help a user to plan their dashboard charts before setting them up. The playground will also allow a user to chain several aggregations together which will allow them to create complex queries without having to have any prior knowledge of how Elasticsearch works.
+To aid performance monitoring, Iris allows users to create personalised dashboards where they can create charts from their data and place them in the dashboard. This allows each user to have their own set of visualised data relative to them. To help a user see their data and charts rapidly an Elasticsearch aggregation~\parencite{Elastic.co.Aggregations} playground is available in order to allow a user to test their data and get results back immediately, this will help a user to plan their dashboard charts before setting them up. The playground also allows a user to chain several aggregations together which allows them to create complex queries without having to have any prior knowledge of how Elasticsearch works.
 
  
 \subsection{Schemas}
