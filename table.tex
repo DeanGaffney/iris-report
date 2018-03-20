@@ -1,0 +1,44 @@
+\documentclass[12pt,a4paper,titlepage]{report}
+
+\usepackage{float,relsize}
+
+\begin{document}
+
+\begin{table}[H]
+\centering
+\small
+\setlength\tabcolsep{10pt}
+ \begin{tabular}{ccrr}
+ \hline
+ \multicolumn{2}{l}{\bfseries Component/Language}
+& \bfseries Files & \bfseries Line Count\\
+ \hline\hline
+ \multicolumn{2}{l}{\bfseries\smaller Schemas}\\
+  & Groovy & 10 & 461\\ 
+  & Grails & 5 & 169\\
+  \multicolumn{2}{l}{\bfseries\smaller Dashboards}\\
+   & Groovy & 3 & 292\\
+  & Grails & 9 & 427\\
+  & Javascript & 1 & 191\\
+  \multicolumn{2}{l}{\bfseries\smaller Charts} \\
+  & Groovy & 2 & 128\\
+  & Javascript & 4 & 308\\
+  \multicolumn{2}{l}{\bfseries\smaller Elasticsearch} \\
+  & Grails & 3 & 169\\
+  & Groovy & 6 & 245\\
+  & Javascript & 2 & 110\\
+  \multicolumn{2}{l}{\bfseries\smaller Integration Tests} \\
+  & Groovy & 14 & 761\\ 
+  \multicolumn{2}{l}{\bfseries\smaller Unit Tests}\\
+   & Groovy & 13 & 668\\ 
+  \multicolumn{2}{l}{\bfseries\smaller Utilities}\\
+   & Groovy & 18 & 384\\ 
+  \multicolumn{2}{l}{\bfseries\smaller Other Services} \\
+  & Groovy & N/A & 1573\\ 
+\end{tabular}
+\caption{Summary of Component Completion.}
+\label{table:component:breakdown}
+\end{table}
+
+
+\end{document}
