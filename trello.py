@@ -10,4 +10,10 @@ for resp in r.json():
     for label in resp['labels']:
         if(label['name'].startswith(sprint_prefix)):
             sprint_dict[label['name']].append(resp['name'])
-print(json.dumps(sprint_dict))
+
+
+for sprint in sprint_dict.keys():
+    for issue in sprint_dict[sprint]:
+        print(issue)
+        #go over the sprint dictionary, create a subsection for the key,
+        #create a bullet list of all the card names for that sprint
