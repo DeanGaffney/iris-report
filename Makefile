@@ -16,3 +16,8 @@ clean:
 
 cleanall: clean
 	rm -f $(MAIN).pdf
+
+trello:
+	python trello.py
+	pdflatex trello.tex
+

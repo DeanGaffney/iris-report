@@ -1,0 +1,93 @@
+\documentclass[12pt]{report}
+\begin{document}
+\chapter{Methodology}
+\section{Trello}\subsection{0.0.1}
+\begin{itemize}
+\item Draw ER Diagram for User owning Dashboards
+\item Research d3 wrapper libraries
+\item Setup grails 3.3.1 + groovy 2.4.11 + java 8u144 on devices
+\item Research Dashboard libraries for serialization
+\item Generate Domain classes based off UML diagram
+\item Look into Elasticsearch Java api and see if it can be used for building complex aggregations dynamically
+\item Use Grails to generate all controllers and views for Domains
+\item Add Spring Security Plugin for User Domain
+\item Build Elasticsearch Objects
+\item Update to Bootstrap 4
+\item Add controller actions for Schema Domain
+\end{itemize}
+\subsection{0.0.2}
+\begin{itemize}
+\item Style SchemaField edit template
+\item Add views and controllers for CRUD actions on ElasticEndpoint domain
+\item Generate the json format expected back for the user
+\item Fix navigation for Schema views
+\item Add levels to javascript aggregation logic
+\item Create a route service for applying rules
+\item Add a route controller method
+\item Populate elasticsearch with data
+\item Get grails3 web socket plugin
+\item Link codepens to Reasearch paper
+\item createMapping() in ElasticService is wrong
+\item Create diagrams for Aggregation objects for research paper
+\item Add Schema relationship to Chart object
+\item Setup Elasticsearch on an AWS VM
+\item Create a Rule object for users to transform their data
+\item Add Sass to project
+\item Setup Elasticsearch mapping service
+\item Create a RestService
+\item Add a delete action/view for Schema domain
+\item Deleting Elasticsearch index is not working from front end
+\item Create ElasticEndpoint domain
+\item Create a Domain for storing Elasticsearch endpoint addresses
+\item Research updating Elasticsearch mappings
+\item Move over to branch 0.0.2
+\item Add controller actions for Dashboard
+\end{itemize}
+\subsection{0.0.3}
+\begin{itemize}
+\item Display aggregation execution result in playground
+\item Schema level counter in JS should match a DOM element to keep it more dynamic
+\item Iris demo presentation
+\item Write gradle task to kill geckodriver.exe
+\item Try adding underscore.js to project to stop javascript error
+\item Make aggregations executable in Aggregation Playground
+\item Create param link for Schema for routing data
+\item Create script to generate data for Iris demo
+\item Add Navbar naviagtion
+\item Create Selenide Test for demo
+\end{itemize}
+\subsection{0.0.4}
+\begin{itemize}
+\item Unsubscribe the chart from onChartLoad
+\item Add download chart image button to each chart widget
+\item Check if billboard is storing all data points on charts
+\item Execute Chart aggregation on dashboard load
+\item Add modal to prompt user for a revision comment when they click update on dashboard
+\item Add a dashboard to the bootstrap file
+\item Add CRUD functionality to widgets on Dashboard
+\item Add update functionality for Dashboards
+\item Create XL Modal for dashboards
+\item Set and resize chart to be the same as the widget area
+\item Create JS files for chart types
+\item Add date by default to all json objects going into Elasticsearch
+\item Create Parsing logic for chart types in backend
+\item Limit socket messages to dashboards which are currently rendering
+\item Save dashboard server side
+\item Use browser cache to store a widget's aggregation attribute
+\item Use 'data-' HTML attribute for storing widget information
+\end{itemize}
+\subsection{0.0.5}
+\begin{itemize}
+\item Add StateChartList to Dashboards
+\item Add StateChartDisk to Dashboards
+\item Turn off stompjs debug logging for client speed improvement
+\item Change the Aggregation section on Dashboards, to contain a UI rather than raw JSON
+\end{itemize}
+\subsection{0.0.6}
+\begin{itemize}
+\item Add code editor for creating rules on the schema creation page
+\item Add most recent document option to aggregations
+\item Put iris-crypto-rates on raspberry pi and schedule it as a cron job
+\item Deploy iris v0.0.6
+\end{itemize}
+\end{document}
