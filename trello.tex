@@ -3,8 +3,10 @@
 \chapter{Methodology}
 \section{Trello}\subsection{0.0.1}
 \begin{itemize}
+\item Scope project with Onaware
 \item Draw ER Diagram for User owning Dashboards
 \item Research d3 wrapper libraries
+\item Draw diagrams for Frontend
 \item Setup grails 3.3.1 + groovy 2.4.11 + java 8u144 on devices
 \item Research Dashboard libraries for serialization
 \item Generate Domain classes based off UML diagram
@@ -12,6 +14,7 @@
 \item Use Grails to generate all controllers and views for Domains
 \item Add Spring Security Plugin for User Domain
 \item Build Elasticsearch Objects
+\item Update to latest version of jQuery
 \item Update to Bootstrap 4
 \item Add controller actions for Schema Domain
 \end{itemize}
@@ -22,6 +25,7 @@
 \item Generate the json format expected back for the user
 \item Fix navigation for Schema views
 \item Add levels to javascript aggregation logic
+\item Setup Selenide on all machines
 \item Create a route service for applying rules
 \item Add a route controller method
 \item Populate elasticsearch with data
@@ -41,6 +45,7 @@
 \item Create a Domain for storing Elasticsearch endpoint addresses
 \item Research updating Elasticsearch mappings
 \item Move over to branch 0.0.2
+\item Add Logging to app
 \item Add controller actions for Dashboard
 \end{itemize}
 \subsection{0.0.3}
@@ -55,6 +60,7 @@
 \item Create script to generate data for Iris demo
 \item Add Navbar naviagtion
 \item Create Selenide Test for demo
+\item Make a test index in Elasticsearch to test out sockets
 \end{itemize}
 \subsection{0.0.4}
 \begin{itemize}
@@ -62,6 +68,7 @@
 \item Add download chart image button to each chart widget
 \item Check if billboard is storing all data points on charts
 \item Execute Chart aggregation on dashboard load
+\item Add download chart data button to each chart widget
 \item Add modal to prompt user for a revision comment when they click update on dashboard
 \item Add a dashboard to the bootstrap file
 \item Add CRUD functionality to widgets on Dashboard
@@ -69,25 +76,42 @@
 \item Create XL Modal for dashboards
 \item Set and resize chart to be the same as the widget area
 \item Create JS files for chart types
+\item Dashboard isRendering flag not working in some cases
 \item Add date by default to all json objects going into Elasticsearch
 \item Create Parsing logic for chart types in backend
+\item Load a saved dashboard client side
 \item Limit socket messages to dashboards which are currently rendering
 \item Save dashboard server side
 \item Use browser cache to store a widget's aggregation attribute
-\item Use 'data-' HTML attribute for storing widget information
+\item Use data- HTML attribute for storing widget information
+\item billboard.js charts are not displaying correctly
+\item Need to add chart Id to subscription charts
 \end{itemize}
 \subsection{0.0.5}
 \begin{itemize}
 \item Add StateChartList to Dashboards
+\item Remove all the Grails/Groovy aggregation builder code to reduce code and war size
+\item Add titles to charts
 \item Add StateChartDisk to Dashboards
+\item Add an admin user in production environment for deployment
+\item Add revision history for Dashboards
+\item Dashboard Revision objects are getting new UID rather than copying older ones
+\item Add pattern colours to charts
 \item Turn off stompjs debug logging for client speed improvement
 \item Change the Aggregation section on Dashboards, to contain a UI rather than raw JSON
+\item Edit or Remove extra aggregation attributes from aggregation builder views
 \end{itemize}
 \subsection{0.0.6}
 \begin{itemize}
+\item Accept raw data from data source without running aggregations
+\item Add X-Auth-Token header and JWT to each agent
+\item Set up VS Code Latex work Shop and config settings in detailed description
+\item Add JWT token to prod and dev bootstrap envs
 \item Add code editor for creating rules on the schema creation page
 \item Add most recent document option to aggregations
+\item cloc command
 \item Put iris-crypto-rates on raspberry pi and schedule it as a cron job
+\item Add dynamic REST call to all agents to grab url  from iris for agent
 \item Deploy iris v0.0.6
 \end{itemize}
 \end{document}
