@@ -15,7 +15,7 @@ for resp in r.json():
             sprint_dict[label['name']].append(resp['name'])
 
 with open('trello.tex', 'w') as tex_file:
-    tex_file.write('\documentclass[12pt]{report}\n\\begin{document}\n\chapter{Methodology}\n\section{Trello}')
+    tex_file.write('\\begin{document}\n\chapter{Methodology}\n\section{Trello}')
     for sprint in sprint_dict.keys():
         tex_file.write('\subsection*{' + sprint + '}\n\\begin{itemize}\n')
         tex_file.writelines(map(lambda issue: '\item ' + texify(issue) + '\n', sprint_dict[sprint]))
