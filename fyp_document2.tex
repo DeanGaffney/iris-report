@@ -39,7 +39,7 @@
 \vfill
 {\fontsize{14pt}{20pt}\selectfont \bfseries \Reader}
 \vfill
-{\fontsize{14pt}{20pt}\selectfont \bfseries \SecondReader}
+% {\fontsize{14pt}{20pt}\selectfont \bfseries \SecondReader}
 \vfill
 {\fontsize{14pt}{20pt}\selectfont \bfseries BSc (Hons) in Entertainment Systems}
 \vfill
@@ -76,7 +76,25 @@ In response to difficulties in identifying performance issues Onaware have tried
 
 Iris is an attempt to solve this problem. Iris allows a user create a new application monitor with little effort using a web interface, give the user a REST endpoint specific to the application for their scripts to target their data, and allow a user to monitor the data in real time using graphs and dashboards. The aim is to make the framework as flexible as possible and not specific to the issue Onaware faced, meaning a user can monitor any data they want from any application they want all they must do is send their data to a REST endpoint.
 
-Users of Iris will consist of Onaware developers who will be monitoring IAM project data and generic tools which may be released to clients at a later time.
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-general-workflow}
+\end{center}
+\end{tcolorbox}
+\caption{High level view of the Iris system.}
+\end{figure}
+
+\begin{figure}[H]
+\begin{tcolorbox}
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-data-flow}
+\end{center}
+\end{tcolorbox}
+\caption{High level view of the data flow in Iris.}
+\end{figure}
+
+Users of Iris will consist of Onaware developers who will be monitoring IAM (Identity Access Management) project data and generic tools which may be released to clients at a later time.
 
 \section{Features List}
 The features of Iris follow closely to that of Kibana. Iris adds some extra features which Kibana does not support, these are as follows:
@@ -91,7 +109,7 @@ The features of Iris follow closely to that of Kibana. Iris adds some extra feat
     \item Dashboard Revision History
     \item Unique Application Endpoint Generation
 \end{itemize}
-\subsection{Types of data}
+\subsection{Types of Data}
 Iris currently supports several types of data, they are as follows:
 \begin{itemize}
     \item Numerical
@@ -102,7 +120,7 @@ Iris currently supports several types of data, they are as follows:
 Support for the different types of data are demonstrated on dashboard charts in \cref{s:implementation:datasource}.
 
 \chapter{Implementation}
-During Semester 1 a number of implementation were designed and tested. As a result the implementation described in Semester 1 required no further changes in this Semester. Hence, this section is fundamentally unchanged from that in the Semester 1 report and the summary is reproduced here with some minor modifications. The subsections dealing with components implemented in Semester 2 is fundamentally new. \Cref{table:component:completion} lists the components and when they were completed. 
+During Semester 1 a number of implementations were designed and tested. As a result the implementation described in the Semester 1 report required no further changes in this Semester. Hence, this section is fundamentally unchanged from that in the Semester 1 report and the summary of the implementation design is reproduced here with some minor modifications. The subsections dealing with components implemented in Semester 2 is fundamentally new. \Cref{table:component:completion} lists the components and when they were completed. 
 \begin{table}[H]
 \centering
 \small
@@ -122,7 +140,7 @@ During Semester 1 a number of implementation were designed and tested. As a resu
  Security & Semester 1 & Semester 2\\ 
  \hline
 \end{tabular}
-\caption{Summary of Component Completion.}
+\caption{Summary of component completion.}
 \label{table:component:completion}
 \end{table}
 
@@ -224,7 +242,7 @@ A screenshot of the expected JSON for the Raspberry Pi data source in Iris.
 \caption{Expected JSON for Raspberry Pi data source.}
 \end{figure}
 
-\paragraph{Transformation/Rule Script editor}
+\paragraph{Transformation/Rule Script Editor}
 Due to Iris' ability to allow users to write transformation scripts that run on incoming data which is discussed in \cref{para:rule:executor:backend}, a code editor was embedded into Iris. The code editor being used is the `Ace' code editor with Groovy syntax highlighting which aims to aid the user in writing small transformation scripts.
 
 \begin{figure}[H]
@@ -234,7 +252,7 @@ Due to Iris' ability to allow users to write transformation scripts that run on 
 \end{center}
 A screenshot of the Transformation Rule script on the Node.js schema written using the `Ace' code editor.
 \end{tcolorbox}
-\caption{Node.js Transformation Rule script}
+\caption{Node.js transformation rule script.}
 \label{fig:rule:executor}
 \end{figure}
 
@@ -271,7 +289,7 @@ Iris now accepts `POST' requests to the endpoint \url{$SERVER_BASE/schema/getAge
 }
 \end{minted}
 \end{tcolorbox}
-\caption{SchemaController getAgentUrl endpoint JSON payload.}
+\caption{SchemaController `getAgentUrl' endpoint JSON payload.}
 \end{figure}
 Assuming the user is authenticated, Iris will look for a Schema matching this name and return the unique endpoint for this schema. The advantage of this is that a user may create a schema and not be satisfied with it. The user may then decide to delete the schema and create a new schema using the same name with extra attributes attached to it. The issue here is that Iris will give the new schema a new url different from the previous schema. This now means a user must go back to their agent code and change a hardcoded url to a new url and then redeploy the agent. However if a user writes their code to take advantage of the `getAgentUrl' endpoint in Iris, they will be able to dynamically obtain a new unique endpoint for the new schema as long as the schema name stays the same. This means there is no need to redeploy the agent with a new url as it is obtained dynamically from Iris.
 
@@ -324,7 +342,7 @@ The logic used to format the gridstack grid into a serialisable object was retri
             };
         }, this);
         \end{minted}
-        \caption{Gridstack.js Developer's Serialization logic}\label{fig:Serialization_logic}
+        \caption{Gridstack.js developer's serialization logic.}\label{fig:Serialization_logic}
     \end{tcolorbox}
     \end{subfigure}%
     \newline
@@ -349,12 +367,12 @@ The logic used to format the gridstack grid into a serialisable object was retri
         };
     }, this);
         \end{minted}
-        \caption{Iris Dashboard Serialization logic}
+        \caption{Iris dashboard serialization logic.}
     \end{tcolorbox}
     \end{subfigure}
 
 \end{tcolorbox}
-\caption{Iris extension of Gridstack.js Serialization}
+\caption{Iris extension of Gridstack.js serialization}
 \end{figure}
 
 One issue with gridstack.js, that was found during the implementation phase, is that the width of a widget can be incorrectly calculated at the upon loading a dashboard. Unfortunately this issue is not consistent and has proven difficult to resolve. Currently the only fix is for the user to click on the resizable handles of a widget and the chart then scales correctly.
@@ -420,7 +438,7 @@ function setChartSubscription(subscriptionId, chart, chartType, schemaId){
 }
 \end{minted}
 \end{tcolorbox}
-\caption{Iris Client Side Chart Subscription logic.}
+\caption{Iris client side chart subscription logic.}
 \end{figure}
 
 \paragraph{Downloadable Chart Data}
@@ -433,7 +451,7 @@ Iris supports the ability to download a JSON file consisting of the current data
 \end{center}
 A screenshot of a downloadable chart in Iris, taken from the `selenium agent' dashboard in Iris. The file icon in the top right is clicked to start the download.
 \end{tcolorbox}
-\caption{Downloadable Chart Example}
+\caption{Downloadable chart example.}
 \label{fig:downloaded:chart}
 \end{figure}
 
@@ -462,7 +480,7 @@ Iris now supports revision history for all dashboards, meaning a user can naviga
 \end{center}
 A screenshot of the Node.js dashboard in Iris capturing its fourth revision.
 \end{tcolorbox}
-\caption{Node.js Dashboard Revision No. 4}
+\caption{Node.js dashboard revision No. 4.}
 \label{fig:dash:rev:4}
 \end{figure}
 \begin{figure}[H]
@@ -472,7 +490,7 @@ A screenshot of the Node.js dashboard in Iris capturing its fourth revision.
 \end{center}
 A screenshot of the Node.js dashboard in Iris capturing its fifth revision. Note the extra chart `OS Types' that was added to this revision compared to the fourth revision show in \cref{fig:dash:rev:4}.
 \end{tcolorbox}
-\caption{Node.js Dashboard Revision No. 5}
+\caption{Node.js dashboard revision No. 5.}
 \end{figure}
 
 \subsubsection{Backend}
@@ -555,7 +573,7 @@ Iris supports revision history for its dashboard system. When a dashboard is ini
 \end{center}
 An image showing how the revision history of dashboards works in Iris.
 \end{tcolorbox}
-\caption{Iris Dashboard Revision Diagram.}
+\caption{Iris dashboard revision diagram.}
 \end{figure}
 
 \paragraph{Scalability}
@@ -573,7 +591,7 @@ A big concern with Iris in the beginning was to see how scalable the dashboard s
 \end{center}
 A flow chart showing how Iris handles dashboards that are rendering versus dashboards that are not rendering.
 \end{tcolorbox}
-\caption{Iris Dashboard Scalability.}
+\caption{Iris dashboard scalability.}
 \end{figure}
 
 \paragraph{User Specific}
@@ -604,7 +622,7 @@ Some of the aggregations listed above are not suited for use on charts as the da
 \end{center}
 A screenshot showing the aggregation options available inside the Iris aggregation builder.
 \end{tcolorbox}
-\caption{Iris Aggregation Builder Options.}
+\caption{Iris aggregation builder options.}
 \end{figure}
 
 In Semester 1 the aggregations were running over all documents in the Elasticsearch index, this was fine for demonstrating the aggregation builder's ability to build aggregations, but for realtime data this would be an expensive way to run aggregations, especially if the Elasticsearch index contained a large amount of data. To tackle this issue there was an option to run aggregations over the most recent entries in the Elasticsearch index and to specify how many entries you want to run the aggregation over. This is a powerful modification to the aggregation builder as now users can take advantage of creating charts that display moving averages, minimums and maximums, as well as avoid running an aggregation over all of the entries in the Elasticsearch index which would be slow. 
@@ -615,7 +633,7 @@ In Semester 1 the aggregations were running over all documents in the Elasticsea
 \end{center}
 A screenshot showing the aggregation most recent option.
 \end{tcolorbox}
-\caption{Iris Aggregation Most Recent Option.}
+\caption{Iris aggregation most recent option.}
 \end{figure}
 
 It is not advisable to create aggregations for charts which are not run over the most recent entries, especially if the data in the Elasticsearch index is large. If a user wishes to run these aggregations they should do so in the aggregation builder area, where no dashboards need to be updated and time is not a concern.
@@ -628,16 +646,16 @@ Iris now supports a preview of the aggregation JSON object being built as the us
 \begin{subfigure}{0.5\textwidth}
 \centering
 \includegraphics[width=0.9\linewidth]{iris-current-agg-1}
-\caption{Current Aggregation with one level.}
+\caption{Current aggregation with one level.}
 \end{subfigure}%
 \begin{subfigure}{0.5\textwidth}
 \centering
 \includegraphics[width=\linewidth]{iris-current-agg-2}
-\caption{Current Aggregation after nesting an aggregation inside the previous aggregation.}
+\caption{Current aggregation after nesting an aggregation inside the previous aggregation.}
 \end{subfigure}
 \end{center}
 \end{tcolorbox}
-\caption{Iris aggregation builder Preview.}
+\caption{Iris aggregation builder preview.}
 \end{figure}
 
 \subsubsection{Testing Aggregations}
@@ -650,7 +668,7 @@ In Semester 1 it was demonstrated that Iris test users could use the aggregation
 \end{center}
 A screenshot showing the aggregation result returned from testing an aggregation inside the aggregation builder area.
 \end{tcolorbox}
-\caption{Iris Aggregation Test Result (aggregation builder area).}
+\caption{Iris aggregation test result (aggregation builder area).}
 \end{figure}
 
 \begin{figure}[H]
@@ -660,7 +678,7 @@ A screenshot showing the aggregation result returned from testing an aggregation
 \end{center}
 A screenshot showing the aggregation builder in the dashboard section.
 \end{tcolorbox}
-\caption{Iris Aggregation Test Result (Dashboard area).}
+\caption{Iris aggregation test result (Dashboard area).}
 \end{figure}
 \subsection{Security}
 % talk about the addition of security in iris
@@ -685,7 +703,7 @@ The plugin allows a user to login to Iris using a POST request which contains th
 \end{center}
 A screenshot showing Iris API login being used to authenticate a valid Iris user, note the JWT token that was sent back.
 \end{tcolorbox}
-\caption{Iris Login API.}
+\caption{Iris login API.}
 \end{figure}
 
 \begin{figure}[H]
@@ -695,7 +713,7 @@ A screenshot showing Iris API login being used to authenticate a valid Iris user
 \end{center}
 A screenshot showing a data source being authenticated by its JWT in the `X-Auth-Token' header of the request.
 \end{tcolorbox}
-\caption{Iris JWT Validation}
+\caption{Iris JWT validation.}
 \end{figure}
 
 If the user's credentials are invalid or the JWT sent by the data source is invalid the user will be denied access to the endpoint.
@@ -707,7 +725,7 @@ If the user's credentials are invalid or the JWT sent by the data source is inva
 \end{center}
 A screenshot showing the access denied message recieved upon authentication failure with Iris.
 \end{tcolorbox}
-\caption{Iris API Access Denied}
+\caption{Iris API access denied example.}
 \end{figure}
 
 Using the plugin, Iris configured its endpoint security based on the endpoints available to the user. All endpoints which are part of the frontend of Iris are locked unless a user is fully authenticated, meaning a user must sign in to use any of the user interface of Iris.
@@ -721,7 +739,7 @@ The two REST endpoints Iris exposes to data sources are `/schema/route/' and `/s
 \end{center}
 A screenshot showing the `/schema/route/' endpoint being secured with the `Secured' annotation.
 \end{tcolorbox}
-\caption{Iris Secured Route.}
+\caption{Iris secured route.}
 \end{figure}
 
 The only endpoints in Iris that require no authentication are the `/login/auth' endpoint which returns the login page for a user who is using the web application to login and the `/api/login' for a data source who is logging in through a POST request. All other endpoints are secured.
@@ -733,7 +751,7 @@ The only endpoints in Iris that require no authentication are the `/login/auth' 
 \end{center}
 A screenshot showing the spring security configuration settings for all of the Iris endpoints.
 \end{tcolorbox}
-\caption{Iris Spring Security Configuration.}
+\caption{Iris spring security configuration file.}
 \end{figure}
 
 For more information on JWT, Spring Security Core and Spring Security Rest, please refer to these urls:
@@ -773,7 +791,7 @@ Iris is hosted on an AWS EC2 instance. The instance is part of the free tier opt
  t2.micro & 1 & 1GB & 8GB\\ 
  \hline
 \end{tabular}
-\caption{AWS EC2 Instance Specifications.}
+\caption{AWS EC2 instance specifications.}
 \label{table:ec2:specs}
 \end{table}
 
@@ -798,7 +816,7 @@ The Elasticsearch instance which Iris interacts with is hosted on AWS as part of
  5.5 & 46,590 & 7.22GB\\ 
  \hline
 \end{tabular}
-\caption{AWS Elasticsearch Instance Specifications.}
+\caption{AWS Elasticsearch instance specifications.}
 \label{table:elastic:specs}
 \end{table}
 \subsubsection{MySQL Instance}
@@ -1031,12 +1049,12 @@ A screenshot of the MySQL agent dashboard in Iris.
 
 \chapter{Conclusions}
 \section{Current Application State}
-Currently Iris is in a stable state and has achieved what it was designed to do, dynamic data monitoring. In the Semester 1 report the design and features of the Iris core framework are discussed in regards to schemas, dashboards and Iris' use of Elasticsearch. All of these features were implemented successfully and collaborate to deliver a fully dynamic data monitoring implementation.
+Currently Iris is in a stable state and has achieved what it was designed to do dynamic data monitoring. In the Semester 1 report the design and features of the Iris core framework are discussed in regards to schemas, dashboards and Iris' use of Elasticsearch. All of these features were implemented successfully and collaborate to deliver a fully dynamic data monitoring implementation.
 
-Iris demonstrates its capabilities in live production on AWS where it monitors data from several data sources which are active on different platforms and push of different forms of data to Iris. Iris confidently handles setting up an application schema for the data sources and handles the incoming data being pushed from these data sources. Iris allows users to track their data through dashboards and Elasticsearch aggregations in realtime which helps solidify Iris' current state in this lifecycle.  
+Iris demonstrates its capabilities in live production on AWS where it monitors data from several data sources which are active on different platforms and push of different forms of data to Iris. Iris handles setting up an application schema for the data sources and handles the incoming data being pushed from these data sources. Iris allows users to track their data through dashboards and Elasticsearch aggregations in realtime which helps verify Iris' current state in this lifecycle.
 
 \section{Future Development}
-The goal of this lifecycle was to implement the core framework of Iris which Onaware could work with and expand upon. Throughout the development of Iris' a potential features list has been growing with Onaware. Below is a summary of some of the features which have been added to a list of features to be added to Iris in the future:
+The goal of this lifecycle was to implement the core framework of Iris which Onaware could work with and expand upon. Throughout the development of Iris a potential features list has been growing within Onaware. Below is a summary of some of the features which are being considered for Iris:
 \begin{itemize}
     \item Storing unmodified data. Currently when a user writes a transformation script to transform the data, the transformed data is being stored in Elasticsearch. It would be better to store the raw unmodified data as well as the modified data.
     \item Replace Elasticsearch Aggregation terminology with more user friendly terminology, making it easier for anyone to build Elasticsearch aggregations.
@@ -1050,11 +1068,11 @@ The features listed above will be discussed in more detail with Onaware once Iri
 \section{Alternative Approaches}
 The main alternative approach which was discussed for building Iris was the idea of using Node.js rather than Grails 3.
 
-Iris was built using Grails, a technology which appears to losing popularity as a means for building web applications. This became evident relatively quick in the research stage of Iris as there was major difficulty finding appropriate plugins and libraries for Grails 3 (the newest release of Grails) that are essential for Iris. The reason Grails 3 is being discussed and not its prior releases is because it shows how Grails is beginning to decline in popularity. For example there is 1,255 plugins for Grails versions 1\&2, but currently there is only 239 plugins for Grails 3, which can be seen here \url{http://plugins.grails.org/}. Due to the lack of community support for Grails 3, using a different technology such as Node.js would have benefited Iris. Node.js which uses the `npm' package manager contains over 650,000 packages, this would have increased the development time of Iris dramatically as a lot of Iris' code had to be written from scratch, and could have benefited from reusing code from the npm package manager.
+Iris was built using Grails, a technology which appears to losing popularity as a means for building web applications. This became evident relatively quickly in the research stage of Iris as there was difficulty finding appropriate plugins and libraries for Grails 3 (the newest release of Grails) that are essential for Iris. The reason Grails 3 is being discussed and not its prior releases is because it shows how Grails is beginning to decline in popularity. For example there is 1,255 plugins for Grails versions 1\&2, but currently there is only 239 plugins for Grails 3, which can be seen here \url{http://plugins.grails.org/}. Due to the lack of community support for Grails 3, using a different technology such as Node.js would have benefited Iris. Node.js which uses the `npm' package manager contains over 650,000 packages \parencite{ModuleCounts}. This would have increased the development time of Iris dramatically as a lot of Iris' code had to be written from scratch, and could have benefited from reusing code from the npm package manager.
 
 Another reason for considering Node.js for Iris, was due to Iris needing to monitor data in realtime. Although Iris currently doesn't struggle with this operation, Node.js' I/O architecture is designed to be non-blocking, which allows requests to be dealt with asynchronously, meaning Iris can handle incoming data requests asynchronously.
 
-The final reason for considering Node.js for Iris is the fact that the majority of requests sent from the client to Iris are in the form of JSON. Once the JSON request is recieved by Iris it needs to be parsed into Groovy code. Groovy has made excellent libraries for parsing JSON but it would be more ideal if possible to work with the same languages both frontend and backend if possible. Node.js makes this possible by having the server code in javascript.
+Another reason for considering Node.js for Iris is the fact that the majority of requests sent from the client to Iris are in the form of JSON. Once the JSON request is recieved by Iris it needs to be parsed into Groovy code. Groovy has made excellent libraries for parsing JSON but it would be more ideal if possible to work with the same languages both frontend and backend if possible. Node.js makes this possible by having the server code in javascript.
 
 Lastly, Iris could benefit from using a more efficient way of dealing with DOM manipulation, jQuery is an older technology and is now starting to be replaced by frontend frameworks. Using a frontend framework such as React.js would allow Iris to render dashboard charts more efficiently due to its use of a virtual DOM, as well as bind the DOM data to javascript variables. React.js also uses components which add a great increase in reusability and testability for the frontend. All React.js code is written in javascript meaning the server and client can communicate in the same language if Node.js was being used for the server code. Using a frontend framework allows the frontend and backend of a project to remain loosely coupled making them both easier to work on.
 
@@ -1068,7 +1086,7 @@ Lastly, Iris could benefit from using a more efficient way of dealing with DOM m
 \begin{appendices}
 
 
-\section{Overview of Code Repository}
+\chapter{Overview of Code Repository}
 All of the code developed in this project is available on bitbucket. Following common conventions a separate repository is used for Iris and for each of the separate agents. They can all be found at the following urls:
 \begin{itemize}
     \item Iris (Core) - \url{https://bitbucket.org/DeanGaffney/iris}.
@@ -1088,7 +1106,7 @@ Due to the amount of code developed it is impractical to include the code within
 \end{center}
 A screenshot of the cloc utility run on Iris, the command filters all third party code and only counts the lines of code in Iris.
 \end{tcolorbox}
-\caption{Cloc Results.}
+\caption{Cloc results.}
 \label{fig:cloc}
 \end{figure}
 
@@ -1125,7 +1143,7 @@ The breakdown shown in \cref{table:component:breakdown} closely follows the sepa
   \multicolumn{2}{l}{\bfseries\smaller Other Services} \\
   & Groovy & N/A & 1573\\ 
 \end{tabular}
-\caption{Summary of Component Completion.}
+\caption{Summary of component lines of code.}
 \label{table:component:breakdown}
 \end{table}
 
