@@ -64,7 +64,7 @@ Iris provides users with a dynamic performance framework which allows users to f
 \chapter{Introduction}
 
 \section{Motivation for Iris}
-The following section is identical to the Motivation for Iris section in the Semester 1 report. It has been added here for convienience.
+The following section is identical to the Motivation for Iris section in the Semester 1 report. It has been added here for convenience.
 
 The motivation for this project comes from database and system performance issues that Onaware\footnote{Onaware is an international company that specialises in IAM (Identity and Access Management) and has offices with 20 staff in Waterford. More information on Onaware can be found at \url{https://onaware.com}.} has experienced in recent projects. It is often the case that they must deal with large amounts of identity data being aggregated into a third party system called `IIQ'.
 
@@ -1030,10 +1030,36 @@ A screenshot of the MySQL agent dashboard in Iris.
 \end{figure}
 
 \chapter{Conclusions}
+\section{Current Application State}
+Currently Iris is in a stable state and has achieved what it was designed to do, dynamic data monitoring. In the Semester 1 report the design and features of the Iris core framework are discussed in regards to schemas, dashboards and Iris' use of Elasticsearch. All of these features were implemented successfully and collaborate to deliver a fully dynamic data monitoring implementation.
 
+Iris demonstrates its capabilities in live production on AWS where it monitors data from several data sources which are active on different platforms and push of different forms of data to Iris. Iris confidently handles setting up an application schema for the data sources and handles the incoming data being pushed from these data sources. Iris allows users to track their data through dashboards and Elasticsearch aggregations in realtime which helps solidify Iris' current state in this lifecycle.  
+
+\section{Future Development}
+The goal of this lifecycle was to implement the core framework of Iris which Onaware could work with and expand upon. Throughout the development of Iris' a potential features list has been growing with Onaware. Below is a summary of some of the features which have been added to a list of features to be added to Iris in the future:
+\begin{itemize}
+    \item Storing unmodified data. Currently when a user writes a transformation script to transform the data, the transformed data is being stored in Elasticsearch. It would be better to store the raw unmodified data as well as the modified data.
+    \item Replace Elasticsearch Aggregation terminology with more user friendly terminology, making it easier for anyone to build Elasticsearch aggregations.
+    \item Add a State Disc Chart list. This would be a list of state disc charts inside one widget.
+    \item Add a dashboard widget which simply displays text, this can be useful for dumping programming exceptions or to send log file contents into a widget on a dashboard.
+    \item Chart merging. Allow a user to merge two or more charts to aid their data visualisation.
+    \item Create a dedicated area for downloading and uploading common applications for pushing data to Iris, this would be similar to a marketplace.
+\end{itemize}
+The features listed above will be discussed in more detail with Onaware once Iris starts its new lifecycle within Onaware.
+
+\section{Alternative Approaches}
+The main alternative approach which was discussed for building Iris was the idea of using Node.js rather than Grails 3.
+
+Iris was built using Grails, a technology which appears to losing popularity as a means for building web applications. This became evident relatively quick in the research stage of Iris as there was major difficulty finding appropriate plugins and libraries for Grails 3 (the newest release of Grails) that are essential for Iris. The reason Grails 3 is being discussed and not its prior releases is because it shows how Grails is beginning to decline in popularity. For example there is 1,255 plugins for Grails versions 1\&2, but currently there is only 239 plugins for Grails 3, which can be seen here \url{http://plugins.grails.org/}. Due to the lack of community support for Grails 3, using a different technology such as Node.js would have benefited Iris. Node.js which uses the `npm' package manager contains over 650,000 packages, this would have increased the development time of Iris dramatically as a lot of Iris' code had to be written from scratch, and could have benefited from reusing code from the npm package manager.
+
+Another reason for considering Node.js for Iris, was due to Iris needing to monitor data in realtime. Although Iris currently doesn't struggle with this operation, Node.js' I/O architecture is designed to be non-blocking, which allows requests to be dealt with asynchronously, meaning Iris can handle incoming data requests asynchronously.
+
+The final reason for considering Node.js for Iris is the fact that the majority of requests sent from the client to Iris are in the form of JSON. Once the JSON request is recieved by Iris it needs to be parsed into Groovy code. Groovy has made excellent libraries for parsing JSON but it would be more ideal if possible to work with the same languages both frontend and backend if possible. Node.js makes this possible by having the server code in javascript.
+
+Lastly, Iris could benefit from using a more efficient way of dealing with DOM manipulation, jQuery is an older technology and is now starting to be replaced by frontend frameworks. Using a frontend framework such as React.js would allow Iris to render dashboard charts more efficiently due to its use of a virtual DOM, as well as bind the DOM data to javascript variables. React.js also uses components which add a great increase in reusability and testability for the frontend. All React.js code is written in javascript meaning the server and client can communicate in the same language if Node.js was being used for the server code. Using a frontend framework allows the frontend and backend of a project to remain loosely coupled making them both easier to work on.
 
 %No cite prints all references even if they are not in the document!!
-\nocite{*}
+% \nocite{*}
 \printbibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
