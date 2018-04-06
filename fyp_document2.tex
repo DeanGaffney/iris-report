@@ -1068,8 +1068,7 @@ The features listed above will be discussed in more detail with Onaware once Iri
 \section{Alternative Approaches}
 The main alternative approach which was discussed for building Iris was the idea of using Node.js rather than Grails 3.
 
-Iris was built using Grails\footnote{From a business stand point Onaware wished for Iris to be developed in Grails as Onaware developers are all Java Developers. 
-If Iris was to be built using different technologies Onaware would now need employees with a different set of skills, which is something Onaware do not currently want.}, a technology which appears to losing popularity as a means for building web applications. This became evident relatively quickly in the research stage of Iris as there was difficulty finding appropriate plugins and libraries for Grails 3 (the newest release of Grails) that are essential for Iris. The reason Grails 3 is being discussed and not its prior releases is because it shows how Grails is beginning to decline in popularity. For example there is 1,255 plugins for Grails versions 1\&2, but currently there is only 239 plugins for Grails 3, which can be seen here \url{http://plugins.grails.org/}. Due to the lack of community support for Grails 3, using a different technology such as Node.js would have benefited Iris. Node.js which uses the `npm' package manager contains over 650,000 packages, this would have decreased the development time of Iris dramatically as a lot of Iris' code had to be written from scratch when using Grails.
+Iris was built using Grails\footnote{Onaware's expertise is in Java and Grails, this is the main reason why Grails was picked for Iris.}, a technology which appears to losing popularity as a means for building web applications. This became evident relatively quickly in the research stage of Iris as there was difficulty finding appropriate plugins and libraries for Grails 3 (the newest release of Grails) that are essential for Iris. The reason Grails 3 is being discussed and not its prior releases is because it shows how Grails is beginning to decline in popularity. For example there is 1,255 plugins for Grails versions 1\&2, but currently there is only 239 plugins for Grails 3, which can be seen here \url{http://plugins.grails.org/}. Due to the lack of community support for Grails 3, using a different technology such as Node.js would have benefited Iris. Node.js which uses the `npm' package manager contains over 650,000 packages, this would have decreased the development time of Iris dramatically as a lot of Iris' code had to be written from scratch when using Grails.
 
 Another reason for considering Node.js for Iris, was due to Iris needing to monitor data in realtime. Although Iris currently doesn't struggle with this operation, Node.js' I/O architecture is designed to be non-blocking, which allows requests to be dealt with asynchronously, meaning Iris can handle incoming data requests asynchronously.
 
@@ -1142,7 +1141,7 @@ The breakdown shown in \cref{table:component:breakdown} closely follows the sepa
   \multicolumn{2}{l}{\bfseries\smaller Utilities}\\
    & Groovy & 18 & 384\\ 
   \multicolumn{2}{l}{\bfseries\smaller Other Services} \\
-  & Groovy & N/A & 1573\\ 
+  & Groovy & 9 & 1573\\ 
 \end{tabular}
 \caption{Summary of component lines of code.}
 \label{table:component:breakdown}
