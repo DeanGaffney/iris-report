@@ -291,7 +291,7 @@ Iris now accepts `POST' requests to the endpoint \url{$SERVER_BASE/schema/getAge
 \end{tcolorbox}
 \caption{SchemaController `getAgentUrl' endpoint JSON payload.}
 \end{figure}
-Assuming the user is authenticated, Iris will look for a Schema matching this name and return the unique endpoint for this schema. The advantage of this is that a user may create a schema and not be satisfied with it. The user may then decide to delete the schema and create a new schema using the same name with extra attributes attached to it. The issue here is that Iris will give the new schema a new url different from the previous schema. This now means a user must go back to their agent code and change a hardcoded url to a new url and then redeploy the agent. However if a user writes their code to take advantage of the `getAgentUrl' endpoint in Iris, they will be able to dynamically obtain a new unique endpoint for the new schema as long as the schema name stays the same. This means there is no need to redeploy the agent with a new url as it is obtained dynamically from Iris.
+Assuming the user is authenticated Iris will look for a Schema matching this name and return the unique endpoint for this schema. The advantage of this is that a user may create a schema and not be satisfied with it. The user may then decide to delete the schema and create a new schema using the same name with extra attributes attached to it. The issue here is that Iris will give the new schema a new url different from the previous schema. This now means a user must go back to their agent code and change a hardcoded url to a new url and then redeploy the agent. However if a user writes their code to take advantage of the `getAgentUrl' endpoint in Iris; they will be able to dynamically obtain a new unique endpoint for the new schema as long as the schema name stays the same. This means there is no need to redeploy the agent with a new url as it is obtained dynamically from Iris.
 
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -320,9 +320,9 @@ The frontend of the Iris system, is concerned with the charting and dashboard co
 Gridstack.js is a jQuery plugin that provides a drag-and-drop multi-column grid for generic widgets. 
 Its features and the basis for selecting gridstack.js is covered in the Semester 1 report.  
  
-Due to the extensive research and testing on this library in Semester 1 and the active github support from Gridstack.js developers there was no major issues during the implementation phase in Semester 2. Gridstack.js is used to contain the components (charts) of the dashboard in a grid format. Whenever a chart is created for a dashboard a new container widget is created containing the chart and added to the gridstack grid. This widget automatically becomes resizable, draggable and serialisable.
+Due to the extensive research and testing on this library in Semester 1 and the active github support from Gridstack.js developers there was no major issues during the implementation phase in Semester 2. Gridstack.js is used to contain the components (charts) of the dashboard in a grid format. Whenever a chart is created for a dashboard a new container widget is created containing the chart and added to the gridstack grid. This widget automatically becomes resizable, draggable and serializable.
 
-The logic used to format the gridstack grid into a serialisable object was retrieved from the Gridstack.js serialise demo\footnote{\url{https://dsmorse.github.io/gridster.js/demos/serialize.html}}. Using the basic structure supplied by the gridstack.js developers, the Iris client code was developed and expanded the existing functionality to support chart types and aggregation objects. (see \Cref{fig:Serialization_logic})
+The logic used to format the gridstack grid into a serializable object was retrieved from the Gridstack.js serialise demo\footnote{\url{https://dsmorse.github.io/gridster.js/demos/serialize.html}}. Using the basic structure supplied by the gridstack.js developers, the Iris client code was developed and expanded the existing functionality to support chart types and aggregation objects. (see \Cref{fig:Serialization_logic})
 %to be included in the serialized data.
 \begin{figure}[H]
 \centering
@@ -383,7 +383,7 @@ For a basic demo of Gridstack.js refer to this url \url{http://gridstackjs.com/d
 
 Billboard.js is a charting library based on D3.js. Billboard.js was researched and tested in detail during Semester 1 but was not integrated within Iris until Semester 2.
 
-Integrating Billboard.js into Iris, and more specifically with Gridstack.js, was relatively straight forward, the only issue was sizing issue for loading charts mentioned above.  
+Integrating Billboard.js into Iris and more specifically with Gridstack.js, was relatively straight forward; the only issue was sizing issue for loading charts mentioned above.  
 Dynamically adding a Billboard.js chart to an existing Gridstack.js grid required an extra parent container to be wrapped around the chart element, effectively converting it to a Gridstack.js widget.
 
 The chart type support will be discussed in \cref{para:charts:fontend} and the chart subscriptions will be discussed in \cref{para:charts:subs:frontend}.
@@ -443,7 +443,7 @@ function setChartSubscription(subscriptionId, chart, chartType, schemaId){
 
 \paragraph{Downloadable Chart Data}
 
-Iris supports the ability to download a JSON file consisting of the current data being displayed on any chart. This functionality was built by using the Billboard.js API and retrieving the chart data, and adding custom logic to format that data into a file to be downloaded upon request.
+Iris supports the ability to download a JSON file consisting of the current data being displayed on any chart. This functionality was built by using the Billboard.js API and retrieving the chart data and adding custom logic to format that data into a file to be downloaded upon request.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{center}
@@ -498,7 +498,7 @@ This section will focus on the major factors behind the backend implementation o
 
 Within this section designs from the Semester 1 report will be discussed in terms of their implementation phase during Semester 2 as well as some new features that were designed and added within Semester 2.
 \paragraph{Chart Types}
-The Iris chart types are handled by using enums in Iris. This allows for the code in Iris to be easily expanded upon when a new chart type is needed, and the use of enums allows for more readable code when dealing with different types of charts.
+The Iris chart types are handled by using enums in Iris. This allows for the code in Iris to be easily expanded upon when a new chart type is needed and the use of enums allows for more readable code when dealing with different types of charts.
 
 \begin{figure}[H]
 \begin{tcolorbox}
@@ -524,7 +524,7 @@ enum ChartType {
 \end{tcolorbox}
 \caption{ChartType.groovy enum from Iris.}
 \end{figure}
-Due to Iris supporting multiple chart types as well as different types of data, each chart has optional attributes. Some of these optional attributes consist of an Elasticsearch aggregation if the user created the chart using the aggregation builder, and a raw attribute in the case of a user wishing to just send raw data to a chart and not have Elasticsearch perform any aggregations over the incoming data.
+Due to Iris supporting multiple chart types as well as different types of data, each chart has optional attributes. Some of these optional attributes consist of an Elasticsearch aggregation if the user created the chart using the aggregation builder and a raw attribute in the case of a user wishing to just send raw data to a chart and not have Elasticsearch perform any aggregations over the incoming data.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{minted}[breaklines]{groovy}

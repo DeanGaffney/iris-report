@@ -1,6 +1,9 @@
 MAIN = fyp_document2
 
-default:  $(MAIN).pdf
+default:
+	pdflatex --shell-escape $(MAIN)
+	biber $(MAIN)
+	pdflatex --shell-escape $(MAIN)
 
 b build: $(MAIN).pdf
 	biber $(MAIN)
