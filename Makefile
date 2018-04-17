@@ -24,7 +24,7 @@ trello:
 	python trello.py
 	pdflatex trello.tex
 
-panel_copies: $(MAIN)_KMurphy.pdf $(MAIN)_ROConnor.pdf
+panel_copies: $(MAIN)_KMurphy.pdf $(MAIN)_ROConnor.pdf $(MAIN)_RLacey.pdf $(MAIN)_PMInerney.pdf
 
 $(MAIN)_KMurphy.pdf: $(MAIN).tex
 	pdflatex -shell-escape -jobname=$(MAIN) "\\def\\Reader{Dr. K Murphy (Supervisor)}\\input{fyp_document2}"
@@ -32,5 +32,13 @@ $(MAIN)_KMurphy.pdf: $(MAIN).tex
 
 $(MAIN)_ROConnor.pdf: $(MAIN).tex
 	pdflatex -shell-escape -jobname=$(MAIN) "\\def\\Reader{Rob O Connor}\\input{fyp_document2}"
+	cp $(MAIN).pdf $@ 
+
+$(MAIN)_PMInerney.pdf: $(MAIN).tex
+	pdflatex -shell-escape -jobname=$(MAIN) "\\def\\Reader{Patrick McInerney}\\input{fyp_document2}"
+	cp $(MAIN).pdf $@ 
+
+$(MAIN)_RLacey.pdf: $(MAIN).tex
+	pdflatex -shell-escape -jobname=$(MAIN) "\\def\\Reader{Richard Lacey}\\input{fyp_document2}"
 	cp $(MAIN).pdf $@ 
  	

@@ -56,7 +56,7 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\chapter{Abstract}
+\chapter*{Abstract}
 
 The aim of this project is to design a full implementation of a system for application performance monitoring. The proposed system, has the working title,  Iris.
 
@@ -65,7 +65,7 @@ Iris provides users with a dynamic performance framework which allows users to f
 \chapter{Introduction}
 
 \section{Motivation for Iris}
-The following section is identical to the Motivation for Iris section in the Semester 1 report. It has been added here for convenience.
+The following section is identical to the Motivation for Iris section in the Semester 1 report. It has been included here for convenience.
 
 The motivation for this project comes from database and system performance issues that Onaware\footnote{Onaware is an international company that specialises in IAM (Identity and Access Management) and has offices with 20 staff in Waterford. More information on Onaware can be found at \url{https://onaware.com}.} has experienced in recent projects. It is often the case that they must deal with large amounts of identity data being aggregated into a third party system called `IIQ'.
 
@@ -378,7 +378,7 @@ The logic used to format the gridstack grid into a serializable object was retri
 
 One issue with gridstack.js, that was found during the implementation phase, is that the width of a widget can be incorrectly calculated at the upon loading a dashboard. Unfortunately this issue is not consistent and has proven difficult to resolve. Currently the only fix is for the user to click on the resizable handles of a widget and the chart then scales correctly.
 
-For a basic demo of Gridstack.js refer to this url \url{http://gridstackjs.com/demo/}
+For a basic demo of Gridstack.js refer to \url{http://gridstackjs.com/demo/}
 
 \paragraph{Billboard.js}
 
@@ -411,7 +411,7 @@ The design for how Iris handles sending incoming data to the correct charts is d
 
 Each client chart on an Iris dashboard subscribes to messages from the server on a unique socket endpoint, which ensures the correct data gets sent to the correct chart. This design is discussed in the Semester 1 report and has remained the same during the implementation of the chart subscription logic in Iris.
 
-For more information on he Grails 3 `grails-spring-websocket' plugin refer to \url{https://github.com/zyro23/grails-spring-websocket}.
+For more information on the Grails 3 `grails-spring-websocket' plugin refer to \url{https://github.com/zyro23/grails-spring-websocket}.
 \begin{figure}[H]
 \begin{tcolorbox}
 \begin{minted}[breaklines]{javascript}
@@ -466,7 +466,7 @@ A screenshot of a downloadable chart in Iris, taken from the `selenium agent' da
 {"x":3,"value":888,"id":"Thomann","index":3},
 {"x":4,"value":888,"id":"Thomann","index":4}]}]
 \end{minted}
-JSON file data downloaded from a chart on the  `selenium agent' dashboard.(Shown in \Cref{fig:downloaded:chart})
+JSON file data downloaded from a chart on the  `selenium agent' dashboard (Shown in \Cref{fig:downloaded:chart}).
 \end{tcolorbox}
 \caption{JSON file data downloaded from a chart.}
 \end{figure}
@@ -489,7 +489,7 @@ A screenshot of the Node.js dashboard in Iris capturing its fourth revision.
 \begin{center}
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{iris-node-agent-dashboard}
 \end{center}
-A screenshot of the Node.js dashboard in Iris capturing its fifth revision. Note the extra chart `OS Types' that was added to this revision compared to the fourth revision show in \cref{fig:dash:rev:4}.
+A screenshot of the Node.js dashboard in Iris capturing its fifth revision. Note the extra chart `OS Types' that was added to this revision compared to the fourth revision shown in \cref{fig:dash:rev:4}.
 \end{tcolorbox}
 \caption{Node.js dashboard revision No. 5.}
 \end{figure}
@@ -796,14 +796,14 @@ Iris is hosted on an AWS EC2 instance. The instance is part of the free tier opt
 \label{table:ec2:specs}
 \end{table}
 
-For more information on the EC2 instance types refer to this url \url{https://aws.amazon.com/ec2/instance-types/}.
+For more information on the EC2 instance types refer to \url{https://aws.amazon.com/ec2/instance-types/}.
 
 \subsubsection{Jetty}
 Jetty is an open source HTTP server that can be used to act as web application container~\parencite{Jetty}. Jetty was not the first choice for being the container for Iris. Tomcat was the original choice as Onaware have their java web applications in Tomcat instances, this meant Iris was also going to be a candidate for being put in a Tomcat container. However due to the limitations of the EC2 instance mentioned in \cref{table:ec2:specs}, Tomcat proved to be unstable and was running out of memory for the JVM (Java Virtual Machine) once it was launched. 
 
 Due to Tomcats' instability, a different web application container was required. Several other containers were tested including GlassFish and JBoss, but these containers also failed to deploy Iris due to limited memory. Jetty was then tested and deployed Iris successfully. In order to test the deployment, the Jetty container was launched and shutdown several times over several days to ensure the container was stable. Once Jetty proved to be satisfactory Iris was deployed.
 
-For more information on Jetty refer to this url \url{https://www.eclipse.org/jetty/documentation/9.4.x/introduction.html}.
+For more information on Jetty refer to \url{https://www.eclipse.org/jetty/documentation/9.4.x/introduction.html}.
 \subsubsection{Elasticsearch Instance}
 The Elasticsearch instance which Iris interacts with is hosted on AWS as part of the Elasticsearch Services offered by Amazon. The instance is part of the free tier selection but proved to have sufficient hardware specifications for Iris which are detailed in \cref{table:elastic:specs}. The instance was tested heavily by sending requests from Iris at a rapid and constant rate over a period of time. The instance did not appear to have any issues dealing with the requests and was considered suitable for Iris.
 \begin{table}[H]
@@ -812,7 +812,7 @@ The Elasticsearch instance which Iris interacts with is hosted on AWS as part of
 \setlength\tabcolsep{6pt}
  \begin{tabular}{|c|c|c|c|}
  \hline
- E.S Version & Documents & Storage\\
+ ES. Version & Documents & Storage\\
  \hline\hline
  5.5 & 46,590 & 7.22GB\\ 
  \hline
@@ -886,7 +886,7 @@ For more information on coinmarketcap see their site here \url{https://coinmarke
 \subsubsection{Linkage with Iris}
 The Raspberry Pi agent is linked to Iris through a unique REST endpoint specific to the Raspberry Pi agent schema. All of the data being sent from the Raspberry Pi is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
 %Add a ref to a section where you explain what iris does, so you dont have to keep repeating this for all agents
-In this case Iris is monitoring raw data on two charts that are monitoring the current price in euro and usd. The other charts are using Elasticsearch aggregations to monitor the min and max prices reached for currencies in both euro and usd.
+In this case Iris is monitoring raw data on two charts that are monitoring the current price in euro and USD. The other charts are using Elasticsearch aggregations to monitor the min and max prices reached for currencies in both euro and USD.
 
 %Raspberry Pi agent schema screenshot in Iris
 \begin{figure}[H]
@@ -924,7 +924,7 @@ Due to Node.js' rise in popularity in recent years this agent demonstrates how I
     \item Total Memory Used
     \item Current CPU Load
 \end{itemize}
-A full list of all the obtainable attributes through `systeminformation' can be found here \url{https://github.com/sebhildebrandt/systeminformation}.
+A full list of all the obtainable attributes through `systeminformation' can be found at \url{https://github.com/sebhildebrandt/systeminformation}.
 
 An important thing to note about this agent is that it takes use of Iris' ability to transform incoming data through scripting. Many of the memory attributes retrieved from `systeminformation' are represented in bytes, this agent uses Iris' centralised transformation abilities to transform the `memFree' attribute to be represented as gigabytes rather than bytes. This script also transforms all the `osName' attributes to be uppercase. Transforming these attributes in Iris through scripting removed the need for a redeployment of the Node.js application.
 
@@ -972,7 +972,7 @@ The Selenium agent demonstrates the versatility of Iris by monitoring the price 
 \subsubsection{Description}
 The Selenium agent demonstrates Iris' versatility through the Selenium web driver which is commonly used for web automation and functional testing. In this case Selenium is used in conjunction with a Selenium wrapper called `Selenide' to automate the scraping of music store websites for a specific guitar. On each site the guitar's price is taken from the webpage as well as the name of the music store, the price of the guitar and the name of the music store is then sent to Iris so that it may be monitored.
 
-For more information on Selenide see their site here \url{http://selenide.org/}
+For more information on Selenide see their site \url{http://selenide.org/}
 
 \subsubsection{Linkage with Iris}
 The Selenium agent is linked to Iris through a unique REST endpoint specific to the Selenium agent schema. All of the data being sent from the Selenium agent is sent to this endpoint. Once the data enters Iris, Iris will run through it's logic for checking for dashboards and charts associated with the schema and send the data through to the charts. 
