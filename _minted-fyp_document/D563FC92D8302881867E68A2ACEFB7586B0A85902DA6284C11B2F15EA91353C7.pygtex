@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{p}{\PYGZob{}}
-	\PYG{n+nt}{\PYGZdq{}firstName\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Dean\PYGZdq{}}\PYG{p}{,}
-	\PYG{n+nt}{\PYGZdq{}lastName\PYGZdq{}}\PYG{p}{:}  \PYG{l+s+s2}{\PYGZdq{}Gaffney\PYGZdq{}}\PYG{p}{,}
-	\PYG{n+nt}{\PYGZdq{}fullName\PYGZdq{}}\PYG{p}{:}  \PYG{l+s+s2}{\PYGZdq{}Dean Gaffney\PYGZdq{}}
-\PYG{p}{\PYGZcb{}}
-\end{Verbatim}

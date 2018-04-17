@@ -8,8 +8,9 @@
 \newcommand\StudentID{20067423}
 \newcommand\Date{April 2018}
 \newcommand\Report{Status Report (Semester 2)}
-\newcommand\Reader{Supervisor: Dr.~Kieran Murphy}
-\newcommand\SecondReader{Second Reader: David Drohan}
+
+\usepackage{etoolbox}
+\ifdef{\Reader}{}{\gdef\Reader{Dr.~Kieran Murphy (Supervisor)}}
 
 \usepackage{fyp_document}
 
@@ -33,11 +34,11 @@
 \vfill
 {\fontsize{12pt}{20pt}\selectfont \bfseries \Report}
 \vfill
-{\fontsize{14pt}{20pt}\selectfont \bfseries \Author}
+{\fontsize{14pt}{20pt}\selectfont \bfseries \Author (\StudentID)}
 \vfill
-{\fontsize{14pt}{20pt}\selectfont \bfseries \StudentID\ Panel 5}
+%{\fontsize{14pt}{20pt}\selectfont \bfseries \StudentID\ --- Panel 5}
 \vfill
-{\fontsize{14pt}{20pt}\selectfont \bfseries \Reader}
+{\fontsize{14pt}{20pt}\selectfont \bfseries Panel 5 --- \Reader}
 \vfill
 % {\fontsize{14pt}{20pt}\selectfont \bfseries \SecondReader}
 \vfill

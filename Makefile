@@ -24,3 +24,13 @@ trello:
 	python trello.py
 	pdflatex trello.tex
 
+panel_copies: $(MAIN)_KMurphy.pdf $(MAIN)_ROConnor.pdf
+
+$(MAIN)_KMurphy.pdf: $(MAIN).tex
+	pdflatex -shell-escape -jobname=$(MAIN) "\\def\\Reader{Dr. K Murphy (Supervisor)}\\input{fyp_document2}"
+	cp $(MAIN).pdf $@ 
+
+$(MAIN)_ROConnor.pdf: $(MAIN).tex
+	pdflatex -shell-escape -jobname=$(MAIN) "\\def\\Reader{Rob O Connor}\\input{fyp_document2}"
+	cp $(MAIN).pdf $@ 
+ 	
