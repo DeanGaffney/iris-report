@@ -1,3 +1,5 @@
+#author Dean Gaffney
+#this script pulls down the iris trello board issues and formats them into a tex document categorised by sprint tags
 import requests, re
 import simplejson as json
 
