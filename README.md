@@ -20,7 +20,7 @@ The semester 1 report covers the motivation, planning and designing of Iris.
 
 ## Semester 2 report
 
-The semseter 2 report covers the implementation of Iris and the Iris agents that were used to demonstrate the functionality of Iris.
+The semester 2 report covers the implementation of Iris and the Iris agents that were used to demonstrate the functionality of Iris.
 
 #### Iris agents
 * [Android](https://github.com/DeanGaffney/iris-android)
